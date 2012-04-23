@@ -1,0 +1,648 @@
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser}{\section{uicilibris.\-wiki\-Parser.\-wiki\-Parser \-Class \-Reference}
+\label{classuicilibris_1_1wikiParser_1_1wikiParser}\index{uicilibris.\-wiki\-Parser.\-wiki\-Parser@{uicilibris.\-wiki\-Parser.\-wiki\-Parser}}
+}
+
+
+\-A converter from wiki-\/style layout to many high-\/level syntaxes like \-La\-Te\-X/\-Beamer.  
+
+
+
+
+\-Inheritance diagram for uicilibris.\-wiki\-Parser.\-wiki\-Parser\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_aa8c6f57cf7318e3add9818ed1c0d7acf}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em \-The constructor. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ab8d2d05435d90a4f72b59e2c49dff14b}{parse\-Wiki\-Source}
+\begin{DoxyCompactList}\small\item\em parses a text provided by self.\-parent in its drop area \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_aa2ad4f2c68118fbea7e8a6c51c9dc279}{reload\-Cache}
+\begin{DoxyCompactList}\small\item\em \-Reloads the cache from a given text, after running template processors. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a3b0221e81ad81da455d765545a4fb008}{reload\-Cache\-Indirect}
+\begin{DoxyCompactList}\small\item\em \-Reloads the cache from the current mediawiki. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_af38e5cea885aed2b7fbaec3e3a682109}{url2lines}
+\begin{DoxyCompactList}\small\item\em loads self.\-lines from the file-\/like object self.\-url\-Lines \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a77ab07ac16780aab2763686a8a9a8fb9}{get\-Images}
+\begin{DoxyCompactList}\small\item\em gets the necessary images from the mediawiki \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a417e20ea54d0baa571a780ad9a272767}{register\-Image}
+\begin{DoxyCompactList}\small\item\em registers an image filename to retreive it later \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a346a627060b640a5ff92a8cda259b470}{image\-Count}
+\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ad379cfe2bffe3ba1e29226fe37144a0c}{is\-Url}
+\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a4f51eda5708d394cf790242ee181cf5b}{get\-Wiki\-Contents\-By\-Title}
+\begin{DoxyCompactList}\small\item\em \-Gets the wiki code from the website, given a page's title. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a9b94d5c7305f2a3442cfab3ae0eb2a4a}{apply\-Plugins}
+\begin{DoxyCompactList}\small\item\em fixes the strings \char`\"{}\&lt;math$>$\char`\"{} and \char`\"{}\&lt;/math$>$\char`\"{}, then pre-\/processes a few simple templates which have a precise definition for \-La\-Te\-X, then processes the images. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_af79280e089c16ff3105d73e45db8705b}{wiki\-Templates}
+\begin{DoxyCompactList}\small\item\em calls the special page \-Expand\-Templates in the wiki to apply templates which must be processed by mediawiki \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ac5365eaf7f17aa4e365e04cb14e69f25}{include\-\_\-one\-\_\-address}
+\begin{DoxyCompactList}\small\item\em gets contents from a simple wiki page \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ad592f3c41f213a79d99ba112997e1119}{load\-Url\-Lines}
+\begin{DoxyCompactList}\small\item\em puts a text into the file-\/like object self.\-url\-Lines \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ad28564c6961cdd8a72d8dbe417c2b349}{to\-Std\-Err}
+\begin{DoxyCompactList}\small\item\em sends a string to sys.\-stderr \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a3ce63812d8f61757627343437a74ce48}{include\-\_\-addresses}
+\begin{DoxyCompactList}\small\item\em populates self.\-url\-Lines with data coming from addresses self.\-url\-Lines will be a file-\/like object. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a2af2d56994cbc429e28597a3e1037447}{include\-\_\-file\-\_\-recursive}
+\begin{DoxyCompactList}\small\item\em makes a list of lines from a file, including recursively other files when necessary \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a905ed62b491b474dadfd86d3e44da0ba}{include\-Instruction}
+\begin{DoxyCompactList}\small\item\em \-Extract filename to include. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a703b601bdac12ccf91e2a97284e837c4}{lines}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a72335f3e81fe1d0d41ed5e76826805a4}{image\-Set}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_af0a9ee932c7aab417205c80071fba145}{report}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a7de89dcc8995d3a58acae4966fe7e322}{parent}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ab7f4d7c5562ce8d2649a9215aca2c351}{base\-Address}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a7825edf6e7c7c054a4e7e02c772c1cc5}{host}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_a82888a48bdef33d5201bdb74ba1a8bd0}{cache}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ae3c96c21872a72fb1cda481f646b413f}{latex\-Ready\-Param}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_acbeda3b902861869a778a904dd6fbe47}{old\-Wiki2beamer}
+\item 
+\hyperlink{classuicilibris_1_1wikiParser_1_1wikiParser_ab56a382d82bac5dcf1ccefbd25084447}{url\-Lines}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-A converter from wiki-\/style layout to many high-\/level syntaxes like \-La\-Te\-X/\-Beamer. 
+
+\-Definition at line 288 of file wiki\-Parser.\-py.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_aa8c6f57cf7318e3add9818ed1c0d7acf}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-\_\-\-\_\-init\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{args = {\ttfamily \mbox{[}\mbox{]}}, }
+\item[{}]{isatty = {\ttfamily \-True}, }
+\item[{}]{is\-Url = {\ttfamily \-False}, }
+\item[{}]{report = {\ttfamily \-False}, }
+\item[{}]{parent = {\ttfamily \-None}, }
+\item[{}]{latex\-Ready\-Param = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{}]{old\-Wiki2beamer = {\ttfamily \-False}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_aa8c6f57cf7318e3add9818ed1c0d7acf}
+
+
+\-The constructor. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em args} & a list of filenames, or a single \-U\-R\-L. \-When a single \-U\-R\-L, it is meant to be the address of a wikimedia page which contains a series of other addresses of the same mediawiki in mediawiki syntax. \\
+\hline
+{\em isatty} & is \-True when data do not come from the standard input \\
+\hline
+{\em is\-Url} & is \-True to force the initialization, by considering arg as a single url which is supposed to be a normal wiki page \\
+\hline
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+{\em parent} & pointer to the main window \\
+\hline
+{\em latex\-Ready\-Param} & the parameter for a signal to be emitted upon completion of the process \\
+\hline
+{\em old\-Wiki2beamer} & when \-True, uses the modes of wiki2beamer \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a9b94d5c7305f2a3442cfab3ae0eb2a4a}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!apply\-Plugins@{apply\-Plugins}}
+\index{apply\-Plugins@{apply\-Plugins}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{apply\-Plugins}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-apply\-Plugins} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a9b94d5c7305f2a3442cfab3ae0eb2a4a}
+
+
+fixes the strings \char`\"{}\&lt;math$>$\char`\"{} and \char`\"{}\&lt;/math$>$\char`\"{}, then pre-\/processes a few simple templates which have a precise definition for \-La\-Te\-X, then processes the images. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em s} & the string to be processed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the processed string 
+\end{DoxyReturn}
+
+
+\-Definition at line 477 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a77ab07ac16780aab2763686a8a9a8fb9}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!get\-Images@{get\-Images}}
+\index{get\-Images@{get\-Images}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{get\-Images}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-get\-Images} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{path, }
+\item[{}]{report = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a77ab07ac16780aab2763686a8a9a8fb9}
+
+
+gets the necessary images from the mediawiki 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em path} & the path to write images \\
+\hline
+{\em report} & if \-True, this method will output a few messages on sys.\-stderr; if report is a callback function, this function will be called with one parameter. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 403 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a4f51eda5708d394cf790242ee181cf5b}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!get\-Wiki\-Contents\-By\-Title@{get\-Wiki\-Contents\-By\-Title}}
+\index{get\-Wiki\-Contents\-By\-Title@{get\-Wiki\-Contents\-By\-Title}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{get\-Wiki\-Contents\-By\-Title}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-get\-Wiki\-Contents\-By\-Title} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{title}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a4f51eda5708d394cf790242ee181cf5b}
+
+
+\-Gets the wiki code from the website, given a page's title. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em title} & the title of a wiki page \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the wiki code for the page, else a void string 
+\end{DoxyReturn}
+
+
+\-Definition at line 465 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a346a627060b640a5ff92a8cda259b470}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!image\-Count@{image\-Count}}
+\index{image\-Count@{image\-Count}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{image\-Count}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-image\-Count} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a346a627060b640a5ff92a8cda259b470}
+\begin{DoxyReturn}{\-Returns}
+the count of embedded images 
+\end{DoxyReturn}
+
+
+\-Definition at line 434 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a3ce63812d8f61757627343437a74ce48}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!include\-\_\-addresses@{include\-\_\-addresses}}
+\index{include\-\_\-addresses@{include\-\_\-addresses}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{include\-\_\-addresses}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-include\-\_\-addresses} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{wiki\-Addresses, }
+\item[{}]{cb\-Info = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a3ce63812d8f61757627343437a74ce48}
+
+
+populates self.\-url\-Lines with data coming from addresses self.\-url\-Lines will be a file-\/like object. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em wiki\-Addresses} & a list of wikiaddresses to visit. \\
+\hline
+{\em cb\-Info} & a callback used to display an information about each address included. \-It should accept one string as input \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 560 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a2af2d56994cbc429e28597a3e1037447}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!include\-\_\-file\-\_\-recursive@{include\-\_\-file\-\_\-recursive}}
+\index{include\-\_\-file\-\_\-recursive@{include\-\_\-file\-\_\-recursive}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{include\-\_\-file\-\_\-recursive}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-include\-\_\-file\-\_\-recursive} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{base}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a2af2d56994cbc429e28597a3e1037447}
+
+
+makes a list of lines from a file, including recursively other files when necessary 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em base} & the name of the file to process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a list of lines 
+\end{DoxyReturn}
+
+
+\-Definition at line 587 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ac5365eaf7f17aa4e365e04cb14e69f25}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!include\-\_\-one\-\_\-address@{include\-\_\-one\-\_\-address}}
+\index{include\-\_\-one\-\_\-address@{include\-\_\-one\-\_\-address}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{include\-\_\-one\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-include\-\_\-one\-\_\-address} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{complete\-Url}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ac5365eaf7f17aa4e365e04cb14e69f25}
+
+
+gets contents from a simple wiki page 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em complete\-Url} & an url \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 516 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a905ed62b491b474dadfd86d3e44da0ba}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!include\-Instruction@{include\-Instruction}}
+\index{include\-Instruction@{include\-Instruction}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{include\-Instruction}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-include\-Instruction} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{line}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a905ed62b491b474dadfd86d3e44da0ba}
+
+
+\-Extract filename to include. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em line} & string a line that might include an inclusion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+string or \-None if the line contains an inclusion, return the filename, otherwise return \-None 
+\end{DoxyReturn}
+
+
+\-Definition at line 631 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ad379cfe2bffe3ba1e29226fe37144a0c}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!is\-Url@{is\-Url}}
+\index{is\-Url@{is\-Url}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{is\-Url}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-is\-Url} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{arg}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ad379cfe2bffe3ba1e29226fe37144a0c}
+\begin{DoxyReturn}{\-Returns}
+\-True if arg is a valid \-Url to a mediawiki. \-As a side-\/effect, self.\-lines will be loaded with the downloaded contents 
+\end{DoxyReturn}
+
+
+\-Definition at line 443 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ad592f3c41f213a79d99ba112997e1119}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!load\-Url\-Lines@{load\-Url\-Lines}}
+\index{load\-Url\-Lines@{load\-Url\-Lines}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{load\-Url\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-load\-Url\-Lines} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{text}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ad592f3c41f213a79d99ba112997e1119}
+
+
+puts a text into the file-\/like object self.\-url\-Lines 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em text} & the input \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 541 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ab8d2d05435d90a4f72b59e2c49dff14b}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!parse\-Wiki\-Source@{parse\-Wiki\-Source}}
+\index{parse\-Wiki\-Source@{parse\-Wiki\-Source}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{parse\-Wiki\-Source}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-parse\-Wiki\-Source} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ab8d2d05435d90a4f72b59e2c49dff14b}
+
+
+parses a text provided by self.\-parent in its drop area 
+
+
+
+\-Definition at line 346 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a417e20ea54d0baa571a780ad9a272767}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!register\-Image@{register\-Image}}
+\index{register\-Image@{register\-Image}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{register\-Image}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-register\-Image} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{img}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a417e20ea54d0baa571a780ad9a272767}
+
+
+registers an image filename to retreive it later 
+
+
+
+\-Definition at line 427 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_aa2ad4f2c68118fbea7e8a6c51c9dc279}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!reload\-Cache@{reload\-Cache}}
+\index{reload\-Cache@{reload\-Cache}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{reload\-Cache}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-reload\-Cache} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{text, }
+\item[{}]{info = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{}]{old\-Wiki2beamer = {\ttfamily \-False}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_aa2ad4f2c68118fbea7e8a6c51c9dc279}
+
+
+\-Reloads the cache from a given text, after running template processors. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em text} & a unicode string with wiki code. \\
+\hline
+{\em info} & some informative message param old\-Wiki2beamer if \-True, we are in the old wiki2beamer mode the text will be processed to revert some effects of python-\/\-Beautiful\-Soup. \-Plugins will be applied, but no submission will be done to the special page \-Expand\-Templates. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 362 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a3b0221e81ad81da455d765545a4fb008}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!reload\-Cache\-Indirect@{reload\-Cache\-Indirect}}
+\index{reload\-Cache\-Indirect@{reload\-Cache\-Indirect}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{reload\-Cache\-Indirect}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-reload\-Cache\-Indirect} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{text, }
+\item[{}]{cb\-Info = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a3b0221e81ad81da455d765545a4fb008}
+
+
+\-Reloads the cache from the current mediawiki. 
+
+\-The given text must provide a series of wiki addresses. 
+\begin{DoxyParams}{\-Parameters}
+{\em text} & an utf-\/8 string with wiki code. \\
+\hline
+{\em cb\-Info} & a callback function to display progress messages. \-It should accept one string as an input. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 381 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ad28564c6961cdd8a72d8dbe417c2b349}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!to\-Std\-Err@{to\-Std\-Err}}
+\index{to\-Std\-Err@{to\-Std\-Err}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{to\-Std\-Err}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-to\-Std\-Err} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{info}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ad28564c6961cdd8a72d8dbe417c2b349}
+
+
+sends a string to sys.\-stderr 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em info} & the information to display \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 549 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_af38e5cea885aed2b7fbaec3e3a682109}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!url2lines@{url2lines}}
+\index{url2lines@{url2lines}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{url2lines}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-url2lines} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_af38e5cea885aed2b7fbaec3e3a682109}
+
+
+loads self.\-lines from the file-\/like object self.\-url\-Lines 
+
+
+
+\-Definition at line 393 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_af79280e089c16ff3105d73e45db8705b}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!wiki\-Templates@{wiki\-Templates}}
+\index{wiki\-Templates@{wiki\-Templates}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{wiki\-Templates}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wiki\-Parser.\-wiki\-Parser.\-wiki\-Templates} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{contents}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_af79280e089c16ff3105d73e45db8705b}
+
+
+calls the special page \-Expand\-Templates in the wiki to apply templates which must be processed by mediawiki 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em contents} & the code with templates (unicode string) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the code with all templates expanded 
+\end{DoxyReturn}
+
+
+\-Definition at line 495 of file wiki\-Parser.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ab7f4d7c5562ce8d2649a9215aca2c351}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!base\-Address@{base\-Address}}
+\index{base\-Address@{base\-Address}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{base\-Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::base\-Address}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ab7f4d7c5562ce8d2649a9215aca2c351}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a82888a48bdef33d5201bdb74ba1a8bd0}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!cache@{cache}}
+\index{cache@{cache}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::cache}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a82888a48bdef33d5201bdb74ba1a8bd0}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a7825edf6e7c7c054a4e7e02c772c1cc5}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!host@{host}}
+\index{host@{host}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::host}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a7825edf6e7c7c054a4e7e02c772c1cc5}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a72335f3e81fe1d0d41ed5e76826805a4}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!image\-Set@{image\-Set}}
+\index{image\-Set@{image\-Set}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{image\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::image\-Set}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a72335f3e81fe1d0d41ed5e76826805a4}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ae3c96c21872a72fb1cda481f646b413f}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!latex\-Ready\-Param@{latex\-Ready\-Param}}
+\index{latex\-Ready\-Param@{latex\-Ready\-Param}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{latex\-Ready\-Param}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::latex\-Ready\-Param}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ae3c96c21872a72fb1cda481f646b413f}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a703b601bdac12ccf91e2a97284e837c4}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!lines@{lines}}
+\index{lines@{lines}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{lines}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::lines}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a703b601bdac12ccf91e2a97284e837c4}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_acbeda3b902861869a778a904dd6fbe47}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!old\-Wiki2beamer@{old\-Wiki2beamer}}
+\index{old\-Wiki2beamer@{old\-Wiki2beamer}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{old\-Wiki2beamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::old\-Wiki2beamer}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_acbeda3b902861869a778a904dd6fbe47}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_a7de89dcc8995d3a58acae4966fe7e322}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!parent@{parent}}
+\index{parent@{parent}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::parent}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_a7de89dcc8995d3a58acae4966fe7e322}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_af0a9ee932c7aab417205c80071fba145}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!report@{report}}
+\index{report@{report}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{report}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::report}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_af0a9ee932c7aab417205c80071fba145}
+
+
+\-Definition at line 306 of file wiki\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1wikiParser_1_1wikiParser_ab56a382d82bac5dcf1ccefbd25084447}{\index{uicilibris\-::wiki\-Parser\-::wiki\-Parser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}!url\-Lines@{url\-Lines}}
+\index{url\-Lines@{url\-Lines}!uicilibris::wikiParser::wikiParser@{uicilibris\-::wiki\-Parser\-::wiki\-Parser}}
+\subsubsection[{url\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wiki\-Parser.\-wiki\-Parser\-::url\-Lines}}}\label{classuicilibris_1_1wikiParser_1_1wikiParser_ab56a382d82bac5dcf1ccefbd25084447}
+
+
+\-Definition at line 541 of file wiki\-Parser.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{wikiParser_8py}{wiki\-Parser.\-py}\end{DoxyCompactItemize}

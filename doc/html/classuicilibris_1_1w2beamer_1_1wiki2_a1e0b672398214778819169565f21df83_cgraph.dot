@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.w2beamer.wiki2.unify_autotemplates",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.w2beamer.wiki2.parse_usepackage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#af6b7872773c2e736d638fa632d2b03fe"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.expand.syntax_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a7c2e494ec8fac69541f38ff597769ea1"];
+}

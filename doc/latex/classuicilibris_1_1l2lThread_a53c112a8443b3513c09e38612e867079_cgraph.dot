@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.l2lThread.run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="uicilibris.l2lThread.reportErr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1l2lThread.html#a4518679cb4b77fc594a17e1754b2c27f",tooltip="a call back function to send message to the error tab in the main window"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="uicilibris.l2lThread.cbInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1l2lThread.html#a28397d7c4810cb174522c80b5598f14f",tooltip="a callback function to display progress information"];
+}

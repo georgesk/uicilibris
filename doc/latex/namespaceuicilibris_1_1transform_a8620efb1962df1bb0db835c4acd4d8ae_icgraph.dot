@@ -1,0 +1,16 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.transform.transform_only",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="uicilibris.transform.transform",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1transform.html#aa5adf0b376da8267267888f82780fe8f",tooltip="convert/transform one line in context of state for w2beamer (wiki to beamer)"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="uicilibris.w2beamer.wiki2.convert2beamer_full",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a3335751f0851f20ac4105204029a9808",tooltip="convert to LaTeX beamer"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="uicilibris.w2beamer.wiki2.__str__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#ac99f478c1af50144e1c1c004ab9ff659"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="uicilibris.w2beamer.wiki2.convert2beamer_selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a3324e41bbdda1afe28ce5f27689ccaa8",tooltip="converts only selected lines"];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

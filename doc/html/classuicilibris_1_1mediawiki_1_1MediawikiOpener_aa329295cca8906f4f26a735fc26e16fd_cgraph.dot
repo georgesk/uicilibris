@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.mediawiki.MediawikiOpener.getOpener",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.mediawiki.MediawikiOpener.genuineMediawikiOpener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1mediawiki_1_1MediawikiOpener.html#ab3c591d43d9c513c655b9c7b42d6f456"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.mediawiki.MediawikiOpener.altMediawikiOpener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1mediawiki_1_1MediawikiOpener.html#ae4c086c260afec399ece3f3191d52ba1"];
+}

@@ -1,0 +1,19 @@
+Le programme exécutable est uicilibris.
+
+Les dépendances sont au moins : python, python-qt4, python-beautifulsoup
+
+uicilibris utilise un mediawiki doté de quelques extensions activées au moins :
+
+- le paquet mediawiki-math est installé, et le fichier LocalSettings.php contient
+le bon code pour le prendre en compte.
+
+- le paquet mediawiki-extensions-base est installé, et les liens suivants
+ont été créés dans /etc/mediawiki-extensions/extensions-enabled/ :
+- Cite.php pour les notes de base de page  
+- ParserFunctions.php pour les constructions conditionnelles dans les modèles
+
+- l'extension "version r..... of the ExpandTemplates extension for 
+MediaWiki 1.16.x" a été installée dans /var/lib/mediawiki/extensions
+et la ligne qui va bien a été ajoutée à LocalSettings.php
+
+- un utilisateur anonyme doit y a voir le droit de lecture.

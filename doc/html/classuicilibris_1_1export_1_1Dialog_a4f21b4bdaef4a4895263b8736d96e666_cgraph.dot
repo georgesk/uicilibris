@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.export.Dialog.doChecks",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.export.Dialog.enableCheckGroup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1export_1_1Dialog.html#a5f3ee8a0cad10e0277f69da100d23223",tooltip="enables or disables the widget for the check"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.export.Dialog.setValidState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1export_1_1Dialog.html#a3ece649c3025eca49cacfb0606f35cca",tooltip="sets the information about the validity of the mediawiki"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="uicilibris.export.Dialog.setLoggedState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1export_1_1Dialog.html#a70dddfb3f14af29cb206ad1cc28bba66",tooltip="sets the information about login in the mediawiki"];
+}

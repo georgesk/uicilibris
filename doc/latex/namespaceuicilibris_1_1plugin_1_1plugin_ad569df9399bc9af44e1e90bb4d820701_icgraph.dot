@@ -1,0 +1,23 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.plugin.plugin.register_plugin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="button.button.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbutton_1_1button.html#a875afa84e2df90d370cd7a346efbf259"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="figure.figure.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classfigure_1_1figure.html#a42918175fa00f65979fd413483aca152"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="label.label.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlabel_1_1label.html#ae5701ed4ceca8763d78cba898008060b"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="menu.menu.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classmenu_1_1menu.html#abc79c153922fba86ab75d3853e58f6af"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="protect.protect.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classprotect_1_1protect.html#a1950f4d8124bc76b472ac0c18aa44c0f"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="putRef.putRef.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classputRef_1_1putRef.html#a9730e5b512e12994a1382c5cb73bb10e"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ref.ref.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classref_1_1ref.html#aee6437636beda8cdf4365886a09fa0aa"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="titlePage.titlePage.__init__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtitlePage_1_1titlePage.html#ad1ec9122c9da6b45f3d3f883e6781d50"];
+}

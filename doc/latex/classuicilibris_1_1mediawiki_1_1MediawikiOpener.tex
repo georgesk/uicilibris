@@ -1,0 +1,396 @@
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener}{\section{uicilibris.\-mediawiki.\-Mediawiki\-Opener \-Class \-Reference}
+\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener}\index{uicilibris.\-mediawiki.\-Mediawiki\-Opener@{uicilibris.\-mediawiki.\-Mediawiki\-Opener}}
+}
+
+
+a class to get and put data from and to a mediawiki; when authentification is required a login/password pair is managed  
+
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa2d6ba1aea4a540e973e676df6bd6641}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em the constructor \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae3d9facf26d5514b9738cceeeee610e6}{get\-Base}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_afec4489c4a9c5f9c01e0c85842924ef8}{get\-Host}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a3a033add2471f9832019b5b9ea92d573}{is\-Valid}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_acb7c859c9e9ef620cf6f6665f015fb15}{get\-Login\-Url}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa329295cca8906f4f26a735fc26e16fd}{get\-Opener}
+\begin{DoxyCompactList}\small\item\em \-Sets self.\-opener with an opener which embeds authentification assets incliding cookies. \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae4c086c260afec399ece3f3191d52ba1}{alt\-Mediawiki\-Opener}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab3c591d43d9c513c655b9c7b42d6f456}{genuine\-Mediawiki\-Opener}
+\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a680b3f909d42e0653bd729147de7abb3}{open}
+\begin{DoxyCompactList}\small\item\em a method to open a page in a mediawiki, with previously stored credentials \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5fd1eba3c9b312751aea45ec64855bf8}{page\-Write}
+\begin{DoxyCompactList}\small\item\em writes some contents into a page of the mediawiki \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab225f66754680f599ded4666d1b693ac}{file\-Put}
+\begin{DoxyCompactList}\small\item\em uploads a file to the mediawiki \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5afcbcf2c8ac818afac97fe7ee817fa6}{login}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a97ad770add035da198306aa2f4f2f610}{password}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aca3ae7582d52993d0acd3fd78e887d2e}{base\-Url}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab452cfcb0733d955a38d6f4279788527}{host}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a829823d3c04143f2c1a9cd9adcd74114}{view\-Source\-Url}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a6f7e48cd8ca22fb1e51fd920c3da6609}{logged}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a2a2d37c634ce31894dea8e4cc9f24d67}{login\-Url}
+\item 
+\hyperlink{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a305fd0dc7e666278703813b5ac28f9cf}{opener}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+a class to get and put data from and to a mediawiki; when authentification is required a login/password pair is managed 
+
+\-Definition at line 46 of file mediawiki.\-py.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa2d6ba1aea4a540e973e676df6bd6641}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-\_\-\-\_\-init\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{base\-Url, }
+\item[{}]{login = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{}]{password = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa2d6ba1aea4a540e973e676df6bd6641}
+
+
+the constructor 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em base\-Url} & the address of the main page of the mediawiki \\
+\hline
+{\em login} & a login required for authentification (defaults to \char`\"{}\char`\"{}) \\
+\hline
+{\em password} & the password which matches the previous login (defaults to \char`\"{}\char`\"{}) \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae4c086c260afec399ece3f3191d52ba1}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!alt\-Mediawiki\-Opener@{alt\-Mediawiki\-Opener}}
+\index{alt\-Mediawiki\-Opener@{alt\-Mediawiki\-Opener}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{alt\-Mediawiki\-Opener}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-alt\-Mediawiki\-Opener} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{soup, }
+\item[{}]{opener, }
+\item[{}]{action}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae4c086c260afec399ece3f3191d52ba1}
+
+\begin{DoxyParams}{\-Parameters}
+{\em soup} & a \-Beautiful\-Soup object \\
+\hline
+{\em opener} & an opener able to manage cookies \\
+\hline
+{\em action} & the \-U\-R\-L to send the request of login \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a string denoting the success of the operation 
+\end{DoxyReturn}
+
+
+\-Definition at line 154 of file mediawiki.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab225f66754680f599ded4666d1b693ac}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!file\-Put@{file\-Put}}
+\index{file\-Put@{file\-Put}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{file\-Put}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-file\-Put} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{local\-File\-Name, }
+\item[{}]{remote\-File\-Name}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab225f66754680f599ded4666d1b693ac}
+
+
+uploads a file to the mediawiki 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em local\-File\-Name} & the file to upload \\
+\hline
+{\em the} & name to give inside the wiki \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the page given by the mediawiki as a feedback, in a \-Beautiful\-Soup object 
+\end{DoxyReturn}
+
+
+\-Definition at line 268 of file mediawiki.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab3c591d43d9c513c655b9c7b42d6f456}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!genuine\-Mediawiki\-Opener@{genuine\-Mediawiki\-Opener}}
+\index{genuine\-Mediawiki\-Opener@{genuine\-Mediawiki\-Opener}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{genuine\-Mediawiki\-Opener}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-genuine\-Mediawiki\-Opener} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{tokeninput, }
+\item[{}]{opener, }
+\item[{}]{action}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab3c591d43d9c513c655b9c7b42d6f456}
+
+\begin{DoxyParams}{\-Parameters}
+{\em tokeninput} & a \-Beautiful\-Soup element $<$input$>$ \\
+\hline
+{\em opener} & an opener able to manage cookies \\
+\hline
+{\em action} & the \-U\-R\-L to send the request of login \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a string denoting the success of the operation 
+\end{DoxyReturn}
+
+
+\-Definition at line 182 of file mediawiki.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae3d9facf26d5514b9738cceeeee610e6}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!get\-Base@{get\-Base}}
+\index{get\-Base@{get\-Base}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{get\-Base}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-get\-Base} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ae3d9facf26d5514b9738cceeeee610e6}
+\begin{DoxyReturn}{\-Returns}
+the base address of the mediawiki 
+\end{DoxyReturn}
+
+
+\-Definition at line 72 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_afec4489c4a9c5f9c01e0c85842924ef8}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!get\-Host@{get\-Host}}
+\index{get\-Host@{get\-Host}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{get\-Host}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-get\-Host} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_afec4489c4a9c5f9c01e0c85842924ef8}
+\begin{DoxyReturn}{\-Returns}
+the host of the mediawiki 
+\end{DoxyReturn}
+
+
+\-Definition at line 79 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_acb7c859c9e9ef620cf6f6665f015fb15}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!get\-Login\-Url@{get\-Login\-Url}}
+\index{get\-Login\-Url@{get\-Login\-Url}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{get\-Login\-Url}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-get\-Login\-Url} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{init\-Url = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_acb7c859c9e9ef620cf6f6665f015fb15}
+
+\begin{DoxyParams}{\-Parameters}
+{\em init\-Url} & an initial \-U\-R\-L to get the features of a mediawiki\\
+\hline
+\end{DoxyParams}
+sets self.\-login\-Url, the url of the mediawiki's login page; sets also self.\-view\-Source\-Url, the url which allows one to view the source of the base page; finally, sets self.\-base\-Url, which is usable to build other urls. \begin{DoxyReturn}{\-Returns}
+self.\-login\-Url 
+\end{DoxyReturn}
+
+
+\-Definition at line 99 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa329295cca8906f4f26a735fc26e16fd}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!get\-Opener@{get\-Opener}}
+\index{get\-Opener@{get\-Opener}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{get\-Opener}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-get\-Opener} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aa329295cca8906f4f26a735fc26e16fd}
+
+
+\-Sets self.\-opener with an opener which embeds authentification assets incliding cookies. 
+
+\-Eventually sets self.\-logged. 
+
+\-Definition at line 130 of file mediawiki.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a3a033add2471f9832019b5b9ea92d573}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!is\-Valid@{is\-Valid}}
+\index{is\-Valid@{is\-Valid}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{is\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-is\-Valid} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a3a033add2471f9832019b5b9ea92d573}
+\begin{DoxyReturn}{\-Returns}
+\-True when the targeted website is most probably a mediawiki. 
+\end{DoxyReturn}
+
+
+\-Definition at line 86 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a680b3f909d42e0653bd729147de7abb3}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!open@{open}}
+\index{open@{open}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-open} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{address, }
+\item[{}]{encoded\-Data = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a680b3f909d42e0653bd729147de7abb3}
+
+
+a method to open a page in a mediawiki, with previously stored credentials 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em address} & the url of the page to open \\
+\hline
+{\em encoded\-Data} & a string in url-\/encoded format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a \-Beautiful\-Soup object made from the server's response 
+\end{DoxyReturn}
+
+
+\-Definition at line 207 of file mediawiki.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5fd1eba3c9b312751aea45ec64855bf8}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!page\-Write@{page\-Write}}
+\index{page\-Write@{page\-Write}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{page\-Write}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-mediawiki.\-Mediawiki\-Opener.\-page\-Write} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{page\-Title, }
+\item[{}]{contents}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5fd1eba3c9b312751aea45ec64855bf8}
+
+
+writes some contents into a page of the mediawiki 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-Title} & the title of the page (unicode string) \\
+\hline
+{\em contents} & a unicode string to write into this page \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the page given by the mediawiki as a feedback, in a \-Beautiful\-Soup object 
+\end{DoxyReturn}
+
+
+\-Definition at line 222 of file mediawiki.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aca3ae7582d52993d0acd3fd78e887d2e}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!base\-Url@{base\-Url}}
+\index{base\-Url@{base\-Url}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{base\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::base\-Url}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_aca3ae7582d52993d0acd3fd78e887d2e}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab452cfcb0733d955a38d6f4279788527}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!host@{host}}
+\index{host@{host}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::host}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_ab452cfcb0733d955a38d6f4279788527}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a6f7e48cd8ca22fb1e51fd920c3da6609}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!logged@{logged}}
+\index{logged@{logged}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{logged}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::logged}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a6f7e48cd8ca22fb1e51fd920c3da6609}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5afcbcf2c8ac818afac97fe7ee817fa6}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!login@{login}}
+\index{login@{login}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::login}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a5afcbcf2c8ac818afac97fe7ee817fa6}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a2a2d37c634ce31894dea8e4cc9f24d67}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!login\-Url@{login\-Url}}
+\index{login\-Url@{login\-Url}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{login\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::login\-Url}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a2a2d37c634ce31894dea8e4cc9f24d67}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a305fd0dc7e666278703813b5ac28f9cf}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!opener@{opener}}
+\index{opener@{opener}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{opener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::opener}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a305fd0dc7e666278703813b5ac28f9cf}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a97ad770add035da198306aa2f4f2f610}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!password@{password}}
+\index{password@{password}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{password}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::password}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a97ad770add035da198306aa2f4f2f610}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+\hypertarget{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a829823d3c04143f2c1a9cd9adcd74114}{\index{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}!view\-Source\-Url@{view\-Source\-Url}}
+\index{view\-Source\-Url@{view\-Source\-Url}!uicilibris::mediawiki::MediawikiOpener@{uicilibris\-::mediawiki\-::\-Mediawiki\-Opener}}
+\subsubsection[{view\-Source\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::mediawiki.\-Mediawiki\-Opener\-::view\-Source\-Url}}}\label{classuicilibris_1_1mediawiki_1_1MediawikiOpener_a829823d3c04143f2c1a9cd9adcd74114}
+
+
+\-Definition at line 55 of file mediawiki.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{mediawiki_8py}{mediawiki.\-py}\end{DoxyCompactItemize}

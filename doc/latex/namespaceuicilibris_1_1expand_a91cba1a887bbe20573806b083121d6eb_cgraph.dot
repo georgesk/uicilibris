@@ -1,0 +1,17 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.expand.expand_code_parse_animspec",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="uicilibris.expand.expand_code_parse_simpleanimspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a3adf073f866155a711055b9c0535bd41"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="uicilibris.expand.expand_code_search_escape_sequences",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a85777fc13697754d6dd7e3fcd9a7f144"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="uicilibris.expand.expand_code_parse_overlayspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a36db1d2ed68f45051157b7f0069b63bb"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="uicilibris.expand.syntax_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a7c2e494ec8fac69541f38ff597769ea1"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

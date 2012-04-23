@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="QThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classQThread.html"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.l2lThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1l2lThread.html",tooltip="a class to run linksToLatex on the behalf of a main window it will accept an url and a text for its i..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.latexCompileThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1latexCompileThread.html",tooltip="a class to compile a Latex source into a temporary directory when the thread terminates, it sends back an object with the necessary pointers to the compiled stuff"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="uicilibris.latexViewThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1latexViewThread.html",tooltip="a class to view a PDF file inside a thread"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="uicilibris.toLatexThread",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1toLatexThread.html",tooltip="a class to expand wiki code to Latex source"];
+}

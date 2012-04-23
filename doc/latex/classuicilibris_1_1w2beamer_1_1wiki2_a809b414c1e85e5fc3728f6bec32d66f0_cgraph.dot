@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.w2beamer.wiki2.filter_selected_lines",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="uicilibris.w2beamer.wiki2.line_opens_selected_frame",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#abdb2ad16c119a59eb3d838479cd0db22"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="uicilibris.w2beamer.wiki2.line_closes_frame",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#ae866f3fb49a8c3c476ae5c51bd3c282f"];
+}

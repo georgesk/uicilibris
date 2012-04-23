@@ -1,0 +1,181 @@
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser}{\section{uicilibris.\-template\-Parser.\-template\-Parser \-Class \-Reference}
+\label{classuicilibris_1_1templateParser_1_1templateParser}\index{uicilibris.\-template\-Parser.\-template\-Parser@{uicilibris.\-template\-Parser.\-template\-Parser}}
+}
+
+
+a class to parse wiki templates, based on the module re  
+
+
+
+
+\-Inheritance diagram for uicilibris.\-template\-Parser.\-template\-Parser\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1templateParser_1_1templateParser_a7a2e7e96a6c5ebf16de33ca6ae66a170}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em the constructor \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1templateParser_1_1templateParser_ab8b9373fd6472e55b6478d7a5c505cbf}{\-\_\-\-\_\-str\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em returns a printable form \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1templateParser_1_1templateParser_a850eb7385e859d86eb7d7467580b8f56}{sub}
+\begin{DoxyCompactList}\small\item\em makes every substitution in a given text and returns the result \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1templateParser_1_1templateParser_a48f677f123127c39f6c84eb3737e2ded}{pf\-Maker}
+\begin{DoxyCompactList}\small\item\em creates a parse function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1templateParser_1_1templateParser_ae3afddfc0da62114451b06e37a4d112f}{ident}
+\item 
+\hyperlink{classuicilibris_1_1templateParser_1_1templateParser_ab3fc9b53689f3d8436898d7e455f97ff}{parse\-Func}
+\item 
+\hyperlink{classuicilibris_1_1templateParser_1_1templateParser_a11df7ff35853b6cc9015f5c5451aa921}{pattern}
+\item 
+\hyperlink{classuicilibris_1_1templateParser_1_1templateParser_ac3d4f484ad1e51f0191b43c21f4a6873}{regexp}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+a class to parse wiki templates, based on the module re 
+
+\-Definition at line 31 of file template\-Parser.\-py.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_a7a2e7e96a6c5ebf16de33ca6ae66a170}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-template\-Parser.\-template\-Parser.\-\_\-\-\_\-init\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{ident, }
+\item[{}]{fun}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1templateParser_1_1templateParser_a7a2e7e96a6c5ebf16de33ca6ae66a170}
+
+
+the constructor 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em ident} & the identifier of the template \\
+\hline
+{\em fun} & a function necessary to get the parameters and output the result \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 39 of file template\-Parser.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_ab8b9373fd6472e55b6478d7a5c505cbf}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!\-\_\-\-\_\-str\-\_\-\-\_\-@{\-\_\-\-\_\-str\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-str\-\_\-\-\_\-@{\-\_\-\-\_\-str\-\_\-\-\_\-}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{\-\_\-\-\_\-str\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-template\-Parser.\-template\-Parser.\-\_\-\-\_\-str\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1templateParser_1_1templateParser_ab8b9373fd6472e55b6478d7a5c505cbf}
+
+
+returns a printable form 
+
+
+
+\-Definition at line 50 of file template\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_a48f677f123127c39f6c84eb3737e2ded}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!pf\-Maker@{pf\-Maker}}
+\index{pf\-Maker@{pf\-Maker}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{pf\-Maker}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-template\-Parser.\-template\-Parser.\-pf\-Maker} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{fun}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1templateParser_1_1templateParser_a48f677f123127c39f6c84eb3737e2ded}
+
+
+creates a parse function 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em fun} & a function getting the dictionary of parameters of a template \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+a function whose profile is\-: input parameter = a match expression, result = a string 
+\end{DoxyReturn}
+
+
+\-Reimplemented in \hyperlink{classuicilibris_1_1templateParser_1_1imageParser_aea563d5172ebb0554783f636267b1e5f}{uicilibris.\-template\-Parser.\-image\-Parser}.
+
+
+
+\-Definition at line 68 of file template\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_a850eb7385e859d86eb7d7467580b8f56}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!sub@{sub}}
+\index{sub@{sub}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{sub}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-template\-Parser.\-template\-Parser.\-sub} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{text}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1templateParser_1_1templateParser_a850eb7385e859d86eb7d7467580b8f56}
+
+
+makes every substitution in a given text and returns the result 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em text} & the given text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the result with every substitution done 
+\end{DoxyReturn}
+
+
+\-Definition at line 59 of file template\-Parser.\-py.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_ae3afddfc0da62114451b06e37a4d112f}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!ident@{ident}}
+\index{ident@{ident}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{ident}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::template\-Parser.\-template\-Parser\-::ident}}}\label{classuicilibris_1_1templateParser_1_1templateParser_ae3afddfc0da62114451b06e37a4d112f}
+
+
+\-Definition at line 39 of file template\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_ab3fc9b53689f3d8436898d7e455f97ff}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!parse\-Func@{parse\-Func}}
+\index{parse\-Func@{parse\-Func}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{parse\-Func}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::template\-Parser.\-template\-Parser\-::parse\-Func}}}\label{classuicilibris_1_1templateParser_1_1templateParser_ab3fc9b53689f3d8436898d7e455f97ff}
+
+
+\-Definition at line 39 of file template\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_a11df7ff35853b6cc9015f5c5451aa921}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!pattern@{pattern}}
+\index{pattern@{pattern}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{pattern}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::template\-Parser.\-template\-Parser\-::pattern}}}\label{classuicilibris_1_1templateParser_1_1templateParser_a11df7ff35853b6cc9015f5c5451aa921}
+
+
+\-Reimplemented in \hyperlink{classuicilibris_1_1templateParser_1_1imageParser_acbade4bd60a213ae591dad90f64021a7}{uicilibris.\-template\-Parser.\-image\-Parser}.
+
+
+
+\-Definition at line 39 of file template\-Parser.\-py.
+
+\hypertarget{classuicilibris_1_1templateParser_1_1templateParser_ac3d4f484ad1e51f0191b43c21f4a6873}{\index{uicilibris\-::template\-Parser\-::template\-Parser@{uicilibris\-::template\-Parser\-::template\-Parser}!regexp@{regexp}}
+\index{regexp@{regexp}!uicilibris::templateParser::templateParser@{uicilibris\-::template\-Parser\-::template\-Parser}}
+\subsubsection[{regexp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::template\-Parser.\-template\-Parser\-::regexp}}}\label{classuicilibris_1_1templateParser_1_1templateParser_ac3d4f484ad1e51f0191b43c21f4a6873}
+
+
+\-Reimplemented in \hyperlink{classuicilibris_1_1templateParser_1_1imageParser_aaf8ed396434c4dc4b6edc3dcf1ffbbd2}{uicilibris.\-template\-Parser.\-image\-Parser}.
+
+
+
+\-Definition at line 39 of file template\-Parser.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{templateParser_8py}{template\-Parser.\-py}\end{DoxyCompactItemize}

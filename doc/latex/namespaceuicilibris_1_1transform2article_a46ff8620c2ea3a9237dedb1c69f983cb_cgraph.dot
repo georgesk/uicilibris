@@ -1,0 +1,14 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.transform2article.transform_tables",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="uicilibris.transform2article.flushTables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1transform2article.html#adc9ad30ec8ba4c3939a2a11f1a108d70",tooltip="flushes the table state"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="uicilibris.transform2article.reportErr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1transform2article.html#ab92d095e516d746a0676829967e87d51",tooltip="emits messages for the user"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="uicilibris.transform2article.topOfStack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1transform2article.html#ad8bb9c3b834b3800045201c94ace9a6d",tooltip="returns the top of the stack if any"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+}

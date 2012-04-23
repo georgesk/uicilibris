@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>713</width>
+    <height>491</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UICI LIBRIS</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/uicilibris.svg</normaloff>images/uicilibris.svg</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="acceptDrops">
+       <bool>false</bool>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Drop area</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>this tab is for Wiki code.</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>this tab is for Wiki code. It accepts pasting, and also drag/drops.</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QTextEdit" name="wikiDropArea">
+            <property name="toolTip">
+             <string>you can select a part of the code</string>
+            </property>
+            <property name="statusTip">
+             <string>When a selection is done, the conversion to LaTeX is done with that selection only</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>Actions</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QPushButton" name="links2latexButton">
+                   <property name="toolTip">
+                    <string>Converts the selected wikilinks to LaTeX</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Converts the selected wikilinks to LaTeX</string>
+                   </property>
+                   <property name="text">
+                    <string>&amp;Links to LaTeX</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="text2latexButton">
+                   <property name="toolTip">
+                    <string>Converts the selected wikicode to LaTeX</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Converts the selected wikicode to LaTeX</string>
+                   </property>
+                   <property name="text">
+                    <string>&amp;Text to LaTeX</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="baEditButton">
+                   <property name="maximumSize">
+                    <size>
+                     <width>60</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Click here to edit the base address of the mediawiki</string>
+                   </property>
+                   <property name="statusTip">
+                    <string>Click 'Base MediaWiki's address' to edit the base address of the mediawiki</string>
+                   </property>
+                   <property name="text">
+                    <string>Base</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="wikiIndex">
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Sunken</enum>
+                   </property>
+                   <property name="text">
+                    <string>...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="targetBox">
+                   <property name="maximumSize">
+                    <size>
+                     <width>200</width>
+                     <height>16777215</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Latex code</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>This tab is for LaTeX code</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>The LaTeX code in this tab will be compiled with pdflatex upon request.</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QTextEdit" name="latexCodeArea">
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>modification is possible</string>
+            </property>
+            <property name="statusTip">
+             <string>modification is possible prior to running pdflatex</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="title">
+             <string>Actions</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout">
+             <item row="0" column="0">
+              <widget class="QPushButton" name="runPdflatexButton">
+               <property name="toolTip">
+                <string>Click here to begin a compilation</string>
+               </property>
+               <property name="statusTip">
+                <string>Click 'Run PdfLatex' to begin a compilation</string>
+               </property>
+               <property name="text">
+                <string>&amp;Run PdfLatex</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QPushButton" name="viewPdfButton">
+               <property name="toolTip">
+                <string>Click here to view the generated PDF file when available</string>
+               </property>
+               <property name="statusTip">
+                <string>Click 'View PDF' to view the generated PDF file when available</string>
+               </property>
+               <property name="text">
+                <string>&amp;View PDF</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QPushButton" name="hackButton">
+               <property name="toolTip">
+                <string>Opens a Terminal to hack the source in a temporary environment</string>
+               </property>
+               <property name="statusTip">
+                <string>Opens a Terminal to hack the source in a temporary environment</string>
+               </property>
+               <property name="text">
+                <string>Hack LaTeX source</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QPushButton" name="gotoLogButton">
+               <property name="toolTip">
+                <string>Click here to browse the log file</string>
+               </property>
+               <property name="statusTip">
+                <string>Click here to browse the log file output by pdflatex</string>
+               </property>
+               <property name="text">
+                <string>Browse logs</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QPushButton" name="exportButton">
+               <property name="toolTip">
+                <string>exports text and image files from the cache</string>
+               </property>
+               <property name="statusTip">
+                <string>exports text and image files from the cache</string>
+               </property>
+               <property name="text">
+                <string>&amp;Export to another mediawiki</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Latex Log</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>This tab displays the log file output by pdflatex</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>After a run of pdftlatex, errors and warnings emitted during the compilation can be searched in this tab.</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QTextEdit" name="logArea">
+            <property name="acceptDrops">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Find</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QComboBox" name="searchCombo">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>300</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>Type a string (or select it in a list) to search it</string>
+               </property>
+               <property name="statusTip">
+                <string>Type a string in the combo box (or select it in the combo's list) to search it</string>
+               </property>
+               <property name="editable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="searchNextButton">
+               <property name="toolTip">
+                <string>Click here to find the next occurence of the searched string</string>
+               </property>
+               <property name="statusTip">
+                <string>Click 'Next' to find the next occurence of the searched string</string>
+               </property>
+               <property name="text">
+                <string>Next</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Errors</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>This tab is for errors raised by Uicilibris</string>
+       </attribute>
+       <attribute name="whatsThis">
+        <string>Uicilibris can detect a few errors. They are reported in this tab</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QTextEdit" name="errorArea">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>713</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="action_Quit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="action_About"/>
+    <addaction name="actionUser_manual"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit (Ctrl-Q)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="actionUser_manual">
+   <property name="text">
+    <string>User &amp;manual</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

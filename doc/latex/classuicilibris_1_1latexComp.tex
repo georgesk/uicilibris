@@ -1,0 +1,174 @@
+\hypertarget{classuicilibris_1_1latexComp}{\section{uicilibris.\-latex\-Comp \-Class \-Reference}
+\label{classuicilibris_1_1latexComp}\index{uicilibris.\-latex\-Comp@{uicilibris.\-latex\-Comp}}
+}
+
+
+implements a process to compile \-La\-Te\-X files and take in account the log file produced  
+
+
+
+
+\-Inheritance diagram for uicilibris.\-latex\-Comp\-:
+
+
+\-Collaboration diagram for uicilibris.\-latex\-Comp\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1latexComp_aaea2a8829e4df2daf4bad3e7aac6d03c}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em the constructor \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1latexComp_ae6165e417ac4520218f920db41a2d5a9}{\-\_\-\-\_\-del\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em the destructor takes care of the temporary directory \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1latexComp_a398668b3ed295e02ea572a3963650de9}{compile}
+\begin{DoxyCompactList}\small\item\em launches the compilation of the source file \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1latexComp_a485cce2ece2e229a22aa21e4a2d28459}{label\-Warning}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_a5b5d686a0230cb74c85c8ed2b8f2a60d}{tmpdir}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_ac4c4c87e8652870b3f427348f00b054c}{tex\-Filename}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_a0b4666c9c550dcb6d7e34f83650efd09}{pdf\-File\-Name}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_a9bdcf618897d006b6a3b7416a3701cb0}{aux\-File\-Name}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_a2f4b7ad349670d65e4815157ba5377ee}{log\-File\-Name}
+\item 
+\hyperlink{classuicilibris_1_1latexComp_ad99271f86b470be24fedfdddd728374d}{log\-Output}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+implements a process to compile \-La\-Te\-X files and take in account the log file produced 
+
+\-Definition at line 424 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classuicilibris_1_1latexComp_aaea2a8829e4df2daf4bad3e7aac6d03c}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-latex\-Comp.\-\_\-\-\_\-init\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{uici, }
+\item[{}]{parent = {\ttfamily \-None}, }
+\item[{}]{cb\-Info = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1latexComp_aaea2a8829e4df2daf4bad3e7aac6d03c}
+
+
+the constructor 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em uici} & uici.\-wb must be a \hyperlink{namespaceuicilibris_1_1w2book}{w2book} instance \\
+\hline
+{\em parent} & a parent for the \hyperlink{classQObject}{\-Q\-Object} structure \\
+\hline
+{\em cb\-Info} & a callback function to deal with information \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_ae6165e417ac4520218f920db41a2d5a9}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!\-\_\-\-\_\-del\-\_\-\-\_\-@{\-\_\-\-\_\-del\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-del\-\_\-\-\_\-@{\-\_\-\-\_\-del\-\_\-\-\_\-}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{\-\_\-\-\_\-del\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-latex\-Comp.\-\_\-\-\_\-del\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1latexComp_ae6165e417ac4520218f920db41a2d5a9}
+
+
+the destructor takes care of the temporary directory 
+
+
+
+\-Definition at line 445 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1latexComp_a398668b3ed295e02ea572a3963650de9}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!compile@{compile}}
+\index{compile@{compile}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{compile}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-latex\-Comp.\-compile} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1latexComp_a398668b3ed295e02ea572a3963650de9}
+
+
+launches the compilation of the source file 
+
+
+
+\-Definition at line 454 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_a485cce2ece2e229a22aa21e4a2d28459}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!label\-Warning@{label\-Warning}}
+\index{label\-Warning@{label\-Warning}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{label\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-latex\-Comp.\-label\-Warning} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1latexComp_a485cce2ece2e229a22aa21e4a2d28459}
+\begin{DoxyReturn}{\-Returns}
+the warning when cross-\/references are not fine 
+\end{DoxyReturn}
+
+
+\-Definition at line 466 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1latexComp_a9bdcf618897d006b6a3b7416a3701cb0}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!aux\-File\-Name@{aux\-File\-Name}}
+\index{aux\-File\-Name@{aux\-File\-Name}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{aux\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::aux\-File\-Name}}}\label{classuicilibris_1_1latexComp_a9bdcf618897d006b6a3b7416a3701cb0}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_a2f4b7ad349670d65e4815157ba5377ee}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!log\-File\-Name@{log\-File\-Name}}
+\index{log\-File\-Name@{log\-File\-Name}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{log\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::log\-File\-Name}}}\label{classuicilibris_1_1latexComp_a2f4b7ad349670d65e4815157ba5377ee}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_ad99271f86b470be24fedfdddd728374d}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!log\-Output@{log\-Output}}
+\index{log\-Output@{log\-Output}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{log\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::log\-Output}}}\label{classuicilibris_1_1latexComp_ad99271f86b470be24fedfdddd728374d}
+
+
+\-Definition at line 454 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_a0b4666c9c550dcb6d7e34f83650efd09}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!pdf\-File\-Name@{pdf\-File\-Name}}
+\index{pdf\-File\-Name@{pdf\-File\-Name}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{pdf\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::pdf\-File\-Name}}}\label{classuicilibris_1_1latexComp_a0b4666c9c550dcb6d7e34f83650efd09}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_ac4c4c87e8652870b3f427348f00b054c}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!tex\-Filename@{tex\-Filename}}
+\index{tex\-Filename@{tex\-Filename}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{tex\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::tex\-Filename}}}\label{classuicilibris_1_1latexComp_ac4c4c87e8652870b3f427348f00b054c}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+\hypertarget{classuicilibris_1_1latexComp_a5b5d686a0230cb74c85c8ed2b8f2a60d}{\index{uicilibris\-::latex\-Comp@{uicilibris\-::latex\-Comp}!tmpdir@{tmpdir}}
+\index{tmpdir@{tmpdir}!uicilibris::latexComp@{uicilibris\-::latex\-Comp}}
+\subsubsection[{tmpdir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-latex\-Comp\-::tmpdir}}}\label{classuicilibris_1_1latexComp_a5b5d686a0230cb74c85c8ed2b8f2a60d}
+
+
+\-Definition at line 432 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{____init_____8py}{\-\_\-\-\_\-init\-\_\-\-\_\-.\-py}\end{DoxyCompactItemize}

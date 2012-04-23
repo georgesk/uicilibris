@@ -1,0 +1,39 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.expand.syntax_error",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.expand.expand_code_parse_overlayspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a36db1d2ed68f45051157b7f0069b63bb"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.expand.expand_code_parse_simpleanimspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a3adf073f866155a711055b9c0535bd41"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="uicilibris.expand.expand_code_parse_animspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceuicilibris_1_1expand.html#a91cba1a887bbe20573806b083121d6eb"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="uicilibris.w2beamer.wiki2.parse_autotemplate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#abc1901a575f216a1427281132078cd7f"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="uicilibris.w2beamer.wiki2.expand_autotemplate_opening",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#acbab4fd2162a8e7a204e00f235893b50",tooltip="expands the output code to insert an automated template"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="uicilibris.w2beamer.wiki2.convert2beamer_full",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a3335751f0851f20ac4105204029a9808",tooltip="convert to LaTeX beamer"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="uicilibris.w2beamer.wiki2.__str__",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#ac99f478c1af50144e1c1c004ab9ff659"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node9 [label="uicilibris.w2beamer.wiki2.convert2beamer_selected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a3324e41bbdda1afe28ce5f27689ccaa8",tooltip="converts only selected lines"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node10 [label="uicilibris.w2beamer.wiki2.parse_usepackage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#af6b7872773c2e736d638fa632d2b03fe"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node11 [label="uicilibris.w2beamer.wiki2.unify_autotemplates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a1e0b672398214778819169565f21df83"];
+  Node11 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node12 [label="uicilibris.w2beamer.wiki2.parse_bool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a26ffbd6fc6b88ef262e2bbdf6bcc3ab8"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node13 [label="uicilibris.w2beamer.wiki2.expand_autotemplate_gen_opening",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2beamer_1_1wiki2.html#a31de2fe8c2ec727221fc0db6f7d1c612"];
+  Node13 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node14 [label="uicilibris.w2book.wiki2.parse_usepackage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2book_1_1wiki2.html#a74c8ffd775e73f877a98adc48592a488"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node15 [label="uicilibris.w2book.wiki2.parse_bool",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2book_1_1wiki2.html#a65fc5e3a732878444028091cbd03ac76"];
+}

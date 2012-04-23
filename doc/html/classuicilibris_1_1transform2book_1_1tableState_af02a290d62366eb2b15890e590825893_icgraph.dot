@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.transform2book.tableState.close",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="uicilibris.w2mMainWindow.ui_connections",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a92db5c455a549b7a1a7dd6f0ae341611",tooltip="Connects signals with methods."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="uicilibris.waitDialog.spinWheelWaitDialog.stopAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog.html#a833c2817deb73f7eee7cf3a1ec836cfb",tooltip="Stops the animation and waits for a click on the close button."];
+}

@@ -1,0 +1,89 @@
+\hypertarget{namespaceuicilibris_1_1w2beamer}{\section{uicilibris\-:\-:w2beamer \-Namespace \-Reference}
+\label{namespaceuicilibris_1_1w2beamer}\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classuicilibris_1_1w2beamer_1_1wiki2}{wiki2}
+\begin{DoxyCompactList}\small\item\em a class which enriches \hyperlink{namespaceuicilibris_1_1wikiParser}{wiki\-Parser} with a \-La\-Te\-X/\-Beamer export feature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{namespaceuicilibris_1_1w2beamer_a3f4c9d7ef11e43b61fbe6699a65b2c56}{table\-Head\-Pattern} = re.\-compile(r\char`\"{}$\backslash$$\backslash$begin\{tabular\}$\backslash$\mbox{[}table id=(\mbox{[}0-\/9\mbox{]}+)$\backslash$\mbox{]}\char`\"{})
+\item 
+\hyperlink{namespaceuicilibris_1_1w2beamer_a20293542377aa84d3645ff8ca489dc25}{lstbasicstyle} = $\backslash$
+\item 
+list \hyperlink{namespaceuicilibris_1_1w2beamer_aa5c548665b6cd95f2755accca3907374}{autotemplate}
+\item 
+tuple \hyperlink{namespaceuicilibris_1_1w2beamer_ad51b396b118fa48819396baec8fcd981}{nowikistartre} = re.\-compile(r'$^\wedge$$<$$\backslash$\mbox{[}$\backslash$s$\ast$nowiki$\backslash$s$\ast$$\backslash$\mbox{]}')
+\item 
+tuple \hyperlink{namespaceuicilibris_1_1w2beamer_a10aa1adbb79cef7023740fb735a22c97}{nowikiendre} = re.\-compile(r'$^\wedge$$\backslash$\mbox{[}$\backslash$s$\ast$nowiki$\backslash$s$\ast$$\backslash$\mbox{]}$>$')
+\item 
+tuple \hyperlink{namespaceuicilibris_1_1w2beamer_abec3afbb11dc65299cf5d94b763260b1}{codestartre} = re.\-compile(r'$^\wedge$$<$$\backslash$\mbox{[}$\backslash$s$\ast$code$\backslash$s$\ast$$\backslash$\mbox{]}')
+\item 
+tuple \hyperlink{namespaceuicilibris_1_1w2beamer_a2123e1d68e83d4c118716ea256b043e2}{codeendre} = re.\-compile(r'$^\wedge$$\backslash$\mbox{[}$\backslash$s$\ast$code$\backslash$s$\ast$$\backslash$\mbox{]}$>$')
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{namespaceuicilibris_1_1w2beamer_aa5c548665b6cd95f2755accca3907374}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!autotemplate@{autotemplate}}
+\index{autotemplate@{autotemplate}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{autotemplate}]{\setlength{\rightskip}{0pt plus 5cm}list {\bf uicilibris\-::w2beamer\-::autotemplate}}}\label{namespaceuicilibris_1_1w2beamer_aa5c548665b6cd95f2755accca3907374}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+1 [\
+2     ('documentclass', '{beamer}'),\
+3     ('usepackage', '{listings}'),\
+4     ('usepackage', '{wasysym}'),\
+5     ('usepackage', '{graphicx}'),\
+6     ('date', '{\\today}'),\
+7     ('lstdefinestyle', lstbasicstyle),\
+8     ('titleframe', 'True')\
+9 ]
+\end{DoxyCode}
+
+
+\-Definition at line 57 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_a2123e1d68e83d4c118716ea256b043e2}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!codeendre@{codeendre}}
+\index{codeendre@{codeendre}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{codeendre}]{\setlength{\rightskip}{0pt plus 5cm}tuple {\bf uicilibris\-::w2beamer\-::codeendre} = re.\-compile(r'$^\wedge$$\backslash$\mbox{[}$\backslash$s$\ast$code$\backslash$s$\ast$$\backslash$\mbox{]}$>$')}}\label{namespaceuicilibris_1_1w2beamer_a2123e1d68e83d4c118716ea256b043e2}
+
+
+\-Definition at line 70 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_abec3afbb11dc65299cf5d94b763260b1}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!codestartre@{codestartre}}
+\index{codestartre@{codestartre}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{codestartre}]{\setlength{\rightskip}{0pt plus 5cm}tuple {\bf uicilibris\-::w2beamer\-::codestartre} = re.\-compile(r'$^\wedge$$<$$\backslash$\mbox{[}$\backslash$s$\ast$code$\backslash$s$\ast$$\backslash$\mbox{]}')}}\label{namespaceuicilibris_1_1w2beamer_abec3afbb11dc65299cf5d94b763260b1}
+
+
+\-Definition at line 69 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_a20293542377aa84d3645ff8ca489dc25}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!lstbasicstyle@{lstbasicstyle}}
+\index{lstbasicstyle@{lstbasicstyle}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{lstbasicstyle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::w2beamer\-::lstbasicstyle} = $\backslash$}}\label{namespaceuicilibris_1_1w2beamer_a20293542377aa84d3645ff8ca489dc25}
+
+
+\-Definition at line 39 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_a10aa1adbb79cef7023740fb735a22c97}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!nowikiendre@{nowikiendre}}
+\index{nowikiendre@{nowikiendre}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{nowikiendre}]{\setlength{\rightskip}{0pt plus 5cm}tuple {\bf uicilibris\-::w2beamer\-::nowikiendre} = re.\-compile(r'$^\wedge$$\backslash$\mbox{[}$\backslash$s$\ast$nowiki$\backslash$s$\ast$$\backslash$\mbox{]}$>$')}}\label{namespaceuicilibris_1_1w2beamer_a10aa1adbb79cef7023740fb735a22c97}
+
+
+\-Definition at line 68 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_ad51b396b118fa48819396baec8fcd981}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!nowikistartre@{nowikistartre}}
+\index{nowikistartre@{nowikistartre}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{nowikistartre}]{\setlength{\rightskip}{0pt plus 5cm}tuple {\bf uicilibris\-::w2beamer\-::nowikistartre} = re.\-compile(r'$^\wedge$$<$$\backslash$\mbox{[}$\backslash$s$\ast$nowiki$\backslash$s$\ast$$\backslash$\mbox{]}')}}\label{namespaceuicilibris_1_1w2beamer_ad51b396b118fa48819396baec8fcd981}
+
+
+\-Definition at line 67 of file w2beamer.\-py.
+
+\hypertarget{namespaceuicilibris_1_1w2beamer_a3f4c9d7ef11e43b61fbe6699a65b2c56}{\index{uicilibris\-::w2beamer@{uicilibris\-::w2beamer}!table\-Head\-Pattern@{table\-Head\-Pattern}}
+\index{table\-Head\-Pattern@{table\-Head\-Pattern}!uicilibris::w2beamer@{uicilibris\-::w2beamer}}
+\subsubsection[{table\-Head\-Pattern}]{\setlength{\rightskip}{0pt plus 5cm}tuple {\bf uicilibris\-::w2beamer\-::table\-Head\-Pattern} = re.\-compile(r\char`\"{}$\backslash$$\backslash$begin\{tabular\}$\backslash$\mbox{[}table id=(\mbox{[}0-\/9\mbox{]}+)$\backslash$\mbox{]}\char`\"{})}}\label{namespaceuicilibris_1_1w2beamer_a3f4c9d7ef11e43b61fbe6699a65b2c56}
+
+
+\-Definition at line 37 of file w2beamer.\-py.
+

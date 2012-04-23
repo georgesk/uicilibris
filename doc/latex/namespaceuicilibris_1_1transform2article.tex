@@ -1,0 +1,348 @@
+\hypertarget{namespaceuicilibris_1_1transform2article}{\section{uicilibris\-:\-:transform2article \-Namespace \-Reference}
+\label{namespaceuicilibris_1_1transform2article}\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}}
+}
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classuicilibris_1_1transform2article_1_1tableState}{table\-State}
+\begin{DoxyCompactList}\small\item\em a class to maintain the structure of a \-Latex table \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a402316d054f41765e2b6490513750b14}{transform\-\_\-itemenums}
+\begin{DoxyCompactList}\small\item\em handle itemizations/enumerations \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_adc9ad30ec8ba4c3939a2a11f1a108d70}{flush\-Tables}
+\begin{DoxyCompactList}\small\item\em flushes the table state \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_ab92d095e516d746a0676829967e87d51}{report\-Err}
+\begin{DoxyCompactList}\small\item\em emits messages for the user \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a46ff8620c2ea3a9237dedb1c69f983cb}{transform\-\_\-tables}
+\begin{DoxyCompactList}\small\item\em handle mediawiki tables \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_ad8bb9c3b834b3800045201c94ace9a6d}{top\-Of\-Stack}
+\begin{DoxyCompactList}\small\item\em returns the top of the stack if any \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a09b2ace90a3c3e6e657b487a2d1f9cb6}{transform\-\_\-h2\-\_\-to\-\_\-subsec}
+\begin{DoxyCompactList}\small\item\em headings (2) to subsections \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a429ee4364e6acec5f81cfa71b967dfc6}{transform\-\_\-h1\-\_\-to\-\_\-sec}
+\begin{DoxyCompactList}\small\item\em headings (1) to sections \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_adb690b02bd00a079f3534b3c8bca96f5}{transform\-\_\-boldfont}
+\begin{DoxyCompactList}\small\item\em bold font \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_aeb70729282e28071468d4ccca53e8509}{transform\-\_\-italicfont}
+\begin{DoxyCompactList}\small\item\em italic font \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a5e0a42c60e979ee65fbba5eca16a1d4e}{transform\-\_\-h3\-\_\-to\-\_\-subsubsec}
+\begin{DoxyCompactList}\small\item\em headings (3) to subsubsection \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a367917f3e51f981b240fde0668a795b8}{transform\-\_\-comment\-Lines}
+\begin{DoxyCompactList}\small\item\em transform comment-\/only lines in \-La\-Te\-X comment lines \end{DoxyCompactList}\item 
+def \hyperlink{namespaceuicilibris_1_1transform2article_a9f02a5b65714762575914ad84f7fe488}{transform}
+\begin{DoxyCompactList}\small\item\em convert/transform one line in context of state for \hyperlink{namespaceuicilibris_1_1w2book}{w2book} (wiki to book) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{namespaceuicilibris_1_1transform2article_adc9ad30ec8ba4c3939a2a11f1a108d70}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!flush\-Tables@{flush\-Tables}}
+\index{flush\-Tables@{flush\-Tables}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{flush\-Tables}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-flush\-Tables} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state, }
+\item[{}]{report = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_adc9ad30ec8ba4c3939a2a11f1a108d70}
+
+
+flushes the table state 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em string} & the line which is to process  the current state of the automaton \\
+\hline
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 125 of file transform2article.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_ab92d095e516d746a0676829967e87d51}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!report\-Err@{report\-Err}}
+\index{report\-Err@{report\-Err}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{report\-Err}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-report\-Err} (
+\begin{DoxyParamCaption}
+\item[{}]{msg, }
+\item[{}]{report = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_ab92d095e516d746a0676829967e87d51}
+
+
+emits messages for the user 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 142 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_ad8bb9c3b834b3800045201c94ace9a6d}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!top\-Of\-Stack@{top\-Of\-Stack}}
+\index{top\-Of\-Stack@{top\-Of\-Stack}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{top\-Of\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-top\-Of\-Stack} (
+\begin{DoxyParamCaption}
+\item[{}]{stack}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_ad8bb9c3b834b3800045201c94ace9a6d}
+
+
+returns the top of the stack if any 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em stack} & a sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+an objet, or else \-N\-One 
+\end{DoxyReturn}
+
+
+\-Definition at line 233 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a9f02a5b65714762575914ad84f7fe488}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform@{transform}}
+\index{transform@{transform}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state, }
+\item[{}]{report = {\ttfamily \-False}}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a9f02a5b65714762575914ad84f7fe488}
+
+
+convert/transform one line in context of state for \hyperlink{namespaceuicilibris_1_1w2book}{w2book} (wiki to book) 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em string} & the current line to transform \\
+\hline
+{\em state} & the state of the automaton \\
+\hline
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 304 of file transform2article.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_adb690b02bd00a079f3534b3c8bca96f5}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-boldfont@{transform\-\_\-boldfont}}
+\index{transform\-\_\-boldfont@{transform\-\_\-boldfont}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-boldfont}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-boldfont} (
+\begin{DoxyParamCaption}
+\item[{}]{string}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_adb690b02bd00a079f3534b3c8bca96f5}
+
+
+bold font 
+
+
+
+\-Definition at line 260 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a367917f3e51f981b240fde0668a795b8}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-comment\-Lines@{transform\-\_\-comment\-Lines}}
+\index{transform\-\_\-comment\-Lines@{transform\-\_\-comment\-Lines}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-comment\-Lines}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-comment\-Lines} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a367917f3e51f981b240fde0668a795b8}
+
+
+transform comment-\/only lines in \-La\-Te\-X comment lines 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em string} & a line \\
+\hline
+{\em state} & an object with the state of the process \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the line with transforms done 
+\end{DoxyReturn}
+
+
+\-Definition at line 288 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a429ee4364e6acec5f81cfa71b967dfc6}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-h1\-\_\-to\-\_\-sec@{transform\-\_\-h1\-\_\-to\-\_\-sec}}
+\index{transform\-\_\-h1\-\_\-to\-\_\-sec@{transform\-\_\-h1\-\_\-to\-\_\-sec}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-h1\-\_\-to\-\_\-sec}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-h1\-\_\-to\-\_\-sec} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a429ee4364e6acec5f81cfa71b967dfc6}
+
+
+headings (1) to sections 
+
+
+
+\-Definition at line 251 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a09b2ace90a3c3e6e657b487a2d1f9cb6}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-h2\-\_\-to\-\_\-subsec@{transform\-\_\-h2\-\_\-to\-\_\-subsec}}
+\index{transform\-\_\-h2\-\_\-to\-\_\-subsec@{transform\-\_\-h2\-\_\-to\-\_\-subsec}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-h2\-\_\-to\-\_\-subsec}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-h2\-\_\-to\-\_\-subsec} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a09b2ace90a3c3e6e657b487a2d1f9cb6}
+
+
+headings (2) to subsections 
+
+
+
+\-Definition at line 241 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a5e0a42c60e979ee65fbba5eca16a1d4e}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-h3\-\_\-to\-\_\-subsubsec@{transform\-\_\-h3\-\_\-to\-\_\-subsubsec}}
+\index{transform\-\_\-h3\-\_\-to\-\_\-subsubsec@{transform\-\_\-h3\-\_\-to\-\_\-subsubsec}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-h3\-\_\-to\-\_\-subsubsec}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-h3\-\_\-to\-\_\-subsubsec} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a5e0a42c60e979ee65fbba5eca16a1d4e}
+
+
+headings (3) to subsubsection 
+
+
+
+\-Definition at line 274 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_aeb70729282e28071468d4ccca53e8509}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-italicfont@{transform\-\_\-italicfont}}
+\index{transform\-\_\-italicfont@{transform\-\_\-italicfont}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-italicfont}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-italicfont} (
+\begin{DoxyParamCaption}
+\item[{}]{string}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_aeb70729282e28071468d4ccca53e8509}
+
+
+italic font 
+
+
+
+\-Definition at line 267 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a402316d054f41765e2b6490513750b14}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-itemenums@{transform\-\_\-itemenums}}
+\index{transform\-\_\-itemenums@{transform\-\_\-itemenums}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-itemenums}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-itemenums} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a402316d054f41765e2b6490513750b14}
+
+
+handle itemizations/enumerations 
+
+
+
+\-Definition at line 35 of file transform2article.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{namespaceuicilibris_1_1transform2article_a46ff8620c2ea3a9237dedb1c69f983cb}{\index{uicilibris\-::transform2article@{uicilibris\-::transform2article}!transform\-\_\-tables@{transform\-\_\-tables}}
+\index{transform\-\_\-tables@{transform\-\_\-tables}!uicilibris::transform2article@{uicilibris\-::transform2article}}
+\subsubsection[{transform\-\_\-tables}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-transform2article.\-transform\-\_\-tables} (
+\begin{DoxyParamCaption}
+\item[{}]{string, }
+\item[{}]{state, }
+\item[{}]{report = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{namespaceuicilibris_1_1transform2article_a46ff8620c2ea3a9237dedb1c69f983cb}
+
+
+handle mediawiki tables 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em string} & the current line to transform \\
+\hline
+{\em state} & the state of the automaton \\
+\hline
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 158 of file transform2article.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+

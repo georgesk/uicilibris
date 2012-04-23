@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="fr"xmlns="http://www.w3.org/1999/xhtml" ><head>
+<title>Poor man's user guide for UICI LIBRIS - UiciLibris</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="stylesheet" href="main.css" />
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Poor_man_s_user_guide_for_UICI_LIBRIS skin-monobook" style="padding:10px;" >
+	<h1 id="firstHeading" class="firstHeading">Poor man's user guide for UICI LIBRIS</h1>
+	<div id="bodyContent">	
+		<!-- start content -->
+<p>To use UICI LIBRIS, you need a write access to a MediaWiki (with a 
+few mandatory extensions enabled), and you hace to intall the 
+application <b>uicilibris</b>.
+</p>
+
+<h2> <span class="mw-headline" id="First"> First: author the contents of the future book </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-authoring-one-page.png" class="image"><img alt="" src="180px-Uicilibris-authoring-one-page.png" class="thumbimage" height="109" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-authoring-one-page.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>Authoring a page in Uicilibris. There are a few templates.</div></div></div>
+<p>Create separate pages in the mediawiki. Each page must have its own
+structure in chapter, section, subsection, subsubsection. Those are
+denoted in mediawiki language by "= chapter title =", 
+"== section title ==", etc. The more "=" delimiters, the lowest hierarchical
+level.
+</p><p>The pages may contain MediaWiki templates. Those are enclose in double curly
+braces like this: "{{Template name| first parameter| etc.}}".
+Some of the templates may have different intrpretations in MediaWiki and in
+<b>Uicilibris</b>.
+</p>
+<h3> <span class="mw-headline" id="All_of_the_contents_of_individual_pages_will_be_translated_to_LaTeX"> All of the contents of individual pages will be translated to LaTeX </span></h3>
+<p><b>Uicilibris</b> will process the contents of the page to make LaTeX source. This process takes in
+account template expansion. Some templates may be exapanded in different ways by MediaWiki and <b>Uicilibris</b>.
+</p>
+<h3> <span class="mw-headline" id="The_WikiTitle_of_the_page_is_not_relevant"> The WikiTitle of the page is not relevant </span></h3>
+<p>Beware of the wikititle: it will never be taken in account when 
+trnaslation to a LaTeX document.
+If you want the wikititle to be part of the Latex output, you must 
+repeat it in the page's content, for example as a title, subtitle, etc.
+</p><p>The WikiTitle can also be referred as the "outer title of the page".
+</p>
+<h2> <span class="mw-headline" > Second: write a "table of contents" </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-author-toc.png" class="image"><img alt="" src="180px-Uicilibris-author-toc.png" class="thumbimage" height="107" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-author-toc.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>Authoring a table of contents</div></div></div>
+<p>To make a book: create a wikipage which contains a sequence of
+wikilinks to other pages. A wikilink is denoted in mediawiki language
+by "[[The outer title of the linked page]]"; the double opening and 
+closing brackets are mandatory.
+</p>
+<h3> <span class="mw-headline" id="No_text_from_this_table_of_content_will_be_included_in_the_LaTeX_document"> No text from this table of content will be included in the LaTeX document </span></h3>
+<p>Consequences are:
+</p>
+<ul><li> only the wikilinks are significant
+</li><li> all other elements can be considered as comments, and adviseably be used for this purpose
+</li><li> as non-links are interpreted by Mediawiki, they can be used to
+ make a visible structure in that wikipage. This structure should not be
+ contradictory with the wanted structure of the book, or you van be 
+mislead.
+</li><li> <b>every single wikipage linked from this table of content must contain the relevant structure elements</b>
+ for LaTeX. The name of the wikilink will never be used for the LaTeX 
+source. So chapter titles, section titles, etc. must be inside the 
+linked wikipages. Never trust the name of a wikilink in the table of 
+contents.
+</li></ul>
+<h2><span class="mw-headline" id="Third"> Third: process your book locally </span></h2>
+<div class="thumb tright"><div class="thumbinner" style="width:154px;"><a href="Letf-icon-for-url.png" class="image"><img alt="" src="Letf-icon-for-url.png" class="thumbimage" height="80" width="152" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Letf-icon-for-url.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>In Firefox, this icon can be dragged to Uicilibris.</div></div></div>
+<p>To process a book: launch the python program <b>uicilibris</b>, drag-drop the
+URL of the book to uicilibris' drop area. For example, with Firefox, 
+you should drag the little icon which appears on the left side of the
+URL in the navigation toolbar. This icon can be different from the one displaied
+in the next thumbnail image.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:156px;"><a href="Page-panel-mediawiki.png" class="image"><img alt="" src="Page-panel-mediawiki.png" class="thumbimage" height="69" width="154" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Page-panel-mediawiki.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>Alternative draggable object</div></div></div>
+<p>There is another possibility to drag the URL of a wikipage: the word "page" on top of the
+panel you are just reading is a good candidate for dragging the URL of this page. This can
+be used as an alternative to the icon in the navigation bar.
+</p><p>You can also copy and paste the source of a wiki page into the so-called "Drop area".
+</p><p>As a last possibility, you can also enter the wikilinks by hand. The format of a wikilink
+is: [[Some words enclosed in double square brackets]]. The wikilinks must
+point to a wiki page. The drawback of the methods which don not use drag/drops is that
+<b>uicilibris</b> will miss the base address of the mediawiki to fetch links.
+</p>
+<h3><span class="mw-headline" id="A_successful_drop_yelds_wiki_code_in_uicilibris.27_first_panel"> A successful drop yelds wiki code in uicilibris' first panel </span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-latex-panel.png" class="image"><img alt="" src="180px-Uicilibris-latex-panel.png" class="thumbimage" height="111" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-latex-panel.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>The LaTeX panel in Uicilibris</div></div></div>
+<p>If the drop succeeds, you should be able to read the contents of the
+page whose URL you have dragged, in wiki source format.
+</p><p>Then click the button "Links to LaTeX". The relevant wikipages will
+be downloaded and their contents will be processed and concatenated
+into the second panel of the application.
+</p>
+<h3> <span class="mw-headline" id="Successful_retrieval_of_linked_wikipages_yeld_a_parseable_LaTeX_source"> Successful retrieval of linked wikipages yeld a parseable LaTeX source </span></h3>
+You will find in uicilibris' second panel <div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-second-panel.png" class="image"><img alt="" src="180px-Uicilibris-second-panel.png" class="thumbimage" height="111" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-second-panel.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>The Latex panel in Uicilibris</div></div></div>
+<p>a parseable LaTeX source file for a book. If you want, you can just
+copy it and paste it in your favorite LaTeX IDE.
+</p>
+<h3><span class="mw-headline" id="Uicilibris_gives_tools_to_get_the_images.2C_compile_the_book_and_view_it"> Uicilibris gives tools to get the images, compile the book and view it </span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-log-panel.png" class="image"><img alt="" src="180px-Uicilibris-log-panel.png" class="thumbimage" height="116" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-log-panel.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>The log panel in Uicilibris</div></div></div>
+<p>In the panel containing the LaTeX source, a button "Run PDFLatex"
+allows you automatically (1) download all the images (2) run
+pdflatex. 
+</p><p>If a PDF file can be made, a button "View PDF" is enabled; this 
+button is not enabled upon compilation failure. In either case, a log of
+ the action of pdflatex is included in the
+<i>log panel</i> (third panel in uicilibris' user interface)
+</p><p><a href="Uicilibris-run-pdflatex-button.png" class="image"><img alt="Uicilibris-run-pdflatex-button.png" src="Uicilibris-run-pdflatex-button.png" height="67" width="356" /></a> <a href="Uicilibris-view-pdf-button.png" class="image"><img alt="Uicilibris-view-pdf-button.png" src="Uicilibris-view-pdf-button.png" height="70" width="356" /></a>
+</p>
+<h3> <span class="mw-headline" id="The_logfile_can_be_searched_easily_for_errors_inside_Uicilibris"> The logfile can be searched easily for errors inside Uicilibris </span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><a href="Uicilibris-error-search.png" class="image"><img alt="" src="180px-Uicilibris-error-search.png" class="thumbimage" height="36" width="180" /></a>  <div class="thumbcaption"><div class="magnify"><a href="Uicilibris-error-search.png" class="internal" title="Agrandir"><img src="magnify-clip.png" alt="" height="11" width="15" /></a></div>A facility to search errors or warnings in the log report</div></div></div>
+<p>In the bottom of the third panel, a combo box allows to search easily
+ strings like "error" in the log report. You can add custom search 
+strings.
+</p>
+>
+</div>
+</body></html>

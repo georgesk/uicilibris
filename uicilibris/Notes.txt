@@ -1,0 +1,18 @@
+À faire :
+
+- implémenter une gestion des métadonnées, pour exploiter l'historique du 
+  mediawiki
+  
+- implémenter un support du style "devoir"
+
+- écrire la documentation de uicilibris *avec uicilibris*
+  à partir de la version 1.4-4, une option latex="un format de colonne"
+  est disponible pour les tableaux, et implémenté dans les fichiers
+  transform2book.py et w2book.py
+
+- implémenter l'export du cache de uicilibris vers un mediawiki,
+  après validation. Pour ça, on pourrait utiliser certaines des
+  possibilités de pywikipedia, voir
+  http://pywikipediabot.sourceforge.net/
+
+- implémenter un export vers Ooo

@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="uicilibris.mediawiki.MediawikiOpener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1mediawiki_1_1MediawikiOpener.html",tooltip="a class to get and put data from and to a mediawiki; when authentification is required a login/passwo..."];
+}

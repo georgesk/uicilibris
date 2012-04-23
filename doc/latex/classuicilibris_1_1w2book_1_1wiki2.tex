@@ -1,0 +1,269 @@
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2}{\section{uicilibris.\-w2book.\-wiki2 \-Class \-Reference}
+\label{classuicilibris_1_1w2book_1_1wiki2}\index{uicilibris.\-w2book.\-wiki2@{uicilibris.\-w2book.\-wiki2}}
+}
+
+
+a class which enriches \hyperlink{namespaceuicilibris_1_1wikiParser}{wiki\-Parser} with a \-La\-Te\-X/\-Book export feature.  
+
+
+
+
+\-Inheritance diagram for uicilibris.\-w2book.\-wiki2\-:
+
+
+\-Collaboration diagram for uicilibris.\-w2book.\-wiki2\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_aebf095bf2882eba45654efa22208a279}{\-\_\-\-\_\-str\-\_\-\-\_\-}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_ae23c5f96c061eec8a575b293879b82ee}{process\-Tabular}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_a7959787936e6ba25fa4478c87f362dcb}{to\-File}
+\begin{DoxyCompactList}\small\item\em write self contents to a file imports and writes necessary images \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_ae352150eb67b1cb6c67ee3137f0cf773}{preamble}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_a074e8ba5278ac244c7b5402275abbc42}{postamble}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_abd7f7826ccd713041b9ac86dd9ce4084}{sanitize}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_ac94ea48f5b21a87eb0dda32a26be71c5}{convert2}
+\begin{DoxyCompactList}\small\item\em convert to \-La\-Te\-X book \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_a74c8ffd775e73f877a98adc48592a488}{parse\-\_\-usepackage}
+\item 
+def \hyperlink{classuicilibris_1_1w2book_1_1wiki2_a65fc5e3a732878444028091cbd03ac76}{parse\-\_\-bool}
+\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1w2book_1_1wiki2_ab1461398f11b498a73d850d22220fca4}{state}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+a class which enriches \hyperlink{namespaceuicilibris_1_1wikiParser}{wiki\-Parser} with a \-La\-Te\-X/\-Book export feature. 
+
+\-The underlying \hyperlink{namespaceuicilibris_1_1wikiParser}{wiki\-Parser} already processes input files or an url pointing to a table of contents in a mediawiki and modifies the content with templates defined in wiki\-Parser.\-process\-Templates4\-L 
+
+\-Definition at line 48 of file w2book.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_aebf095bf2882eba45654efa22208a279}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!\-\_\-\-\_\-str\-\_\-\-\_\-@{\-\_\-\-\_\-str\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-str\-\_\-\-\_\-@{\-\_\-\-\_\-str\-\_\-\-\_\-}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{\-\_\-\-\_\-str\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-\_\-\-\_\-str\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_aebf095bf2882eba45654efa22208a279}
+\begin{DoxyReturn}{\-Returns}
+contents converted to \-Latex/\-Beamer syntax as a single string, encoded in utf-\/8 
+\end{DoxyReturn}
+
+
+\-Reimplemented in \hyperlink{classuicilibris_1_1w2article_1_1wiki2_af05069c6f9b62a40cb0ca4fb142769c9}{uicilibris.\-w2article.\-wiki2}.
+
+
+
+\-Definition at line 54 of file w2book.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_ac94ea48f5b21a87eb0dda32a26be71c5}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!convert2@{convert2}}
+\index{convert2@{convert2}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{convert2}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-convert2} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{lines, }
+\item[{}]{report = {\ttfamily \-False}, }
+\item[{}]{transform = {\ttfamily lambda~x}, }
+\item[{}]{y, }
+\item[{}]{z}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_ac94ea48f5b21a87eb0dda32a26be71c5}
+
+
+convert to \-La\-Te\-X book 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em lines} & a list of lines \\
+\hline
+{\em report} & if \-True, messages are emitted to sys.\-stderr; if it is callable, it is invoked with the same messages \\
+\hline
+{\em transform} & a function to transform lines \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 183 of file w2book.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_a65fc5e3a732878444028091cbd03ac76}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!parse\-\_\-bool@{parse\-\_\-bool}}
+\index{parse\-\_\-bool@{parse\-\_\-bool}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{parse\-\_\-bool}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-parse\-\_\-bool} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{string}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_a65fc5e3a732878444028091cbd03ac76}
+
+
+\-Definition at line 236 of file w2book.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_a74c8ffd775e73f877a98adc48592a488}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!parse\-\_\-usepackage@{parse\-\_\-usepackage}}
+\index{parse\-\_\-usepackage@{parse\-\_\-usepackage}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{parse\-\_\-usepackage}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-parse\-\_\-usepackage} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{usepackage}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_a74c8ffd775e73f877a98adc48592a488}
+
+\begin{DoxyParams}{\-Parameters}
+{\em usepackage} & (str) the unparsed usepackage string in the form \mbox{[}options\mbox{]}\{name\} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+(tuple) (name(str), options(str)) 
+\end{DoxyReturn}
+
+
+\-Definition at line 222 of file w2book.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_a074e8ba5278ac244c7b5402275abbc42}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!postamble@{postamble}}
+\index{postamble@{postamble}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{postamble}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-postamble} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_a074e8ba5278ac244c7b5402275abbc42}
+
+
+\-Definition at line 126 of file w2book.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_ae352150eb67b1cb6c67ee3137f0cf773}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!preamble@{preamble}}
+\index{preamble@{preamble}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{preamble}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-preamble} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{documentclass = {\ttfamily \char`\"{}book\char`\"{}}, }
+\item[{}]{babel\-Opt = {\ttfamily \char`\"{}frenchb\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_ae352150eb67b1cb6c67ee3137f0cf773}
+
+\begin{DoxyParams}{\-Parameters}
+{\em documentclass,\-:} & the documentclass to use @ return a \-La\-Te\-X preamble \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 104 of file w2book.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_ae23c5f96c061eec8a575b293879b82ee}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!process\-Tabular@{process\-Tabular}}
+\index{process\-Tabular@{process\-Tabular}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{process\-Tabular}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-process\-Tabular} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{l}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_ae23c5f96c061eec8a575b293879b82ee}
+
+
+\-Definition at line 68 of file w2book.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_abd7f7826ccd713041b9ac86dd9ce4084}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!sanitize@{sanitize}}
+\index{sanitize@{sanitize}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{sanitize}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-sanitize} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{s}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_abd7f7826ccd713041b9ac86dd9ce4084}
+\begin{DoxyReturn}{\-Returns}
+a sanitized output\-: get rid of \& etc. processes the comments left by previous works; processes underscores in lines where there is no maths turns lines with math-\/only contents to out-\/of text formulas takes in account url-\/like words 
+\end{DoxyReturn}
+
+
+\-Definition at line 139 of file w2book.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_a7959787936e6ba25fa4478c87f362dcb}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!to\-File@{to\-File}}
+\index{to\-File@{to\-File}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{to\-File}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2book.\-wiki2.\-to\-File} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{file\-Name, }
+\item[{}]{report = {\ttfamily \-None}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2book_1_1wiki2_a7959787936e6ba25fa4478c87f362dcb}
+
+
+write self contents to a file imports and writes necessary images 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em report} & if \-True, this method will output a few messages on sys.\-stderr; if report is a callback function, this function will be called with one parameter. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 90 of file w2book.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1w2book_1_1wiki2_ab1461398f11b498a73d850d22220fca4}{\index{uicilibris\-::w2book\-::wiki2@{uicilibris\-::w2book\-::wiki2}!state@{state}}
+\index{state@{state}!uicilibris::w2book::wiki2@{uicilibris\-::w2book\-::wiki2}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::w2book.\-wiki2\-::state}}}\label{classuicilibris_1_1w2book_1_1wiki2_ab1461398f11b498a73d850d22220fca4}
+
+
+\-Definition at line 183 of file w2book.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{w2book_8py}{w2book.\-py}\end{DoxyCompactItemize}

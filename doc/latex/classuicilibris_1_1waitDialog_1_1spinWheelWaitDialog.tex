@@ -1,0 +1,179 @@
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog}{\section{uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog \-Class \-Reference}
+\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog}\index{uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog@{uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog}}
+}
+
+
+implements a \hyperlink{classQDialog}{\-Q\-Dialog} to display a waiting wheel spinner during some event  
+
+
+
+
+\-Inheritance diagram for uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-:
+
+
+\-Collaboration diagram for uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a3467633739c1c42bc26866c8f5523a5e}{\-\_\-\-\_\-init\-\_\-\-\_\-}
+\begin{DoxyCompactList}\small\item\em the constructor \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_addce2cc0b9b1edcfa82f37abf27fb5a7}{close}
+\begin{DoxyCompactList}\small\item\em redefinition of the default slot \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a8b457fed7f0d78457b08486746a8ea4b}{animate\-Lc\-Dial}
+\begin{DoxyCompactList}\small\item\em moves the cursor of the \-Q\-Dial object \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a833c2817deb73f7eee7cf3a1ec836cfb}{stop\-Animation}
+\begin{DoxyCompactList}\small\item\em \-Stops the animation and waits for a click on the close button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Public \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aac9bbd21ce4439a90b3307e167276849}{close\-Button\-Msg}
+\item 
+\hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_ac292d19bfaa5b744ff48951907ed3f12}{dial}
+\item 
+\hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aabf2ac37ecd83ecdc2eaff46652d6ebc}{button}
+\item 
+\hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a49c89cfb638907a01898a541a4d4cdea}{dial\-Pos}
+\item 
+\hyperlink{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a86ba95c8db0c48e34eaad4f6088fdcc3}{timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+implements a \hyperlink{classQDialog}{\-Q\-Dialog} to display a waiting wheel spinner during some event 
+
+\-Definition at line 29 of file wait\-Dialog.\-py.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a3467633739c1c42bc26866c8f5523a5e}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-init\-\_\-\-\_\-@{\-\_\-\-\_\-init\-\_\-\-\_\-}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{\-\_\-\-\_\-init\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog.\-\_\-\-\_\-init\-\_\-\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{parent = {\ttfamily \-None}, }
+\item[{}]{cb\-Stop = {\ttfamily \-None}, }
+\item[{}]{title = {\ttfamily \-None}, }
+\item[{}]{close\-Button\-Msg = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a3467633739c1c42bc26866c8f5523a5e}
+
+
+the constructor 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em parent} & a parent widget \\
+\hline
+{\em cb\-Stop} & a callback procedure to be called when the dialog is closed \\
+\hline
+{\em title} & a title for the dialog window \\
+\hline
+{\em close\-Button\-Msg} & a message to display on the button if the user is supposed to close the dialog explicitely upon completion. \-If this parameter is omitted, the dialog closes itself directly. \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a8b457fed7f0d78457b08486746a8ea4b}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!animate\-Lc\-Dial@{animate\-Lc\-Dial}}
+\index{animate\-Lc\-Dial@{animate\-Lc\-Dial}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{animate\-Lc\-Dial}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog.\-animate\-Lc\-Dial} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a8b457fed7f0d78457b08486746a8ea4b}
+
+
+moves the cursor of the \-Q\-Dial object 
+
+
+
+\-Definition at line 71 of file wait\-Dialog.\-py.
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_addce2cc0b9b1edcfa82f37abf27fb5a7}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!close@{close}}
+\index{close@{close}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog.\-close} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_addce2cc0b9b1edcfa82f37abf27fb5a7}
+
+
+redefinition of the default slot 
+
+
+
+\-Definition at line 63 of file wait\-Dialog.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a833c2817deb73f7eee7cf3a1ec836cfb}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!stop\-Animation@{stop\-Animation}}
+\index{stop\-Animation@{stop\-Animation}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{stop\-Animation}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog.\-stop\-Animation} (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a833c2817deb73f7eee7cf3a1ec836cfb}
+
+
+\-Stops the animation and waits for a click on the close button. 
+
+
+
+\-Definition at line 81 of file wait\-Dialog.\-py.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aabf2ac37ecd83ecdc2eaff46652d6ebc}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!button@{button}}
+\index{button@{button}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{button}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-::button}}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aabf2ac37ecd83ecdc2eaff46652d6ebc}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aac9bbd21ce4439a90b3307e167276849}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!close\-Button\-Msg@{close\-Button\-Msg}}
+\index{close\-Button\-Msg@{close\-Button\-Msg}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{close\-Button\-Msg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-::close\-Button\-Msg}}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_aac9bbd21ce4439a90b3307e167276849}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_ac292d19bfaa5b744ff48951907ed3f12}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!dial@{dial}}
+\index{dial@{dial}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{dial}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-::dial}}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_ac292d19bfaa5b744ff48951907ed3f12}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a49c89cfb638907a01898a541a4d4cdea}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!dial\-Pos@{dial\-Pos}}
+\index{dial\-Pos@{dial\-Pos}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{dial\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-::dial\-Pos}}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a49c89cfb638907a01898a541a4d4cdea}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+\hypertarget{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a86ba95c8db0c48e34eaad4f6088fdcc3}{\index{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}!timer@{timer}}
+\index{timer@{timer}!uicilibris::waitDialog::spinWheelWaitDialog@{uicilibris\-::wait\-Dialog\-::spin\-Wheel\-Wait\-Dialog}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris\-::wait\-Dialog.\-spin\-Wheel\-Wait\-Dialog\-::timer}}}\label{classuicilibris_1_1waitDialog_1_1spinWheelWaitDialog_a86ba95c8db0c48e34eaad4f6088fdcc3}
+
+
+\-Definition at line 38 of file wait\-Dialog.\-py.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+uicilibris/\hyperlink{waitDialog_8py}{wait\-Dialog.\-py}\end{DoxyCompactItemize}
