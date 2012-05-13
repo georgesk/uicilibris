@@ -87,13 +87,12 @@ def urlopen(url, data=None):
                     'Pragma' : "no-cache",
                     'Referer' : "http://packages.debian.org/sid/uicilibris"
                     }
-        req = urllib2.Request(url, data, headers)
         nbtries=8
         finished=False
         contentsOK=True
         while not finished:
             try:
-                r = urllib2.urlopen(req,timeout=1)
+                r =  urllib2.urlopen(urllib2.Request(url, data=data, headers=headers), timeout=1)
                 finished=True
                 r=StringIO.StringIO(r.read())
             except Exception, e:
@@ -105,11 +104,13 @@ def urlopen(url, data=None):
                     r=StringIO.StringIO("")
         if contentsOK:
             # cache the data if the url is open
+            nbtries=8
             finished=False
             while not finished:
                 try:
                     Cache.toCache(url, data, r.read())
                     r.seek(0)
+                    finished=True
                 except Exception, e:
                     nbtries=nbtries-1
                     print "There was an error: %r, still %d tries" %(e, nbtries)
