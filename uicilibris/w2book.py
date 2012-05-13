@@ -51,7 +51,7 @@ class wiki2(wikiParser.wikiParser):
         encoded in utf-8
         """
         # finds the option for Babel, based on the current locale
-        if self.parent.locale[:2]=="fr":
+        if str(self.parent.locale)[:2]=="fr":
             babelOpt="frenchb";
         else:
             babelOpt="english"
