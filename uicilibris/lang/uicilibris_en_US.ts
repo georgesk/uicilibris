@@ -306,32 +306,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="123"/>
+        <location filename="../export.py" line="122"/>
         <source>You are not logged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="126"/>
+        <location filename="../export.py" line="125"/>
         <source>You are logged</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="129"/>
+        <location filename="../export.py" line="128"/>
         <source>Authentification state undecided</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="143"/>
+        <location filename="../export.py" line="142"/>
         <source>The website is not a mediawiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="146"/>
+        <location filename="../export.py" line="145"/>
         <source>The website is a mediawiki</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../export.py" line="149"/>
+        <location filename="../export.py" line="148"/>
         <source>Validity state undecided</source>
         <translation type="unfinished"></translation>
     </message>

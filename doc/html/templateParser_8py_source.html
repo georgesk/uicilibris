@@ -203,136 +203,137 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00115"></a>00115         modifiers=<span class="stringliteral">&quot;&quot;</span>
 <a name="l00116"></a>00116         <span class="keywordflow">if</span> <span class="stringliteral">&quot;width&quot;</span> <span class="keywordflow">in</span> d:
 <a name="l00117"></a>00117             modifiers+=<span class="stringliteral">&quot;width=%s, &quot;</span> %d[<span class="stringliteral">&quot;width&quot;</span>]
-<a name="l00118"></a>00118         <span class="keywordflow">if</span> <span class="stringliteral">&quot;height&quot;</span> <span class="keywordflow">in</span> d:
-<a name="l00119"></a>00119             modifiers+=<span class="stringliteral">&quot;height=%s, &quot;</span> %d[<span class="stringliteral">&quot;height&quot;</span>]
-<a name="l00120"></a>00120         code=<span class="stringliteral">&quot;\\includegraphics&quot;</span>
-<a name="l00121"></a>00121         <span class="keywordflow">if</span> modifiers:
-<a name="l00122"></a>00122             code+=<span class="stringliteral">&quot;[%s]&quot;</span> %modifiers[:-2]
-<a name="l00123"></a>00123         code+=<span class="stringliteral">&quot;{%s}&quot;</span> %d[<span class="stringliteral">&quot;imgFile&quot;</span>]
-<a name="l00124"></a>00124         figure=<span class="keyword">False</span>
-<a name="l00125"></a>00125         caption=<span class="stringliteral">&quot;&quot;</span>
-<a name="l00126"></a>00126         <span class="keywordflow">for</span> k <span class="keywordflow">in</span> d:
-<a name="l00127"></a>00127             <span class="keywordflow">if</span> type(k)==type(0): <span class="comment"># for the numeric keys</span>
-<a name="l00128"></a>00128                 <span class="keywordflow">if</span> d[k]==<span class="stringliteral">&quot;thumb&quot;</span>:
-<a name="l00129"></a>00129                     figure=<span class="keyword">True</span>
-<a name="l00130"></a>00130                 <span class="keywordflow">elif</span> caption==<span class="stringliteral">&quot;&quot;</span>: <span class="comment"># the first unindentified value becomes a caption</span>
+<a name="l00118"></a>00118             del (d[<span class="stringliteral">&quot;width&quot;</span>])
+<a name="l00119"></a>00119         <span class="keywordflow">if</span> <span class="stringliteral">&quot;height&quot;</span> <span class="keywordflow">in</span> d:
+<a name="l00120"></a>00120             modifiers+=<span class="stringliteral">&quot;height=%s, &quot;</span> %d[<span class="stringliteral">&quot;height&quot;</span>]
+<a name="l00121"></a>00121             del (d[<span class="stringliteral">&quot;height&quot;</span>])
+<a name="l00122"></a>00122         code=<span class="stringliteral">&quot;\\includegraphics&quot;</span>
+<a name="l00123"></a>00123         <span class="keywordflow">if</span> modifiers:
+<a name="l00124"></a>00124             code+=<span class="stringliteral">&quot;[%s]&quot;</span> %modifiers[:-2]
+<a name="l00125"></a>00125         code+=<span class="stringliteral">&quot;{%s}&quot;</span> %d[<span class="stringliteral">&quot;imgFile&quot;</span>]
+<a name="l00126"></a>00126         figure=<span class="keyword">False</span>
+<a name="l00127"></a>00127         caption=<span class="stringliteral">&quot;&quot;</span>
+<a name="l00128"></a>00128         <span class="keywordflow">for</span> k <span class="keywordflow">in</span> d:
+<a name="l00129"></a>00129             <span class="keywordflow">if</span> type(k)==type(0): <span class="comment"># for the numeric keys</span>
+<a name="l00130"></a>00130                 <span class="keywordflow">if</span> d[k]==<span class="stringliteral">&quot;thumb&quot;</span>:
 <a name="l00131"></a>00131                     figure=<span class="keyword">True</span>
-<a name="l00132"></a>00132                     caption=d[k]
-<a name="l00133"></a>00133         <span class="keywordflow">if</span> figure:
-<a name="l00134"></a>00134             code=<span class="stringliteral">&quot;\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\\\ \n%s\n\\end{center}\n\\end{figure}\n&quot;</span> %(caption, code)
-<a name="l00135"></a>00135             
-<a name="l00136"></a>00136         <span class="keywordflow">return</span> code
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138     <span class="comment">##</span>
-<a name="l00139"></a>00139     <span class="comment"># </span>
-<a name="l00140"></a>00140     <span class="comment">#         creates a parse function</span>
-<a name="l00141"></a>00141     <span class="comment">#         @param fun a function getting the dictionary of parameters of a template</span>
-<a name="l00142"></a>00142     <span class="comment">#         @return a function whose profile is: input parameter = a match expression, result = a string</span>
-<a name="l00143"></a>00143     <span class="comment">#         </span>
-<a name="l00144"></a><a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html#aea563d5172ebb0554783f636267b1e5f">00144</a>     <span class="keyword">def </span><a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html#aea563d5172ebb0554783f636267b1e5f" title="creates a parse function">pfMaker</a>(self,fun):
-<a name="l00145"></a>00145         <span class="keyword">def </span>pf(m):
-<a name="l00146"></a>00146             dic={}
-<a name="l00147"></a>00147             dic[<span class="stringliteral">&quot;imgFile&quot;</span>]=m.group(1)
-<a name="l00148"></a>00148             i=0
-<a name="l00149"></a>00149             params=m.group(2)
-<a name="l00150"></a>00150             params=params.split(<span class="stringliteral">&quot;|&quot;</span>)[1:]
-<a name="l00151"></a>00151             <span class="keywordflow">for</span> p <span class="keywordflow">in</span> params:
-<a name="l00152"></a>00152                 m=re.match(<span class="stringliteral">&quot;([\S]+)=(.*)&quot;</span>,p)
-<a name="l00153"></a>00153                 <span class="keywordflow">if</span> m:
-<a name="l00154"></a>00154                     dic[m.group(1)]=m.group(2)
-<a name="l00155"></a>00155                 <span class="keywordflow">else</span>:
-<a name="l00156"></a>00156                     dic[i]=p
-<a name="l00157"></a>00157                     i+=1
-<a name="l00158"></a>00158             <span class="keywordflow">try</span>:
-<a name="l00159"></a>00159                 <span class="keywordflow">return</span> fun(dic)
-<a name="l00160"></a>00160             <span class="keywordflow">except</span>:
-<a name="l00161"></a>00161                 exctype, excval = sys.exc_info()[:2]
-<a name="l00162"></a>00162                 exc=re.findall(<span class="stringliteral">&quot;.*\.(.*)&#39;.*&quot;</span>, <span class="stringliteral">&quot;%s&quot;</span> %exctype)[0]
-<a name="l00163"></a>00163                 <span class="keywordflow">pass</span>
-<a name="l00164"></a>00164             <span class="keywordflow">return</span> <span class="stringliteral">&quot;{\\textbf{%s: %s}; could not translate the template &#39;%s&#39;}&quot;</span> %(exc, excval, self.ident)
-<a name="l00165"></a>00165         <span class="keywordflow">return</span> pf
-<a name="l00166"></a>00166 
+<a name="l00132"></a>00132                 <span class="keywordflow">else</span>: <span class="comment"># the last unindentified value will become a caption</span>
+<a name="l00133"></a>00133                     figure=<span class="keyword">True</span>
+<a name="l00134"></a>00134                     caption=d[k]
+<a name="l00135"></a>00135         <span class="keywordflow">if</span> figure:
+<a name="l00136"></a>00136             code=<span class="stringliteral">&quot;\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\\\ \n%s\n\\end{center}\n\\end{figure}\n&quot;</span> %(caption, code)
+<a name="l00137"></a>00137         <span class="keywordflow">return</span> code
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139     <span class="comment">##</span>
+<a name="l00140"></a>00140     <span class="comment"># </span>
+<a name="l00141"></a>00141     <span class="comment">#         creates a parse function</span>
+<a name="l00142"></a>00142     <span class="comment">#         @param fun a function getting the dictionary of parameters of a template</span>
+<a name="l00143"></a>00143     <span class="comment">#         @return a function whose profile is: input parameter = a match expression, result = a string</span>
+<a name="l00144"></a>00144     <span class="comment">#         </span>
+<a name="l00145"></a><a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html#aea563d5172ebb0554783f636267b1e5f">00145</a>     <span class="keyword">def </span><a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html#aea563d5172ebb0554783f636267b1e5f" title="creates a parse function">pfMaker</a>(self,fun):
+<a name="l00146"></a>00146         <span class="keyword">def </span>pf(m):
+<a name="l00147"></a>00147             dic={}
+<a name="l00148"></a>00148             dic[<span class="stringliteral">&quot;imgFile&quot;</span>]=m.group(1)
+<a name="l00149"></a>00149             i=0
+<a name="l00150"></a>00150             params=m.group(2)
+<a name="l00151"></a>00151             params=params.split(<span class="stringliteral">&quot;|&quot;</span>)[1:]
+<a name="l00152"></a>00152             <span class="keywordflow">for</span> p <span class="keywordflow">in</span> params:
+<a name="l00153"></a>00153                 m=re.match(<span class="stringliteral">&quot;([\S]+)=(.*)&quot;</span>,p)
+<a name="l00154"></a>00154                 <span class="keywordflow">if</span> m:
+<a name="l00155"></a>00155                     dic[m.group(1)]=m.group(2)
+<a name="l00156"></a>00156                 <span class="keywordflow">else</span>:
+<a name="l00157"></a>00157                     dic[i]=p
+<a name="l00158"></a>00158                     i+=1
+<a name="l00159"></a>00159             <span class="keywordflow">try</span>:
+<a name="l00160"></a>00160                 <span class="keywordflow">return</span> fun(dic)
+<a name="l00161"></a>00161             <span class="keywordflow">except</span>:
+<a name="l00162"></a>00162                 exctype, excval = sys.exc_info()[:2]
+<a name="l00163"></a>00163                 exc=re.findall(<span class="stringliteral">&quot;.*\.(.*)&#39;.*&quot;</span>, <span class="stringliteral">&quot;%s&quot;</span> %exctype)[0]
+<a name="l00164"></a>00164                 <span class="keywordflow">pass</span>
+<a name="l00165"></a>00165             <span class="keywordflow">return</span> <span class="stringliteral">&quot;{\\textbf{%s: %s}; could not translate the template &#39;%s&#39;}&quot;</span> %(exc, excval, self.ident)
+<a name="l00166"></a>00166         <span class="keywordflow">return</span> pf
 <a name="l00167"></a>00167 
 <a name="l00168"></a>00168 
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170 <span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:
-<a name="l00171"></a>00171     <span class="comment">############################################################</span>
-<a name="l00172"></a>00172     <span class="comment">##### These examples give a demo of the templateParser class</span>
-<a name="l00173"></a>00173     <span class="comment">############################################################</span>
-<a name="l00174"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a934a014ef49ba892753e6d54dbeb35f3">00174</a>     input=<span class="stringliteral">&quot;&quot;&quot;{{!}} bla bla {{!}} bla {{Latex:ref|fig:fig2}} bla bla</span>
-<a name="l00175"></a>00175 <span class="stringliteral">{{Latex:Figure|pic=onePic.png|schematic=oneSketch.png|caption=The caption|label=The label}}</span>
-<a name="l00176"></a>00176 <span class="stringliteral">bla bla {{Latex:Label|fig:other}} bla bla</span>
-<a name="l00177"></a>00177 <span class="stringliteral">a figure with a missing parameter:</span>
-<a name="l00178"></a>00178 <span class="stringliteral">{{Latex:Figure|schematic=oneSketch.png|caption=Figure with a missing param|label=fig:fig2}},</span>
-<a name="l00179"></a>00179 <span class="stringliteral">and now an image : [[Image:theImage.png|width=5cm|thumb|the Caption]].&quot;&quot;&quot;</span>
-<a name="l00180"></a>00180     
-<a name="l00181"></a>00181     <span class="comment">####### nullary template</span>
-<a name="l00182"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae1c46ccd8cb106ed098a453a34c6485c">00182</a>     bang=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;!&quot;</span>,fun=<span class="keyword">lambda</span> x: <span class="stringliteral">&quot;|&quot;</span>)
-<a name="l00183"></a>00183     
-<a name="l00184"></a>00184     <span class="comment">####### templates with one mandatory anonymous parameter</span>
-<a name="l00185"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ad641a7d51cf16935ac4a7912f8cca790">00185</a>     ref=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:ref&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot; \\ref{%s}&quot;</span> %d[0])
-<a name="l00186"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#acb433717f6e1666289157d06c74bb9bc">00186</a>     label=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Label&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot;\\label{%s}&quot;</span> %d[0])
-<a name="l00187"></a>00187     
-<a name="l00188"></a>00188     <span class="comment">####### a template with named *mandatory* parameters</span>
-<a name="l00189"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ab62a7d06d49e36920493eedea1e78799">00189</a>     figure=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Figure&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot;\\begin{figure}[h!]\\begin{center}\\includegraphics[height=1.5cm]{pic-%s}\\includegraphics[height=1.5cm]{schematic-%s}\\\\ \\caption{%s\\label{%s}}\\end{center}\\end{figure}&quot;</span> %(d[<span class="stringliteral">&quot;pic&quot;</span>], d[<span class="stringliteral">&quot;schematic&quot;</span>],d[<span class="stringliteral">&quot;caption&quot;</span>],d[<span class="stringliteral">&quot;label&quot;</span>]))
-<a name="l00190"></a>00190     
-<a name="l00191"></a>00191     <span class="comment">####### a better template for named parameters, providing defauts</span>
-<a name="l00192"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae11aa57da9437f9da25eca50de12d84f">00192</a>     <span class="keyword">def </span><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae11aa57da9437f9da25eca50de12d84f" title="a better template for named parameters, providing defauts">pFigure</a>(d):
-<a name="l00193"></a>00193         result=<span class="stringliteral">&quot;\\begin{figure}[h!]\\begin{center}&quot;</span>
-<a name="l00194"></a>00194         <span class="keywordflow">if</span> <span class="stringliteral">&quot;pic&quot;</span> <span class="keywordflow">in</span> d:
-<a name="l00195"></a>00195             result+=<span class="stringliteral">&quot;\\includegraphics[height=1.5cm]{pic-%s}&quot;</span> %d[<span class="stringliteral">&quot;pic&quot;</span>]
-<a name="l00196"></a>00196         <span class="keywordflow">if</span> <span class="stringliteral">&quot;schematic&quot;</span> <span class="keywordflow">in</span> d:
-<a name="l00197"></a>00197             result+=<span class="stringliteral">&quot;\\includegraphics[height=1.5cm]{schematic-%s}&quot;</span> %d[<span class="stringliteral">&quot;schematic&quot;</span>]
-<a name="l00198"></a>00198         result+=<span class="stringliteral">&quot;\\\\ &quot;</span>
-<a name="l00199"></a>00199         <span class="keywordflow">if</span> <span class="stringliteral">&quot;caption&quot;</span> <span class="keywordflow">in</span> d:
-<a name="l00200"></a>00200             result+=<span class="stringliteral">&quot;\\caption{%s&quot;</span> %d[<span class="stringliteral">&quot;caption&quot;</span>]
-<a name="l00201"></a>00201             <span class="keywordflow">if</span> <span class="stringliteral">&quot;label&quot;</span> <span class="keywordflow">in</span> d:
-<a name="l00202"></a>00202                 result+=<span class="stringliteral">&quot;\\label{%s}&quot;</span> %d[<span class="stringliteral">&quot;label&quot;</span>]
-<a name="l00203"></a>00203             result+=<span class="stringliteral">&quot;}&quot;</span>
-<a name="l00204"></a>00204         result +=<span class="stringliteral">&quot;\\end{center}\\end{figure}&quot;</span>
-<a name="l00205"></a>00205         <span class="keywordflow">return</span> result
-<a name="l00206"></a>00206     figurePlus=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Figure&quot;</span>, fun=pFigure)
-<a name="l00207"></a>00207             
-<a name="l00208"></a>00208 
-<a name="l00209"></a>00209     
-<a name="l00210"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ad7d8a741383be26743e20995ca1fefb5">00210</a>     templates=[bang, ref, label, figure, figurePlus]
-<a name="l00211"></a>00211     
-<a name="l00212"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a13a85fc84f508035ebb8153b47c5f486">00212</a>     code= <span class="stringliteral">&quot;\\section{The input}\n&quot;</span>
-<a name="l00213"></a>00213     code+= <span class="stringliteral">&quot;\\begin{verbatim*}input= &quot;</span> + input + <span class="stringliteral">&quot;\\end{verbatim*}\n&quot;</span>
-<a name="l00214"></a>00214     <span class="keywordflow">for</span> t <span class="keywordflow">in</span> templates:
-<a name="l00215"></a>00215         code += <span class="stringliteral">&quot;\\section{%s}\n&quot;</span> %t
-<a name="l00216"></a>00216         code += t.sub(input) + <span class="stringliteral">&quot;\n&quot;</span>
-<a name="l00217"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#aa96add71a0f0412a1a5189b52c4fa2a8">00217</a>     imgT=<a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html" title="a class to parse wiki images, based on the module re">imageParser</a>()
-<a name="l00218"></a>00218     code += <span class="stringliteral">&quot;\\section{Images}\n&quot;</span>
-<a name="l00219"></a>00219     code += imgT.sub(input) + <span class="stringliteral">&quot;\n&quot;</span>
-<a name="l00220"></a>00220 
-<a name="l00221"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a1f958fca9ba00cb5d34e5912c7627b0b">00221</a>     texSource=<span class="stringliteral">&quot;&quot;&quot;\</span>
-<a name="l00222"></a>00222 <span class="stringliteral">\\documentclass{article}</span>
-<a name="l00223"></a>00223 <span class="stringliteral">%% -*- coding: utf-8 -*-</span>
-<a name="l00224"></a>00224 <span class="stringliteral"></span>
-<a name="l00225"></a>00225 <span class="stringliteral">\\usepackage[utf8x]{inputenc}</span>
-<a name="l00226"></a>00226 <span class="stringliteral">\\usepackage{ucs}</span>
-<a name="l00227"></a>00227 <span class="stringliteral">\\usepackage{lmodern}</span>
-<a name="l00228"></a>00228 <span class="stringliteral">\\usepackage{graphicx}</span>
-<a name="l00229"></a>00229 <span class="stringliteral">\\usepackage[english]{babel}</span>
-<a name="l00230"></a>00230 <span class="stringliteral">\\usepackage{hyperref,wrapfig}</span>
-<a name="l00231"></a>00231 <span class="stringliteral"></span>
-<a name="l00232"></a>00232 <span class="stringliteral">\\begin{document}</span>
-<a name="l00233"></a>00233 <span class="stringliteral">%s</span>
-<a name="l00234"></a>00234 <span class="stringliteral">\\end{document}</span>
-<a name="l00235"></a>00235 <span class="stringliteral">&quot;&quot;&quot;</span> %code
-<a name="l00236"></a>00236     
-<a name="l00237"></a>00237     <span class="keyword">import</span> subprocess
-<a name="l00238"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a0a8c084e3ba11efc717d4352c01ca327">00238</a>     outfile=open(<span class="stringliteral">&quot;essai.tex&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>)
-<a name="l00239"></a>00239     outfile.write(texSource)
-<a name="l00240"></a>00240     outfile.close()
-<a name="l00241"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a1f824f5c36840363cddaaed894ad175e">00241</a>     cmd=<span class="stringliteral">&quot;pdflatex -interaction=batchmode essai.tex; pdflatex -interaction=batchmode essai.tex; evince essai.pdf&quot;</span>
-<a name="l00242"></a>00242     subprocess.call(cmd, shell=<span class="keyword">True</span>)
-<a name="l00243"></a>00243     
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171 <span class="keywordflow">if</span> __name__==<span class="stringliteral">&quot;__main__&quot;</span>:
+<a name="l00172"></a>00172     <span class="comment">############################################################</span>
+<a name="l00173"></a>00173     <span class="comment">##### These examples give a demo of the templateParser class</span>
+<a name="l00174"></a>00174     <span class="comment">############################################################</span>
+<a name="l00175"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a934a014ef49ba892753e6d54dbeb35f3">00175</a>     input=<span class="stringliteral">&quot;&quot;&quot;{{!}} bla bla {{!}} bla {{Latex:ref|fig:fig2}} bla bla</span>
+<a name="l00176"></a>00176 <span class="stringliteral">{{Latex:Figure|pic=onePic.png|schematic=oneSketch.png|caption=The caption|label=The label}}</span>
+<a name="l00177"></a>00177 <span class="stringliteral">bla bla {{Latex:Label|fig:other}} bla bla</span>
+<a name="l00178"></a>00178 <span class="stringliteral">a figure with a missing parameter:</span>
+<a name="l00179"></a>00179 <span class="stringliteral">{{Latex:Figure|schematic=oneSketch.png|caption=Figure with a missing param|label=fig:fig2}},</span>
+<a name="l00180"></a>00180 <span class="stringliteral">and now an image : [[Image:theImage.png|width=5cm|thumb|the Caption]].&quot;&quot;&quot;</span>
+<a name="l00181"></a>00181     
+<a name="l00182"></a>00182     <span class="comment">####### nullary template</span>
+<a name="l00183"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae1c46ccd8cb106ed098a453a34c6485c">00183</a>     bang=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;!&quot;</span>,fun=<span class="keyword">lambda</span> x: <span class="stringliteral">&quot;|&quot;</span>)
+<a name="l00184"></a>00184     
+<a name="l00185"></a>00185     <span class="comment">####### templates with one mandatory anonymous parameter</span>
+<a name="l00186"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ad641a7d51cf16935ac4a7912f8cca790">00186</a>     ref=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:ref&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot; \\ref{%s}&quot;</span> %d[0])
+<a name="l00187"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#acb433717f6e1666289157d06c74bb9bc">00187</a>     label=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Label&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot;\\label{%s}&quot;</span> %d[0])
+<a name="l00188"></a>00188     
+<a name="l00189"></a>00189     <span class="comment">####### a template with named *mandatory* parameters</span>
+<a name="l00190"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ab62a7d06d49e36920493eedea1e78799">00190</a>     figure=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Figure&quot;</span>, fun=<span class="keyword">lambda</span> d: <span class="stringliteral">&quot;\\begin{figure}[h!]\\begin{center}\\includegraphics[height=1.5cm]{pic-%s}\\includegraphics[height=1.5cm]{schematic-%s}\\\\ \\caption{%s\\label{%s}}\\end{center}\\end{figure}&quot;</span> %(d[<span class="stringliteral">&quot;pic&quot;</span>], d[<span class="stringliteral">&quot;schematic&quot;</span>],d[<span class="stringliteral">&quot;caption&quot;</span>],d[<span class="stringliteral">&quot;label&quot;</span>]))
+<a name="l00191"></a>00191     
+<a name="l00192"></a>00192     <span class="comment">####### a better template for named parameters, providing defauts</span>
+<a name="l00193"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae11aa57da9437f9da25eca50de12d84f">00193</a>     <span class="keyword">def </span><a class="code" href="namespaceuicilibris_1_1templateParser.html#ae11aa57da9437f9da25eca50de12d84f" title="a better template for named parameters, providing defauts">pFigure</a>(d):
+<a name="l00194"></a>00194         result=<span class="stringliteral">&quot;\\begin{figure}[h!]\\begin{center}&quot;</span>
+<a name="l00195"></a>00195         <span class="keywordflow">if</span> <span class="stringliteral">&quot;pic&quot;</span> <span class="keywordflow">in</span> d:
+<a name="l00196"></a>00196             result+=<span class="stringliteral">&quot;\\includegraphics[height=1.5cm]{pic-%s}&quot;</span> %d[<span class="stringliteral">&quot;pic&quot;</span>]
+<a name="l00197"></a>00197         <span class="keywordflow">if</span> <span class="stringliteral">&quot;schematic&quot;</span> <span class="keywordflow">in</span> d:
+<a name="l00198"></a>00198             result+=<span class="stringliteral">&quot;\\includegraphics[height=1.5cm]{schematic-%s}&quot;</span> %d[<span class="stringliteral">&quot;schematic&quot;</span>]
+<a name="l00199"></a>00199         result+=<span class="stringliteral">&quot;\\\\ &quot;</span>
+<a name="l00200"></a>00200         <span class="keywordflow">if</span> <span class="stringliteral">&quot;caption&quot;</span> <span class="keywordflow">in</span> d:
+<a name="l00201"></a>00201             result+=<span class="stringliteral">&quot;\\caption{%s&quot;</span> %d[<span class="stringliteral">&quot;caption&quot;</span>]
+<a name="l00202"></a>00202             <span class="keywordflow">if</span> <span class="stringliteral">&quot;label&quot;</span> <span class="keywordflow">in</span> d:
+<a name="l00203"></a>00203                 result+=<span class="stringliteral">&quot;\\label{%s}&quot;</span> %d[<span class="stringliteral">&quot;label&quot;</span>]
+<a name="l00204"></a>00204             result+=<span class="stringliteral">&quot;}&quot;</span>
+<a name="l00205"></a>00205         result +=<span class="stringliteral">&quot;\\end{center}\\end{figure}&quot;</span>
+<a name="l00206"></a>00206         <span class="keywordflow">return</span> result
+<a name="l00207"></a>00207     figurePlus=<a class="code" href="classuicilibris_1_1templateParser_1_1templateParser.html" title="a class to parse wiki templates, based on the module re">templateParser</a>(<span class="stringliteral">&quot;Latex:Figure&quot;</span>, fun=pFigure)
+<a name="l00208"></a>00208             
+<a name="l00209"></a>00209 
+<a name="l00210"></a>00210     
+<a name="l00211"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#ad7d8a741383be26743e20995ca1fefb5">00211</a>     templates=[bang, ref, label, figure, figurePlus]
+<a name="l00212"></a>00212     
+<a name="l00213"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a13a85fc84f508035ebb8153b47c5f486">00213</a>     code= <span class="stringliteral">&quot;\\section{The input}\n&quot;</span>
+<a name="l00214"></a>00214     code+= <span class="stringliteral">&quot;\\begin{verbatim*}input= &quot;</span> + input + <span class="stringliteral">&quot;\\end{verbatim*}\n&quot;</span>
+<a name="l00215"></a>00215     <span class="keywordflow">for</span> t <span class="keywordflow">in</span> templates:
+<a name="l00216"></a>00216         code += <span class="stringliteral">&quot;\\section{%s}\n&quot;</span> %t
+<a name="l00217"></a>00217         code += t.sub(input) + <span class="stringliteral">&quot;\n&quot;</span>
+<a name="l00218"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#aa96add71a0f0412a1a5189b52c4fa2a8">00218</a>     imgT=<a class="code" href="classuicilibris_1_1templateParser_1_1imageParser.html" title="a class to parse wiki images, based on the module re">imageParser</a>()
+<a name="l00219"></a>00219     code += <span class="stringliteral">&quot;\\section{Images}\n&quot;</span>
+<a name="l00220"></a>00220     code += imgT.sub(input) + <span class="stringliteral">&quot;\n&quot;</span>
+<a name="l00221"></a>00221 
+<a name="l00222"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a1f958fca9ba00cb5d34e5912c7627b0b">00222</a>     texSource=<span class="stringliteral">&quot;&quot;&quot;\</span>
+<a name="l00223"></a>00223 <span class="stringliteral">\\documentclass{article}</span>
+<a name="l00224"></a>00224 <span class="stringliteral">%% -*- coding: utf-8 -*-</span>
+<a name="l00225"></a>00225 <span class="stringliteral"></span>
+<a name="l00226"></a>00226 <span class="stringliteral">\\usepackage[utf8x]{inputenc}</span>
+<a name="l00227"></a>00227 <span class="stringliteral">\\usepackage{ucs}</span>
+<a name="l00228"></a>00228 <span class="stringliteral">\\usepackage{lmodern}</span>
+<a name="l00229"></a>00229 <span class="stringliteral">\\usepackage{graphicx}</span>
+<a name="l00230"></a>00230 <span class="stringliteral">\\usepackage[english]{babel}</span>
+<a name="l00231"></a>00231 <span class="stringliteral">\\usepackage{hyperref,wrapfig}</span>
+<a name="l00232"></a>00232 <span class="stringliteral"></span>
+<a name="l00233"></a>00233 <span class="stringliteral">\\begin{document}</span>
+<a name="l00234"></a>00234 <span class="stringliteral">%s</span>
+<a name="l00235"></a>00235 <span class="stringliteral">\\end{document}</span>
+<a name="l00236"></a>00236 <span class="stringliteral">&quot;&quot;&quot;</span> %code
+<a name="l00237"></a>00237     
+<a name="l00238"></a>00238     <span class="keyword">import</span> subprocess
+<a name="l00239"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a0a8c084e3ba11efc717d4352c01ca327">00239</a>     outfile=open(<span class="stringliteral">&quot;essai.tex&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>)
+<a name="l00240"></a>00240     outfile.write(texSource)
+<a name="l00241"></a>00241     outfile.close()
+<a name="l00242"></a><a class="code" href="namespaceuicilibris_1_1templateParser.html#a1f824f5c36840363cddaaed894ad175e">00242</a>     cmd=<span class="stringliteral">&quot;pdflatex -interaction=batchmode essai.tex; pdflatex -interaction=batchmode essai.tex; evince essai.pdf&quot;</span>
+<a name="l00243"></a>00243     subprocess.call(cmd, shell=<span class="keyword">True</span>)
 <a name="l00244"></a>00244     
 <a name="l00245"></a>00245     
-<a name="l00246"></a>00246         
-<a name="l00247"></a>00247 
+<a name="l00246"></a>00246     
+<a name="l00247"></a>00247         
+<a name="l00248"></a>00248 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -353,7 +354,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="templateParser_8py.html">templateParser.py</a>      </li>
 
-    <li class="footer">Generated on Mon Apr 23 2012 14:56:02 for UiciLibris by
+    <li class="footer">Generated on Sun May 13 2012 15:21:42 for UiciLibris by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

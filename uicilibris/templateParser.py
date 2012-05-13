@@ -107,8 +107,10 @@ class imageParser(templateParser):
         modifiers=""
         if "width" in d:
             modifiers+="width=%s, " %d["width"]
+            del (d["width"])
         if "height" in d:
             modifiers+="height=%s, " %d["height"]
+            del (d["height"])
         code="\\includegraphics"
         if modifiers:
             code+="[%s]" %modifiers[:-2]
@@ -119,12 +121,11 @@ class imageParser(templateParser):
             if type(k)==type(0): # for the numeric keys
                 if d[k]=="thumb":
                     figure=True
-                elif caption=="": # the first unindentified value becomes a caption
+                else: # the last unindentified value will become a caption
                     figure=True
                     caption=d[k]
         if figure:
             code="\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\\\ \n%s\n\\end{center}\n\\end{figure}\n" %(caption, code)
-            
         return code
 
     def pfMaker(self,fun):

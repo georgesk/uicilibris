@@ -311,32 +311,32 @@
         <translation>État de l&apos;autentification</translation>
     </message>
     <message>
-        <location filename="../export.py" line="123"/>
+        <location filename="../export.py" line="122"/>
         <source>You are not logged</source>
         <translation>Vous n&apos;êtes pas logé</translation>
     </message>
     <message>
-        <location filename="../export.py" line="126"/>
+        <location filename="../export.py" line="125"/>
         <source>You are logged</source>
         <translation>Vous êtes logé</translation>
     </message>
     <message>
-        <location filename="../export.py" line="129"/>
+        <location filename="../export.py" line="128"/>
         <source>Authentification state undecided</source>
         <translation>État de l&apos;autentification inconnu</translation>
     </message>
     <message>
-        <location filename="../export.py" line="143"/>
+        <location filename="../export.py" line="142"/>
         <source>The website is not a mediawiki</source>
         <translation>Le site web n&apos;est pas un mediawiki</translation>
     </message>
     <message>
-        <location filename="../export.py" line="146"/>
+        <location filename="../export.py" line="145"/>
         <source>The website is a mediawiki</source>
         <translation>Le site web est un mediawiki</translation>
     </message>
     <message>
-        <location filename="../export.py" line="149"/>
+        <location filename="../export.py" line="148"/>
         <source>Validity state undecided</source>
         <translation>État de validité inconnu</translation>
     </message>
