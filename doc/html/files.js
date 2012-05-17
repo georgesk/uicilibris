@@ -9,6 +9,7 @@ var files =
     [ "uicilibris/transform.py", "transform_8py.html", "transform_8py" ],
     [ "uicilibris/transform2article.py", "transform2article_8py.html", "transform2article_8py" ],
     [ "uicilibris/transform2book.py", "transform2book_8py.html", "transform2book_8py" ],
+    [ "uicilibris/uiciSoup.py", "uiciSoup_8py.html", null ],
     [ "uicilibris/url.py", "url_8py.html", "url_8py" ],
     [ "uicilibris/version.py", "version_8py.html", "version_8py" ],
     [ "uicilibris/w2article.py", "w2article_8py.html", "w2article_8py" ],

@@ -201,17 +201,35 @@ class w2mMainWindow(QMainWindow):
         self.imageSet=imageSet
         return
 
+    def getSelected(self, area=None, allSelected=False):
+        """
+        gets the text selected in the drop area, and converts eventually
+        all the line breaks
+        @param area if None, defaults to self.ui.wikiDropArea; else can be
+        another text containing widget
+        @param allSelected : selects everything if True
+        returns the selected contents as a unicode string
+        """
+        if area==None:
+            area=self.ui.wikiDropArea
+        if allSelected:
+            area.selectAll()
+        cursor=area.textCursor()
+        if not cursor.hasSelection():
+            area.selectAll()
+            cursor=area.textCursor()
+        s=unicode(cursor.selectedText())
+        s="\n".join(s.splitlines())
+        return s
+        
+
     def toLatex(self):
         """
         turns the selected contents of the first tab into Latex code which is
         fed into the second tab. If nothing is selected previously, the whole
         contents are selected.
         """
-        cursor=self.ui.wikiDropArea.textCursor()
-        if not cursor.hasSelection():
-            self.ui.wikiDropArea.selectAll()
-            cursor=self.ui.wikiDropArea.textCursor()
-        self.latexSource=unicode(cursor.selectedText())
+        self.latexSource=self.getSelected()
         self.toLatexWait=spinWheelWaitDialog(self, self.stopToLatex, title="Expanding to LaTeX")
         self.toLatexWait.show()
         self.toLThread=toLatexThread(self)
@@ -231,11 +249,7 @@ class w2mMainWindow(QMainWindow):
         a series of links to wiki pages. If nothing is selected previously, the whole
         contents are selected.
         """
-        cursor=self.ui.wikiDropArea.textCursor()
-        if not cursor.hasSelection():
-            self.ui.wikiDropArea.selectAll()
-            cursor=self.ui.wikiDropArea.textCursor()
-        self.inputText=unicode(cursor.selectedText())
+        self.inputText=self.getSelected()
         #initialize a wiki2book instance with the home page of the mediawiki
         if self.wikiIndex==None:
             self.getWikiIndex()
@@ -339,7 +353,8 @@ class w2mMainWindow(QMainWindow):
         self.compileProgress.setWindowTitle("LaTeX compilation")
         self.compileProgress.show()
         self.connect(self.compileProgress, SIGNAL("canceled()"), self.stopPdfLatex)
-        self.latexSource=unicode(self.ui.latexCodeArea.toPlainText())
+        self.latexSource=self.getSelected(area=self.ui.latexCodeArea, 
+                                          allSelected=True)
         self.lcThread=latexCompileThread(self)
         self.lcThread.start()
 
@@ -471,7 +486,7 @@ class toLatexThread(QThread):
     def run(self):
         #initialize a wiki2book instance with the home page of the mediawiki
         homeUrl=self.parent().wikiIndex.encode("utf-8")+"/fakePage"
-        wb=w2book.wiki2book([homeUrl], isUrl=True, report=False) # the fake homeUrl is there only to get the address of the wiki; as a side-effect, the cache will be loaded with fake data.
+        wb=w2book.wiki2([homeUrl], parent=self.parent(), isUrl=True, report=False) # the fake homeUrl is there only to get the address of the wiki; as a side-effect, the cache will be loaded with fake data.
         wb.reloadCache(self.parent().latexSource)
         latexSource=("%s" %wb).decode("utf-8")
         # register the wiki2book structure

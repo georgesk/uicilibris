@@ -130,6 +130,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">search the next occurence of a fragment if it is defined  <a href="#a588c437ad13c0313a23eda4d4fbe6334"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuicilibris_1_1w2mMainWindow.html#a1a1b41e898d650d99ee9de7c0f423ac8">setImages</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">register the set of images to be used with one document  <a href="#a1a1b41e898d650d99ee9de7c0f423ac8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3">getSelected</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gets the text selected in the drop area, and converts eventually all the line breaks  <a href="#a44b374bc853c2903372e4a0d421929a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuicilibris_1_1w2mMainWindow.html#a2572ed1ecb17d7984699be7fd2b4c16f">toLatex</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">turns the selected contents of the first tab into Latex code which is fed into the second tab.  <a href="#a2572ed1ecb17d7984699be7fd2b4c16f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classuicilibris_1_1w2mMainWindow.html#afcd6b1cbd2e3c7c49c3eb218e63d74fb">stopToLatex</a></td></tr>
@@ -338,7 +340,7 @@ Here is the caller graph for this function:</div>
 
 <p>closes the wait spin dialog </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00321">321</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00336">336</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -384,7 +386,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00300">300</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00315">315</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -467,13 +469,66 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00309">309</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00324">324</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classuicilibris_1_1w2mMainWindow_ada098421fc13a62937c011086ce8f70a_icgraph.png" border="0" usemap="#classuicilibris_1_1w2mMainWindow_ada098421fc13a62937c011086ce8f70a_icgraph" alt=""/></div>
 <map name="classuicilibris_1_1w2mMainWindow_ada098421fc13a62937c011086ce8f70a_icgraph" id="classuicilibris_1_1w2mMainWindow_ada098421fc13a62937c011086ce8f70a_icgraph">
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a44b374bc853c2903372e4a0d421929a3"></a><!-- doxytag: member="uicilibris::w2mMainWindow::getSelected" ref="a44b374bc853c2903372e4a0d421929a3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3">uicilibris.w2mMainWindow.getSelected</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>area</em> = <code>None</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>allSelected</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>gets the text selected in the drop area, and converts eventually all the line breaks </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">area</td><td>if None, defaults to self.ui.wikiDropArea; else can be another text containing widget </td></tr>
+    <tr><td class="paramname">allSelected</td><td>: selects everything if True returns the selected contents as a unicode string </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00223">223</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3_icgraph.png" border="0" usemap="#classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3_icgraph" alt=""/></div>
+<map name="classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3_icgraph" id="classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3_icgraph">
 </map>
 </div>
 </p>
@@ -497,7 +552,7 @@ Here is the caller graph for this function:</div>
 
 <p>inputs self.wikiIndex </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00269">269</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00284">284</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -527,7 +582,7 @@ Here is the caller graph for this function:</div>
 
 <p>raises the log panel </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00413">413</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00429">429</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -557,7 +612,7 @@ Here is the caller graph for this function:</div>
 
 <p>launches gnome-terminal and opens a shell in self.tmpDir </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00400">400</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00416">416</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -597,7 +652,7 @@ Here is the caller graph for this function:</div>
 
 <p>deals with a text information to deliver to self.compileProgress </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00371">371</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00387">387</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -627,7 +682,7 @@ Here is the caller graph for this function:</div>
 
 <p>stops the thread self.threadLinksToLatex </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00281">281</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00296">296</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -649,7 +704,7 @@ Here is the caller graph for this function:</div>
 <p>turns the selected contents of the first tab into Latex code which is fed into the second tab. </p>
 <p>The first tab is supposed to provide a series of links to wiki pages. If nothing is selected previously, the whole contents are selected. </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -695,7 +750,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00290">290</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00305">305</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -742,7 +797,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00331">331</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00346">346</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -781,7 +836,7 @@ Here is the caller graph for this function:</div>
 
 <p>runs PdfLatex with the contents available in self.ui.latexCodeArea </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00353">353</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00368">368</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -979,7 +1034,7 @@ Here is the caller graph for this function:</div>
 
 <p>terminates the thread of Latex compilation if it is still running </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00381">381</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00397">397</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1009,7 +1064,7 @@ Here is the caller graph for this function:</div>
 
 <p>terminates the thread of LaTeX expansion if it is still running </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00235">235</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00254">254</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1031,7 +1086,7 @@ Here is the caller graph for this function:</div>
 <p>turns the selected contents of the first tab into Latex code which is fed into the second tab. </p>
 <p>If nothing is selected previously, the whole contents are selected. </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00220">220</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00243">243</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1091,7 +1146,7 @@ Here is the call graph for this function:</div>
 
 <p>launches a subprocess to view the PDF file if any </p>
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00389">389</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00405">405</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1194,7 +1249,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00353">353</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00368">368</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1209,7 +1264,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00353">353</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00368">368</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1224,7 +1279,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1254,7 +1309,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1284,7 +1339,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1314,7 +1369,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00220">220</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00243">243</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1329,7 +1384,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00353">353</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00368">368</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1359,7 +1414,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1374,7 +1429,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00246">246</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00265">265</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1389,7 +1444,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00220">220</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00243">243</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1404,7 +1459,7 @@ Here is the caller graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="____init_____8py_source.html#l00220">220</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
+<p>Definition at line <a class="el" href="____init_____8py_source.html#l00243">243</a> of file <a class="el" href="____init_____8py_source.html">__init__.py</a>.</p>
 
 </div>
 </div>
@@ -1494,7 +1549,7 @@ Here is the caller graph for this function:</div>
       <li class="navelem"><a class="el" href="namespaceuicilibris.html">uicilibris</a>      </li>
       <li class="navelem"><a class="el" href="classuicilibris_1_1w2mMainWindow.html">w2mMainWindow</a>      </li>
 
-    <li class="footer">Generated on Sun May 13 2012 16:49:16 for UiciLibris by
+    <li class="footer">Generated on Thu May 17 2012 22:37:47 for UiciLibris by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -12,6 +12,7 @@ var searchData=
   ['getlines',['getLines',['../classuicilibris_1_1wikiParser_1_1lineJoiner.html#aef5495971e8512ad4e86be06b751ac0e',1,'uicilibris::wikiParser::lineJoiner.getLines()'],['../classuicilibris_1_1wikiParser_1_1txtFileCacher.html#a5d552058a3ae2a60667b53fd826fb89a',1,'uicilibris::wikiParser::txtFileCacher.getLines()']]],
   ['getloginurl',['getLoginUrl',['../classuicilibris_1_1mediawiki_1_1MediawikiOpener.html#acb7c859c9e9ef620cf6f6665f015fb15',1,'uicilibris::mediawiki::MediawikiOpener']]],
   ['getopener',['getOpener',['../classuicilibris_1_1mediawiki_1_1MediawikiOpener.html#aa329295cca8906f4f26a735fc26e16fd',1,'uicilibris::mediawiki::MediawikiOpener']]],
+  ['getselected',['getSelected',['../classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3',1,'uicilibris::w2mMainWindow']]],
   ['getwikicontents',['getWikiContents',['../namespaceuicilibris_1_1wikiParser.html#a3ddb4d65f8af68c58dc5750f4dccc728',1,'uicilibris::wikiParser']]],
   ['getwikicontentsbytitle',['getWikiContentsByTitle',['../classuicilibris_1_1wikiParser_1_1wikiParser.html#a4f51eda5708d394cf790242ee181cf5b',1,'uicilibris::wikiParser::wikiParser']]],
   ['getwikiindex',['getWikiIndex',['../classuicilibris_1_1w2mMainWindow.html#a6717d417cd86ab78b4428a14b5ad4b0c',1,'uicilibris::w2mMainWindow']]],

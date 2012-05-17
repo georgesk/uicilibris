@@ -34,6 +34,8 @@ def \hyperlink{classuicilibris_1_1w2mMainWindow_a588c437ad13c0313a23eda4d4fbe633
 \begin{DoxyCompactList}\small\item\em search the next occurence of a fragment if it is defined \end{DoxyCompactList}\item 
 def \hyperlink{classuicilibris_1_1w2mMainWindow_a1a1b41e898d650d99ee9de7c0f423ac8}{set\-Images}
 \begin{DoxyCompactList}\small\item\em register the set of images to be used with one document \end{DoxyCompactList}\item 
+def \hyperlink{classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3}{get\-Selected}
+\begin{DoxyCompactList}\small\item\em gets the text selected in the drop area, and converts eventually all the line breaks \end{DoxyCompactList}\item 
 def \hyperlink{classuicilibris_1_1w2mMainWindow_a2572ed1ecb17d7984699be7fd2b4c16f}{to\-Latex}
 \begin{DoxyCompactList}\small\item\em turns the selected contents of the first tab into \-Latex code which is fed into the second tab. \end{DoxyCompactList}\item 
 def \hyperlink{classuicilibris_1_1w2mMainWindow_afcd6b1cbd2e3c7c49c3eb218e63d74fb}{stop\-To\-Latex}
@@ -208,7 +210,7 @@ closes the wait spin dialog
 
 
 
-\-Definition at line 321 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 336 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -234,7 +236,7 @@ appends a lin in the \-Error area
 \end{DoxyParams}
 
 
-\-Definition at line 300 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 315 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -283,7 +285,36 @@ sets the contents of the latex area
 \end{DoxyParams}
 
 
-\-Definition at line 309 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 324 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!get\-Selected@{get\-Selected}}
+\index{get\-Selected@{get\-Selected}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
+\subsubsection[{get\-Selected}]{\setlength{\rightskip}{0pt plus 5cm}def {\bf uicilibris.\-w2m\-Main\-Window.\-get\-Selected} (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{area = {\ttfamily \-None}, }
+\item[{}]{all\-Selected = {\ttfamily \-False}}
+\end{DoxyParamCaption}
+)}}\label{classuicilibris_1_1w2mMainWindow_a44b374bc853c2903372e4a0d421929a3}
+
+
+gets the text selected in the drop area, and converts eventually all the line breaks 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em area} & if \-None, defaults to self.\-ui.\-wiki\-Drop\-Area; else can be another text containing widget \\
+\hline
+{\em all\-Selected} & \-: selects everything if \-True returns the selected contents as a unicode string \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 223 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -303,7 +334,7 @@ inputs self.\-wiki\-Index
 
 
 
-\-Definition at line 269 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 284 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -323,7 +354,7 @@ raises the log panel
 
 
 
-\-Definition at line 413 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 429 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -343,7 +374,7 @@ launches gnome-\/terminal and opens a shell in self.\-tmp\-Dir
 
 
 
-\-Definition at line 400 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 416 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -364,7 +395,7 @@ deals with a text information to deliver to self.\-compile\-Progress
 
 
 
-\-Definition at line 371 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 387 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -384,7 +415,7 @@ stops the thread self.\-thread\-Links\-To\-Latex
 
 
 
-\-Definition at line 281 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 296 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a1cfdfd4a9daf1a27d3d7f29cacb9f757}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!links\-To\-Latex@{links\-To\-Latex}}
 \index{links\-To\-Latex@{links\-To\-Latex}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -399,7 +430,7 @@ turns the selected contents of the first tab into \-Latex code which is fed into
 
 \-The first tab is supposed to provide a series of links to wiki pages. \-If nothing is selected previously, the whole contents are selected. 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -425,7 +456,7 @@ increments the progress bar in self.\-progress\-L2\-L and changes the text of th
 \end{DoxyParams}
 
 
-\-Definition at line 290 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 305 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -451,7 +482,7 @@ registers a recently compiles \-P\-D\-F file and displays log data in the log pa
 \end{DoxyParams}
 
 
-\-Definition at line 331 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 346 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -476,7 +507,7 @@ runs \-Pdf\-Latex with the contents available in self.\-ui.\-latex\-Code\-Area
 
 
 
-\-Definition at line 353 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 368 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -594,7 +625,7 @@ terminates the thread of \-Latex compilation if it is still running
 
 
 
-\-Definition at line 381 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 397 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -614,7 +645,7 @@ terminates the thread of \-La\-Te\-X expansion if it is still running
 
 
 
-\-Definition at line 235 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 254 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a2572ed1ecb17d7984699be7fd2b4c16f}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!to\-Latex@{to\-Latex}}
 \index{to\-Latex@{to\-Latex}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -629,7 +660,7 @@ turns the selected contents of the first tab into \-Latex code which is fed into
 
 \-If nothing is selected previously, the whole contents are selected. 
 
-\-Definition at line 220 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 243 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -669,7 +700,7 @@ launches a subprocess to view the \-P\-D\-F file if any
 
 
 
-\-Definition at line 389 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 405 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 
 
@@ -722,21 +753,21 @@ wiki drop area methods
 \subsubsection[{compile\-Progress}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::compile\-Progress}}}\label{classuicilibris_1_1w2mMainWindow_a8c8646a28acac6615945567f1fa46c69}
 
 
-\-Definition at line 353 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 368 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_afe2ccbbc20677f9ddd2d2fa77caeb806}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!current\-Image@{current\-Image}}
 \index{current\-Image@{current\-Image}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{current\-Image}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::current\-Image}}}\label{classuicilibris_1_1w2mMainWindow_afe2ccbbc20677f9ddd2d2fa77caeb806}
 
 
-\-Definition at line 353 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 368 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a2f24f6bdda0fbbca6e1db32c7d98340e}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!current\-Wiki\-Address@{current\-Wiki\-Address}}
 \index{current\-Wiki\-Address@{current\-Wiki\-Address}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{current\-Wiki\-Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::current\-Wiki\-Address}}}\label{classuicilibris_1_1w2mMainWindow_a2f24f6bdda0fbbca6e1db32c7d98340e}
 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_afb4f580f333201e8a365c655f2d4007d}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!fragment@{fragment}}
 \index{fragment@{fragment}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -750,7 +781,7 @@ wiki drop area methods
 \subsubsection[{home\-Url}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::home\-Url}}}\label{classuicilibris_1_1w2mMainWindow_a2bc2b98beaf3e58c75d0d498d04a633a}
 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_aea918e60f8f75f52253e51e3d9be7541}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!image\-Set@{image\-Set}}
 \index{image\-Set@{image\-Set}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -764,7 +795,7 @@ wiki drop area methods
 \subsubsection[{input\-Text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::input\-Text}}}\label{classuicilibris_1_1w2mMainWindow_a0f89ac428c7513bf0ec4dbf0a3ecb5d1}
 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_ac0ae42df26bed5f2fa3fc528e45ed509}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!latex\-Comp@{latex\-Comp}}
 \index{latex\-Comp@{latex\-Comp}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -778,14 +809,14 @@ wiki drop area methods
 \subsubsection[{latex\-Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::latex\-Source}}}\label{classuicilibris_1_1w2mMainWindow_ada151c14c9130c23e785400ed4a928a0}
 
 
-\-Definition at line 220 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 243 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a7b0a865015bd2ba10295f6005cea9d38}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!lc\-Thread@{lc\-Thread}}
 \index{lc\-Thread@{lc\-Thread}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{lc\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::lc\-Thread}}}\label{classuicilibris_1_1w2mMainWindow_a7b0a865015bd2ba10295f6005cea9d38}
 
 
-\-Definition at line 353 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 368 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a8919c7e4aa2248b775d19d4ee06e4804}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!locale@{locale}}
 \index{locale@{locale}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
@@ -799,28 +830,28 @@ wiki drop area methods
 \subsubsection[{progress\-L2\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::progress\-L2\-L}}}\label{classuicilibris_1_1w2mMainWindow_a4efb76de4a069dcd039f109ef4919ef1}
 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a47c2a15391bed6ec03cde163f38e6c5b}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!thread\-Links\-To\-Latex@{thread\-Links\-To\-Latex}}
 \index{thread\-Links\-To\-Latex@{thread\-Links\-To\-Latex}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{thread\-Links\-To\-Latex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::thread\-Links\-To\-Latex}}}\label{classuicilibris_1_1w2mMainWindow_a47c2a15391bed6ec03cde163f38e6c5b}
 
 
-\-Definition at line 246 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 265 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_ac67489763eaf17eae4ce5f1cd0de6b89}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!to\-Latex\-Wait@{to\-Latex\-Wait}}
 \index{to\-Latex\-Wait@{to\-Latex\-Wait}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{to\-Latex\-Wait}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::to\-Latex\-Wait}}}\label{classuicilibris_1_1w2mMainWindow_ac67489763eaf17eae4ce5f1cd0de6b89}
 
 
-\-Definition at line 220 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 243 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_af19955a3bdc866a94bead13aa3afa0d0}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!to\-L\-Thread@{to\-L\-Thread}}
 \index{to\-L\-Thread@{to\-L\-Thread}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}
 \subsubsection[{to\-L\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uicilibris.\-w2m\-Main\-Window\-::to\-L\-Thread}}}\label{classuicilibris_1_1w2mMainWindow_af19955a3bdc866a94bead13aa3afa0d0}
 
 
-\-Definition at line 220 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
+\-Definition at line 243 of file \-\_\-\-\_\-init\-\_\-\-\_\-.\-py.
 
 \hypertarget{classuicilibris_1_1w2mMainWindow_a73782bac2df26e751c3708d1d4bf91ea}{\index{uicilibris\-::w2m\-Main\-Window@{uicilibris\-::w2m\-Main\-Window}!ui@{ui}}
 \index{ui@{ui}!uicilibris::w2mMainWindow@{uicilibris\-::w2m\-Main\-Window}}

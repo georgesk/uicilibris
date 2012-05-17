@@ -40,6 +40,7 @@ def pTitlePage(d):
     result+="\\end{center}"
     if "editor" in d:
         result+="{\\large %s}\\\\ \n" %d["editor"]
+    result+="\\end{center}"
     result+="\\end{titlepage}"
     result+="\\pagebreak \\tableofcontents \\listoffigures\\pagebreak\n"
 

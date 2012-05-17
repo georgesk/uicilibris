@@ -11,6 +11,7 @@ var searchData=
   ['transform2article',['transform2article',['../namespaceuicilibris_1_1transform2article.html',1,'uicilibris']]],
   ['transform2book',['transform2book',['../namespaceuicilibris_1_1transform2book.html',1,'uicilibris']]],
   ['uicilibris',['uicilibris',['../namespaceuicilibris.html',1,'']]],
+  ['uicisoup',['uiciSoup',['../namespaceuicilibris_1_1uiciSoup.html',1,'uicilibris']]],
   ['url',['url',['../namespaceuicilibris_1_1url.html',1,'uicilibris']]],
   ['version',['version',['../namespaceuicilibris_1_1version.html',1,'uicilibris']]],
   ['w2article',['w2article',['../namespaceuicilibris_1_1w2article.html',1,'uicilibris']]],

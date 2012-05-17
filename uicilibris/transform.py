@@ -77,7 +77,7 @@ def transform_itemenums(string, state):
     
     # now, substitute item markers
     p = re.compile("^([\*\#]+)(.*)$")
-    _string = p.sub(r"  \\item\2", string)
+    _string = p.sub(r"  \\item \2", string)
     string = preamble + _string
  
     return string

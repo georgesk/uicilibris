@@ -34,10 +34,11 @@ var annotated =
     [ "titlePage.titlePage", "classtitlePage_1_1titlePage.html", "classtitlePage_1_1titlePage" ],
     [ "uicilibris.toLatexThread", "classuicilibris_1_1toLatexThread.html", "classuicilibris_1_1toLatexThread" ],
     [ "uicilibris.wikiParser.txtFileCacher", "classuicilibris_1_1wikiParser_1_1txtFileCacher.html", "classuicilibris_1_1wikiParser_1_1txtFileCacher" ],
+    [ "uicilibris.uiciSoup.uiciSoup", "classuicilibris_1_1uiciSoup_1_1uiciSoup.html", "classuicilibris_1_1uiciSoup_1_1uiciSoup" ],
     [ "uicilibris::w2bstate::w2bstate", "classuicilibris_1_1w2bstate_1_1w2bstate.html", "classuicilibris_1_1w2bstate_1_1w2bstate" ],
     [ "uicilibris.w2mMainWindow", "classuicilibris_1_1w2mMainWindow.html", "classuicilibris_1_1w2mMainWindow" ],
+    [ "uicilibris.w2book.wiki2", "classuicilibris_1_1w2book_1_1wiki2.html", "classuicilibris_1_1w2book_1_1wiki2" ],
     [ "uicilibris.w2article.wiki2", "classuicilibris_1_1w2article_1_1wiki2.html", "classuicilibris_1_1w2article_1_1wiki2" ],
     [ "uicilibris.w2beamer.wiki2", "classuicilibris_1_1w2beamer_1_1wiki2.html", "classuicilibris_1_1w2beamer_1_1wiki2" ],
-    [ "uicilibris.w2book.wiki2", "classuicilibris_1_1w2book_1_1wiki2.html", "classuicilibris_1_1w2book_1_1wiki2" ],
     [ "uicilibris.wikiParser.wikiParser", "classuicilibris_1_1wikiParser_1_1wikiParser.html", "classuicilibris_1_1wikiParser_1_1wikiParser" ]
 ];

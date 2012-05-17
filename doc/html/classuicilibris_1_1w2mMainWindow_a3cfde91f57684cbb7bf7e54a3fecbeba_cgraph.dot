@@ -8,4 +8,6 @@ digraph G
   Node2 [label="uicilibris.w2mMainWindow.setPdfProductsEnabled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a63405a7e53f8162caf4cc917954ec971",tooltip="enable/disable the buttons which depend from files output by pdflatex"];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
   Node3 [label="uicilibris.w2mMainWindow.stopPdfLatex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#abbbadefbe280076540bf281798cc2869",tooltip="terminates the thread of Latex compilation if it is still running"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="uicilibris.w2mMainWindow.getSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3",tooltip="gets the text selected in the drop area, and converts eventually all the line breaks"];
 }

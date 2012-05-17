@@ -19,6 +19,7 @@ var namespaces =
     [ "uicilibris::transform", "namespaceuicilibris_1_1transform.html", "namespaceuicilibris_1_1transform" ],
     [ "uicilibris::transform2article", "namespaceuicilibris_1_1transform2article.html", "namespaceuicilibris_1_1transform2article" ],
     [ "uicilibris::transform2book", "namespaceuicilibris_1_1transform2book.html", "namespaceuicilibris_1_1transform2book" ],
+    [ "uicilibris::uiciSoup", "namespaceuicilibris_1_1uiciSoup.html", "namespaceuicilibris_1_1uiciSoup" ],
     [ "uicilibris::url", "namespaceuicilibris_1_1url.html", "namespaceuicilibris_1_1url" ],
     [ "uicilibris::version", "namespaceuicilibris_1_1version.html", "namespaceuicilibris_1_1version" ],
     [ "uicilibris::w2article", "namespaceuicilibris_1_1w2article.html", "namespaceuicilibris_1_1w2article" ],

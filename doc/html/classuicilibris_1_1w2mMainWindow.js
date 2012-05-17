@@ -8,6 +8,7 @@ var classuicilibris_1_1w2mMainWindow =
     [ "displayErr", "classuicilibris_1_1w2mMainWindow.html#a4f683d705e901227efacd4d3b59da2d7", null ],
     [ "displayManual", "classuicilibris_1_1w2mMainWindow.html#a9e24390ca18a0b41afa56c6b24f7d06b", null ],
     [ "feedIntoLatexArea", "classuicilibris_1_1w2mMainWindow.html#ada098421fc13a62937c011086ce8f70a", null ],
+    [ "getSelected", "classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3", null ],
     [ "getWikiIndex", "classuicilibris_1_1w2mMainWindow.html#a6717d417cd86ab78b4428a14b5ad4b0c", null ],
     [ "gotoLog", "classuicilibris_1_1w2mMainWindow.html#a7895d4ac97825f2105c4508a4b5e82f9", null ],
     [ "hack", "classuicilibris_1_1w2mMainWindow.html#a55d3ee40c7ee582b4ce7af1ce91c92d7", null ],

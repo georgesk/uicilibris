@@ -3,5 +3,5 @@ digraph G
   edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
   node [fontname="FreeSans",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="uicilibris.wikiParser.txtFileCacher",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1wikiParser_1_1txtFileCacher.html",tooltip="a cache for text files"];
+  Node1 [label="uicilibris.wikiParser.lineJoiner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1wikiParser_1_1lineJoiner.html",tooltip="a class to join lines taking in account some wiki syntax"];
 }

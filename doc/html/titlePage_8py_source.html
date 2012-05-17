@@ -128,18 +128,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040     result+=<span class="stringliteral">&quot;\\end{center}&quot;</span>
 <a name="l00041"></a>00041     <span class="keywordflow">if</span> <span class="stringliteral">&quot;editor&quot;</span> <span class="keywordflow">in</span> d:
 <a name="l00042"></a>00042         result+=<span class="stringliteral">&quot;{\\large %s}\\\\ \n&quot;</span> %d[<span class="stringliteral">&quot;editor&quot;</span>]
-<a name="l00043"></a>00043     result+=<span class="stringliteral">&quot;\\end{titlepage}&quot;</span>
-<a name="l00044"></a>00044     result+=<span class="stringliteral">&quot;\\pagebreak \\tableofcontents \\listoffigures\\pagebreak\n&quot;</span>
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046     <span class="keywordflow">return</span> result
-<a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="classtitlePage_1_1titlePage.html">00048</a> <span class="keyword">class </span><a class="code" href="classtitlePage_1_1titlePage.html">titlePage</a>(templateParser, <a class="code" href="classplugin.html">plugin</a>):
-<a name="l00049"></a><a class="code" href="classtitlePage_1_1titlePage.html#ad1ec9122c9da6b45f3d3f883e6781d50">00049</a>     <span class="keyword">def </span><a class="code" href="classtitlePage_1_1titlePage.html#ad1ec9122c9da6b45f3d3f883e6781d50">__init__</a>(self):
-<a name="l00050"></a>00050         plugin.__init__(self)
-<a name="l00051"></a>00051         templateParser.__init__(self, <span class="stringliteral">&quot;Latex:TitlePage&quot;</span>, fun=pTitlePage)
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <a class="code" href="namespaceuicilibris_1_1plugin_1_1plugin.html#ad569df9399bc9af44e1e90bb4d820701">register_plugin</a>(titlePage)
-<a name="l00054"></a>00054 
+<a name="l00043"></a>00043     result+=<span class="stringliteral">&quot;\\end{center}&quot;</span>
+<a name="l00044"></a>00044     result+=<span class="stringliteral">&quot;\\end{titlepage}&quot;</span>
+<a name="l00045"></a>00045     result+=<span class="stringliteral">&quot;\\pagebreak \\tableofcontents \\listoffigures\\pagebreak\n&quot;</span>
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="keywordflow">return</span> result
+<a name="l00048"></a>00048 
+<a name="l00049"></a><a class="code" href="classtitlePage_1_1titlePage.html">00049</a> <span class="keyword">class </span><a class="code" href="classtitlePage_1_1titlePage.html">titlePage</a>(templateParser, <a class="code" href="classplugin.html">plugin</a>):
+<a name="l00050"></a><a class="code" href="classtitlePage_1_1titlePage.html#ad1ec9122c9da6b45f3d3f883e6781d50">00050</a>     <span class="keyword">def </span><a class="code" href="classtitlePage_1_1titlePage.html#ad1ec9122c9da6b45f3d3f883e6781d50">__init__</a>(self):
+<a name="l00051"></a>00051         plugin.__init__(self)
+<a name="l00052"></a>00052         templateParser.__init__(self, <span class="stringliteral">&quot;Latex:TitlePage&quot;</span>, fun=pTitlePage)
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <a class="code" href="namespaceuicilibris_1_1plugin_1_1plugin.html#ad569df9399bc9af44e1e90bb4d820701">register_plugin</a>(titlePage)
+<a name="l00055"></a>00055 
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -160,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul>
       <li class="navelem"><a class="el" href="titlePage_8py.html">titlePage.py</a>      </li>
 
-    <li class="footer">Generated on Sun May 13 2012 16:49:15 for UiciLibris by
+    <li class="footer">Generated on Thu May 17 2012 22:37:46 for UiciLibris by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

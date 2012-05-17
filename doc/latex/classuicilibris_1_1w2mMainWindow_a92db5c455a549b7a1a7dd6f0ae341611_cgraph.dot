@@ -39,18 +39,20 @@ digraph G
   Node17 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
   Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
   Node18 [label="uicilibris.w2mMainWindow.stopPdfLatex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#abbbadefbe280076540bf281798cc2869",tooltip="terminates the thread of Latex compilation if it is still running"];
-  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
-  Node19 [label="uicilibris.w2mMainWindow.viewPdfLatex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#ab7460cd2f26720e6a131093d56bcc68a",tooltip="launches a subprocess to view the PDF file if any"];
+  Node17 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="uicilibris.w2mMainWindow.getSelected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a44b374bc853c2903372e4a0d421929a3",tooltip="gets the text selected in the drop area, and converts eventually all the line breaks"];
   Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid"];
-  Node20 [label="uicilibris.w2mMainWindow.hack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a55d3ee40c7ee582b4ce7af1ce91c92d7",tooltip="launches gnome-terminal and opens a shell in self.tmpDir"];
+  Node20 [label="uicilibris.w2mMainWindow.viewPdfLatex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#ab7460cd2f26720e6a131093d56bcc68a",tooltip="launches a subprocess to view the PDF file if any"];
   Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid"];
-  Node21 [label="uicilibris.w2mMainWindow.gotoLog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a7895d4ac97825f2105c4508a4b5e82f9",tooltip="raises the log panel"];
+  Node21 [label="uicilibris.w2mMainWindow.hack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a55d3ee40c7ee582b4ce7af1ce91c92d7",tooltip="launches gnome-terminal and opens a shell in self.tmpDir"];
   Node1 -> Node22 [color="midnightblue",fontsize="10",style="solid"];
-  Node22 [label="uicilibris.w2mMainWindow.search",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a0e9674456559e4ae92ade2c99cf93d7b",tooltip="makes a search in the error tab"];
+  Node22 [label="uicilibris.w2mMainWindow.gotoLog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a7895d4ac97825f2105c4508a4b5e82f9",tooltip="raises the log panel"];
   Node1 -> Node23 [color="midnightblue",fontsize="10",style="solid"];
-  Node23 [label="uicilibris.w2mMainWindow.searchNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a588c437ad13c0313a23eda4d4fbe6334",tooltip="search the next occurence of a fragment if it is defined"];
+  Node23 [label="uicilibris.w2mMainWindow.search",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a0e9674456559e4ae92ade2c99cf93d7b",tooltip="makes a search in the error tab"];
   Node1 -> Node24 [color="midnightblue",fontsize="10",style="solid"];
-  Node24 [label="uicilibris.w2mMainWindow.wa_dragEnterEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a897d993b629f629317fff71b4c3dcaca",tooltip="wiki drop area methods"];
+  Node24 [label="uicilibris.w2mMainWindow.searchNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a588c437ad13c0313a23eda4d4fbe6334",tooltip="search the next occurence of a fragment if it is defined"];
   Node1 -> Node25 [color="midnightblue",fontsize="10",style="solid"];
-  Node25 [label="uicilibris.w2mMainWindow.wa_dropEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#ad31a0058c04bb84ca92c70617e29eced"];
+  Node25 [label="uicilibris.w2mMainWindow.wa_dragEnterEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#a897d993b629f629317fff71b4c3dcaca",tooltip="wiki drop area methods"];
+  Node1 -> Node26 [color="midnightblue",fontsize="10",style="solid"];
+  Node26 [label="uicilibris.w2mMainWindow.wa_dropEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1w2mMainWindow.html#ad31a0058c04bb84ca92c70617e29eced"];
 }

@@ -132,6 +132,7 @@ class wiki2(wikiParser.wikiParser):
         turns lines with math-only contents to out-of text formulas
         takes in account url-like words
         """
+        # convert a few html entities introduced by beautifulsoup
         s=s.replace("&quot;","\"")
         s=s.replace("&amp;lt;math&gt;", "$")
         s=s.replace("&amp;lt;/math&gt;", "$")
@@ -144,7 +145,7 @@ class wiki2(wikiParser.wikiParser):
         s=s.replace("&amp;gt;", ">")
         s=s.replace("&gt;", ">")
         s=s.replace("&amp;amp;","\\&")
-        s=s.replace("%", "\\%{}")
+        s=s.replace("%", "\\%")
         s=re.sub(r"\\comment\{(.*)\}",r"%% \1",s)
         # some mediawiki instances do not provide the same results,
         # so here is a second pass to translate special markup
@@ -161,10 +162,10 @@ class wiki2(wikiParser.wikiParser):
             s="$%s$" %s
         # hyperlinks with an anchor
         olds=s
-        s=re.sub(r"\[(http://[^ \}]+) +([^\}]+)]", r"\\href{\1 }{\mbox{\2} }",s)
+        s=re.sub(r"\[(http://[^ ]+) +(.+)]", r"\\href{\1 }{\mbox{\2} }",s)
         # http urls alone
-        if olds==s: # avoid processing links twice
-            s=re.sub(r"(http://[^ \}]+)", r"\\href{\1 }{\mbox{\1} }",s)
+        # avoid processing links already prefixed by "href{"
+        s=re.sub(r"([^{])(http://[^ ]+)", r"\1\\href{\2 }{\mbox{\2} }",s)
         return s
     
     def convert2(self,lines, report=False, transform=lambda x, y, z: x):

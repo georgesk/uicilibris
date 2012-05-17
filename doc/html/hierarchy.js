@@ -44,6 +44,7 @@ var hierarchy =
       [ "uicilibris.templateParser.imageParser", "classuicilibris_1_1templateParser_1_1imageParser.html", null ]
     ] ],
     [ "uicilibris.wikiParser.txtFileCacher", "classuicilibris_1_1wikiParser_1_1txtFileCacher.html", null ],
+    [ "uicilibris.uiciSoup.uiciSoup", "classuicilibris_1_1uiciSoup_1_1uiciSoup.html", null ],
     [ "uicilibris::w2bstate::w2bstate", "classuicilibris_1_1w2bstate_1_1w2bstate.html", null ],
     [ "uicilibris.wikiParser.wikiParser", "classuicilibris_1_1wikiParser_1_1wikiParser.html", [
       [ "uicilibris.w2beamer.wiki2", "classuicilibris_1_1w2beamer_1_1wiki2.html", null ],
