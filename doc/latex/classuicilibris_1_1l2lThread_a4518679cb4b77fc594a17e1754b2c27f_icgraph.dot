@@ -1,9 +1,0 @@
-digraph G
-{
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="uicilibris.l2lThread.reportErr",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 [label="uicilibris.l2lThread.run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classuicilibris_1_1l2lThread.html#a53c112a8443b3513c09e38612e867079",tooltip="turns the contents of the parent&#39;s first tab into Latex code which is fed into the second tab..."];
-}
