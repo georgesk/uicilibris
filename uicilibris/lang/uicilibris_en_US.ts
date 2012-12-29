@@ -407,107 +407,102 @@
 <context>
     <name>uicilibris</name>
     <message>
-        <location filename="../uicilibris" line="211"/>
+        <location filename="../__init__.py" line="212"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="257"/>
+        <location filename="../__init__.py" line="281"/>
         <source>Expanding to LaTeX</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="406"/>
+        <location filename="../__init__.py" line="439"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="291"/>
+        <location filename="../__init__.py" line="324"/>
         <source>Links to LaTeX processing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="339"/>
+        <location filename="../__init__.py" line="372"/>
         <source>processing &apos;%1&apos; ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="384"/>
+        <location filename="../__init__.py" line="417"/>
         <source>Pdflatex failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="384"/>
+        <location filename="../__init__.py" line="417"/>
         <source>For some reason, Pdflatex failed.&lt;b /&gt;Try to hack around.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="406"/>
+        <location filename="../__init__.py" line="439"/>
         <source>Getting images ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="408"/>
+        <location filename="../__init__.py" line="441"/>
         <source>LaTeX compilation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="421"/>
+        <location filename="../__init__.py" line="455"/>
         <source>getting &apos;%1&apos; ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="439"/>
+        <location filename="../__init__.py" line="473"/>
         <source>Cannot open PDF file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="439"/>
+        <location filename="../__init__.py" line="473"/>
         <source>There is no reachable PDF file. Compile the LaTeX source, or check the error tab.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="451"/>
+        <location filename="../__init__.py" line="485"/>
         <source>Cannot find the temporary files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="451"/>
+        <location filename="../__init__.py" line="485"/>
         <source>There is no temporary files. Please run Pdflatex.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message encoding="UTF-8">
-        <location filename="../__init__.py" line="166"/>
-        <source>À propos</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
-        <location filename="../uicilibris" line="90"/>
+        <location filename="../__init__.py" line="91"/>
         <source>Style = Wiki to Book</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="91"/>
+        <location filename="../__init__.py" line="92"/>
         <source>Style = Wiki to Article</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="92"/>
+        <location filename="../__init__.py" line="93"/>
         <source>Style = Wiki to Beamer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="288"/>
+        <location filename="../__init__.py" line="321"/>
         <source>Connection to the mediawiki ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="352"/>
+        <location filename="../__init__.py" line="385"/>
         <source>Feature not yet implemented</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../uicilibris" line="352"/>
+        <location filename="../__init__.py" line="385"/>
         <source>The feature &apos;%1&apos; is not yet implemented. Report a bug to the developers.</source>
         <translation type="unfinished"></translation>
     </message>
