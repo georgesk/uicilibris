@@ -53,7 +53,7 @@ locale="C" # this global variable may be redefined later
 
 class w2mMainWindow(QMainWindow):
     
-    def __init__(self, parent, argv):
+    def __init__(self, parent, argv, locale="C"):
         """
         The constructor
         @param parent a parent window
@@ -63,6 +63,7 @@ class w2mMainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.windowTitle="UICI LIBRIS"
         QWidget.__init__(self, parent)
+        self.locale=locale
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_connections()
@@ -616,7 +617,6 @@ def run(argv):
     ###translation##
     locale = QLocale.system().name()
     qtTranslator = QTranslator()
-
     if qtTranslator.load("qt_" + locale):
         app.installTranslator(qtTranslator)
         
@@ -624,7 +624,7 @@ def run(argv):
     if appTranslator.load("/usr/share/uicilibris/lang/uicilibris_" + locale):
         app.installTranslator(appTranslator)
     
-    w = w2mMainWindow(None,argv)
+    w = w2mMainWindow(None,argv,locale)
     w.show()
     sys.exit(app.exec_())
     

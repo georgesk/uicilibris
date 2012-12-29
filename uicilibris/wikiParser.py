@@ -114,15 +114,19 @@ def imgFun(d):
     if modifiers:
         code+="[%s]" %modifiers[:-2]
     code+="{%s}" %d["imgFile"]
+    # embedding the image in a figure should be made whenether
+    # there is a caption or when the image is a wiki thumnail
     figure=False
     caption=""
+    for k in d: # iterate over d to find the caption, which must be last
+        if type(k)==type(0): #the key must be a number
+            if d[k][-2:]!="px": #not the width spec for the wiki!
+                caption=d[k]
+                figure=True
     for k in d:
         if type(k)==type(0): # for the numeric keys
             if d[k]=="thumb":
                 figure=True
-            elif caption=="": # the first unindentified value becomes a caption
-                figure=True
-                caption=d[k]
     if figure:
         code="\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\vspace{0.5em}\n%s\n\\end{center}\n\\end{figure}\n" %(caption, code)
     wParser.registerImage(d["imgFile"])
@@ -534,8 +538,12 @@ class wikiParser:
                 a=a[:pos]
             if cbInfo: cbInfo(a)
             contents=self.getWikiContentsByTitle(a)
-            contents=self.applyPlugins(contents) 
+            contents=self.applyPlugins(contents)
             processedContents=self.wikiTemplates(contents)
+            # if processedContents still contain some included images
+            # run another template processor
+            if "[[Image:" in processedContents:
+                processedContents=self.applyPlugins(processedContents)
             text+="\n<!-- uicilibris: begin '%s' -->\n" %a
             text+=processedContents+"\n"
             text+="\n<!-- uicilibris: end '%s' -->\n" %a

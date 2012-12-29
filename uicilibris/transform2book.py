@@ -171,10 +171,12 @@ def transform_tables(string, state, report=None):
     if m:
         t=tableState()
         # recognition of latex="some columns format"
-        p1 = re.compile("^{\|.*latex=&amp;quot;([^&]+)&amp;quot;")
+        p1 = re.compile("^{\|.*latex=&quot;([^&]+)&quot;")
         m1=p1.match(string)
         if m1:
-            t.setColFormat(m1.group(1)) 
+            formatcol=m1.group(1)
+            formatcol=formatcol.replace(r"//", r"////")
+            t.setColFormat(formatcol) 
         state.tableStack.append(t)
         state.allTables.append(t)
         return t.latexHeader()
@@ -203,13 +205,18 @@ def transform_tables(string, state, report=None):
             state.tableErrors.append("footer")
             return string
     ### table cell
-    p = re.compile(r"^\|([^\|].*)?$")
+    p = re.compile(r"^\|([^[]*\|)*(.*)$")
+    ### search an initial pipe char (|),
+    ### then any expressions without a link nor an image before another pipe
+    ### and the expression after the last pipe.
     m=p.match(string)
     if m:
         t=topOfStack(state.tableStack)
         if t != None:
             t.addCell()
-            return t.latexCell(m.group(1))
+            # only returns the text after the last pipe char.
+            cellContent=m.groups()[-1]
+            return t.latexCell(cellContent)
         else:
             reportErr("table cell with no table (%s). This can be due to a double closing curly brace '}}' in a mathematic formula, which is inside a template. To avoid corrupting the model, replace '}}' by '} }' in the math formula." %state.currentPage, report)
             state.tableErrors.append("cell")

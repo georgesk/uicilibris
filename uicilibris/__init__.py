@@ -5,7 +5,7 @@ licence={}
 licence['en']="""\
 uicilibris version %s:
 
-a program harvest a book from mediawiki contents
+a program to harvest a book from mediawiki contents
 
 Copyright (C)2011 Georges Khaznadar <georgesk@ofset.org>
 
@@ -46,7 +46,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from Ui_uicilibris import Ui_MainWindow
 from waitDialog import spinWheelWaitDialog
-import version,wikiParser, w2book
+import version, wikiParser, w2book, w2beamer, w2article, export
 import sys, re, StringIO, time, tempfile, subprocess, os.path
 
 locale="C" # this global variable may be redefined later
@@ -61,13 +61,15 @@ class w2mMainWindow(QMainWindow):
         """
          ######QT
         QMainWindow.__init__(self)
-        self.windowTitle="Wiki 2 Many"
+        self.windowTitle="UICI LIBRIS"
         QWidget.__init__(self, parent)
+        self.locale=locale
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui_connections()
-        self.locale=locale
         self.wikiIndex=None
+        self.latexSource=""
+        self.wikiSource=""
         self.latexComp=None
         self.wb=None
         self.fragment=QString("")
@@ -75,14 +77,48 @@ class w2mMainWindow(QMainWindow):
         self.ui.searchCombo.addItem("")
         self.ui.searchCombo.addItem("Warning:")
         self.ui.searchCombo.addItem("Error:")
+        self.style=None
+        self.initTargetBox()
+        self.threadLinksToLatex=None
         return
+
+    def targets(self):
+        """
+        @return a dictionary targets for the expansion wiki->latex;
+        each target is the key to
+        a tuple (QString, parser class, boolean oldWiki2beamer)
+        """
+        return {"0book"   : (QApplication.translate("uicilibris", "Style = Wiki to Book", None, QApplication.UnicodeUTF8), w2book, False),
+                "1article": (QApplication.translate("uicilibris", "Style = Wiki to Article", None, QApplication.UnicodeUTF8),w2article,False),
+                "2beamer" : (QApplication.translate("uicilibris", "Style = Wiki to Beamer", None, QApplication.UnicodeUTF8),w2beamer, True),
+                }
+
+    def autoParser(self):
+        """
+        returns automatically the right parser based on the target selected.
+        @return a parser class
+        """
+        return self.targets()[self.style][1]
 
     def autoOldStyle(self):
         """
-        @return False as this class has nothing to do with wiki2beamer currently
+        returns automatically the value of "old-style", which refers to the
+        style inherited from wiki2beamer original source
+        @return True if wiki2beamer's old style must be used.
         """
-        return False
+        return self.targets()[self.style][2]
+
     
+    def initTargetBox(self):
+        """
+        initializes the contents of the target comboBox
+        """
+        dico=self.targets()
+        for k in sorted(dico.keys()):
+            self.ui.targetBox.addItem(dico[k][0])
+        self.ui.targetBox.setCurrentIndex(0)
+        self.style=sorted(dico.keys())[0]
+
     def setPdfProductsEnabled(self, state):
         """
         enable/disable the buttons which depend from files output by pdflatex
@@ -91,6 +127,8 @@ class w2mMainWindow(QMainWindow):
         self.ui.viewPdfButton.setEnabled(state)
         self.ui.hackButton.setEnabled(state)
         self.ui.gotoLogButton.setEnabled(state)
+        # allow exports even if the source could not be compiled to a valid PDF
+        # self.ui.exportButton.setEnabled(state)
         if not state:
             self.ui.logArea.clear()
         
@@ -104,16 +142,18 @@ class w2mMainWindow(QMainWindow):
         self.connect(self.ui.text2latexButton, SIGNAL('clicked()'), self.toLatex)
         self.connect(self.ui.links2latexButton, SIGNAL('clicked()'), self.linksToLatex)
         self.connect(self.ui.baEditButton, SIGNAL('clicked()'), self.getWikiIndex)
+        self.connect(self.ui.targetBox, SIGNAL('currentIndexChanged(int)'), self.newStyle)
         self.connect(self, SIGNAL("latexready"), self.feedIntoLatexArea)
-        self.connect(self, SIGNAL("stopWaitLatex"), self.closeLatexWait)
         self.connect(self, SIGNAL("pdfready"), self.registerPdf)
         self.connect(self, SIGNAL("wikiAddress"), self.newWikiAddress)
         self.connect(self, SIGNAL("imgAddress"),  self.incCompileProgress)
         self.connect(self, SIGNAL("errMsg"),  self.displayErr)
+        self.connect(self, SIGNAL("notYetImplemented"),  self.warnNotYetImplemented)
         self.connect(self.ui.runPdflatexButton, SIGNAL('clicked()'), self.runPdfLatex)
         self.connect(self.ui.viewPdfButton, SIGNAL('clicked()'), self.viewPdfLatex)
         self.connect(self.ui.hackButton, SIGNAL('clicked()'), self.hack)
         self.connect(self.ui.gotoLogButton, SIGNAL('clicked()'), self.gotoLog)
+        self.connect(self.ui.exportButton, SIGNAL('clicked()'), self.export)
         self.connect(self.ui.searchCombo, SIGNAL('editTextChanged(QString)'), self.search)
         self.connect(self.ui.searchNextButton, SIGNAL('clicked()'), self.searchNext)
         ### connect drop methods
@@ -127,7 +167,7 @@ class w2mMainWindow(QMainWindow):
         event.acceptProposedAction()
         return
     
-    httpRegexp=re.compile(r"(http://.*/index.php)/[.-_\S:]+")
+    httpRegexp=re.compile(r"(http://.*)/.*/\S+")
     
     def wa_dropEvent(self, event):
         mimeData = event.mimeData()
@@ -136,9 +176,8 @@ class w2mMainWindow(QMainWindow):
             m=w2mMainWindow.httpRegexp.match(text)
             if m:
                 # get the web page's source
-                text=wikiParser.getWikiContents(text)[1]
+                self.wikiIndex, text=wikiParser.getWikiContents(text)
                 self.ui.wikiDropArea.setPlainText(text)
-                self.wikiIndex=m.group(1)
                 self.ui.wikiIndex.setText(self.wikiIndex)
             else:
                 self.ui.wikiDropArea.setPlainText(text)
@@ -153,6 +192,13 @@ class w2mMainWindow(QMainWindow):
             del self.latexComp
         QMainWindow.closeEvent(self, event)
 
+    def newStyle(self, index):
+        """
+        callback function invoked when the index has changed in
+        self.ui.targetBox; modifies self.style
+        """
+        self.style=sorted(self.targets().keys())[index]
+
     def about(self):
         """
         displays the about dialog
@@ -163,7 +209,7 @@ class w2mMainWindow(QMainWindow):
         else:
             l="en"
         msg=licence[l] %version.version
-        QMessageBox.information(None, QApplication.translate("uicilibris", "À propos", None, QApplication.UnicodeUTF8), msg)
+        QMessageBox.information(None, QApplication.translate("uicilibris", "About", None, QApplication.UnicodeUTF8), msg)
         return
 
     def displayManual(self):
@@ -229,8 +275,14 @@ class w2mMainWindow(QMainWindow):
         fed into the second tab. If nothing is selected previously, the whole
         contents are selected.
         """
+<<<<<<< HEAD
+        self.wikiSource=self.getAreaSelection(self.ui.wikiDropArea)
+        self.ui.latexCodeArea.clear()
+        self.toLatexWait=spinWheelWaitDialog(self, self.stopToLatex, title=QApplication.translate("uicilibris", "Expanding to LaTeX", None, QApplication.UnicodeUTF8))
+=======
         self.latexSource=self.getSelected()
         self.toLatexWait=spinWheelWaitDialog(self, self.stopToLatex, title="Expanding to LaTeX")
+>>>>>>> 35b5b3690b76c638ef5e07c8bb641fbf6cae0a41
         self.toLatexWait.show()
         self.toLThread=toLatexThread(self)
         self.toLThread.start()
@@ -242,6 +294,12 @@ class w2mMainWindow(QMainWindow):
         if self.toLThread.isRunning():
             self.toLThread.terminate()
 
+    def dropAreaText(self):
+        """
+        @return the text contained in the UI's drop area
+        """
+        return self.getAreaSelection(self.ui.wikiDropArea)
+    
     def linksToLatex(self):
         """
         turns the selected contents of the first tab into Latex code which is
@@ -249,19 +307,42 @@ class w2mMainWindow(QMainWindow):
         a series of links to wiki pages. If nothing is selected previously, the whole
         contents are selected.
         """
+<<<<<<< HEAD
+        self.inputText=self.dropAreaText()
+        self.ui.latexCodeArea.clear()
+=======
         self.inputText=self.getSelected()
         #initialize a wiki2book instance with the home page of the mediawiki
+>>>>>>> 35b5b3690b76c638ef5e07c8bb641fbf6cae0a41
         if self.wikiIndex==None:
             self.getWikiIndex()
-        self.homeUrl=self.wikiIndex.encode("utf-8")+"/fakePage"
         wikiAddresses=re.findall("\[\[([^\]]+)\]\]", self.inputText)
         self.currentWikiAddress=0 # number of addresses processed
-        self.progressL2L=QProgressDialog("Connection to %s ..." %self.homeUrl, "Cancel", 0, len(wikiAddresses)+1, self)
-        self.progressL2L.setWindowTitle("Links to LaTeX processing")
+        self.progressL2L=QProgressDialog(QApplication.translate("uicilibris","Connection to the mediawiki ...", None, QApplication.UnicodeUTF8),
+                                         QApplication.translate("uicilibris", "Cancel", None, QApplication.UnicodeUTF8),
+                                         0, len(wikiAddresses)+1, self)
+        self.progressL2L.setWindowTitle(QApplication.translate("uicilibris", "Links to LaTeX processing", None, QApplication.UnicodeUTF8))
         self.progressL2L.show()
         self.connect(self.progressL2L, SIGNAL("canceled()"), self.killThreadLinksToLatex)
-        self.threadLinksToLatex=l2lThread(self)
-        self.threadLinksToLatex.start()
+        if self.threadLinksToLatex==None:
+            # avoid starting this thread twice
+            self.threadLinksToLatex=l2lThread(self)
+            self.threadLinksToLatex.start()
+
+    def getAreaSelection(self, area):
+        """
+        gets the text selectet in a text area. Some recoding is
+        done to process end of paragraphs (unicode chatrs u'\u2029')
+        @param area a QTextEdit instance
+        @return the selected text in unicode format, or all the text
+        """
+        cursor=area.textCursor()
+        if not cursor.hasSelection():
+            area.selectAll()
+            cursor=area.textCursor()
+        text=cursor.selectedText()
+        text=text.replace(u'\u2029', '\n')
+        return unicode(text)
 
     def getWikiIndex(self):
         """
@@ -288,7 +369,7 @@ class w2mMainWindow(QMainWindow):
         """
         self.currentWikiAddress+=1
         self.progressL2L.setValue(self.currentWikiAddress)
-        self.progressL2L.setLabelText(u"processing '%s' ..." %a)
+        self.progressL2L.setLabelText(QApplication.translate("uicilibris", "processing '%1' ...", None, QApplication.UnicodeUTF8).arg(a))
 
     def displayErr(self, msg):
         """
@@ -297,26 +378,31 @@ class w2mMainWindow(QMainWindow):
         """
         self.ui.errorArea.append(msg)
 
-    def feedIntoLatexArea(self, text, multi=None):
+    def warnNotYetImplemented(self, msg):
+        """
+        warns about a feature not yet implemented
+        """
+        QMessageBox.warning (self, QApplication.translate("uicilibris","Feature not yet implemented", None, QApplication.UnicodeUTF8),
+                             QApplication.translate("uicilibris", "The feature '%1' is not yet implemented. Report a bug to the developers.", None, QApplication.UnicodeUTF8).arg(msg) )
+        return
+    
+    def feedIntoLatexArea(self, progress=None):
         """
         sets the contents of the latex area
-        @param text the contents, which must be in unicode format
-        @param multi must be True when a progressbar is used.
+        @param progress must be True when a progressbar is used.
         """
-        if multi != None:
+        text=("%s" %self.wb).decode("utf-8")
+        self.ui.latexCodeArea.setPlainText(text)
+        self.ui.tabWidget.setCurrentIndex(1)
+        if progress == "compiling":
             self.currentWikiAddress+=1
             self.progressL2L.setValue(self.currentWikiAddress)
             self.progressL2L.setLabelText(u"Finishing translation ...")
-        self.ui.latexCodeArea.setPlainText(text)
-        self.ui.tabWidget.setCurrentIndex(1)
+        elif progress=="endL2L":
+            self.progressL2L.close()
+        elif progress=="endToLatex":
+            self.toLatexWait.close()
         
-    def closeLatexWait(self):
-        """
-        closes the wait spin dialog
-        """
-        self.toLatexWait.close()
-            
-            
     def registerPdf(self, lc):
         """
         registers a recently compiles PDF file and displays log data
@@ -328,7 +414,8 @@ class w2mMainWindow(QMainWindow):
             self.setPdfProductsEnabled(True)
         else:
             self.ui.hackButton.setEnabled(True)
-            QMessageBox.warning (self, u"Pdflatex failed", u"For some reason, Pdflatex failed.<b />Try to hack around." )
+            QMessageBox.warning (self, QApplication.translate("uicilibris","Pdflatex failed", None, QApplication.UnicodeUTF8),
+                                 QApplication.translate("uicilibris", "For some reason, Pdflatex failed.<b />Try to hack around.", None, QApplication.UnicodeUTF8) )
         logInput=open(self.latexComp.logFileName,"r")
         try:
             log=logInput.read().decode("utf-8")
@@ -349,8 +436,9 @@ class w2mMainWindow(QMainWindow):
             self.latexComp=None
         self.setPdfProductsEnabled(False)
         self.currentImage=0
-        self.compileProgress=QProgressDialog("Getting images ...", "Cancel", 0, self.wb.imageCount()+1, self)
-        self.compileProgress.setWindowTitle("LaTeX compilation")
+        self.compileProgress=QProgressDialog(QApplication.translate("uicilibris", "Getting images ...", None, QApplication.UnicodeUTF8),
+                                             QApplication.translate("uicilibris", "Cancel", None, QApplication.UnicodeUTF8), 0, self.wb.imageCount()+1, self)
+        self.compileProgress.setWindowTitle(QApplication.translate("uicilibris", "LaTeX compilation", None, QApplication.UnicodeUTF8))
         self.compileProgress.show()
         self.connect(self.compileProgress, SIGNAL("canceled()"), self.stopPdfLatex)
         self.latexSource=self.getSelected(area=self.ui.latexCodeArea, 
@@ -364,7 +452,7 @@ class w2mMainWindow(QMainWindow):
         """
         self.currentImage+=1
         self.compileProgress.setValue(self.currentImage)
-        self.compileProgress.setLabelText(u"getting '%s' ..." %info)
+        self.compileProgress.setLabelText(QApplication.translate("uicilibris", "getting '%1' ...", None, QApplication.UnicodeUTF8).arg(info))
         return
 
     def stopPdfLatex(self):
@@ -382,7 +470,8 @@ class w2mMainWindow(QMainWindow):
             cmd="(evince %s &)" %self.latexComp.pdfFileName
             subprocess.call(cmd, shell=True)
         else:
-            QMessageBox.warning(self, "Cannot open PDF file", "There is no reachable PDF file. Compile the LaTeX source, or check the error tab.")
+            QMessageBox.warning(self, QApplication.translate("uicilibris", "Cannot open PDF file", None, QApplication.UnicodeUTF8),
+                                QApplication.translate("uicilibris", "There is no reachable PDF file. Compile the LaTeX source, or check the error tab.", None, QApplication.UnicodeUTF8))
 
     def hack(self):
         """
@@ -393,7 +482,8 @@ class w2mMainWindow(QMainWindow):
             cmd="(cd %s; gnome-terminal --title='%s' &)" %(tmpdir, "Uici Libris Terminal (%s)" %tmpdir)
             subprocess.call(cmd, shell=True)
         else:
-            QMessageBox.warning(self, "Cannot find the temporary files", "There is no temporary files. Plese run Pdflatex.")
+            QMessageBox.warning(self, QApplication.translate("uicilibris", "Cannot find the temporary files", None, QApplication.UnicodeUTF8),
+                                QApplication.translate("uicilibris", "There is no temporary files. Please run Pdflatex.", None, QApplication.UnicodeUTF8))
         return
 
     def gotoLog(self):
@@ -402,6 +492,14 @@ class w2mMainWindow(QMainWindow):
         """
         self.ui.tabWidget.setCurrentIndex(2)
         return
+
+    def export(self):
+        """
+        starts a dialog to export the content of the cache to another
+        enabled mediawiki. If the dialog succeeds, goes on with exportation.
+        """
+        d=export.Dialog(self)
+        d.show()
        
         
 
@@ -410,12 +508,14 @@ class latexComp(QObject):
     implements a process to compile LaTeX files and take in account
     the log file produced
     """
-    def __init__(self, uici, parent=None, cbInfo=None):
+    def __init__(self, uici, parent=None, cbInfo=None, coding="utf-8"):
         """
         the constructor
         @param uici uici.wb must be a w2book instance
         @param parent a parent for the QObject structure
         @param cbInfo a callback function to deal with information
+        @param coding the system to use when writing a text file.
+        Defaults to "utf-8"
         """
         QObject.__init__(self, parent)
         self.tmpdir=tempfile.mkdtemp(prefix="uici_")
@@ -423,7 +523,10 @@ class latexComp(QObject):
         self.pdfFileName= os.path.join(self.tmpdir,"out.pdf")
         self.auxFileName= os.path.join(self.tmpdir,"out.aux")
         self.logFileName= os.path.join(self.tmpdir,"out.log")
-        uici.wb.toFile(self.texFilename, cbInfo)
+        outfile=open(self.texFilename, "w")
+        outfile.write(uici.latexSource.encode(coding))
+        outfile.close()
+        uici.wb.getImages(self.tmpdir, cbInfo)
 
     def __del__(self):
         """
@@ -440,9 +543,10 @@ class latexComp(QObject):
         cmd="cd %s; pdflatex -interaction=nonstopmode out.tex" %self.tmpdir
         compileAgain=True
         while compileAgain:
+            existAux=os.path.exists(self.auxFileName)
             pipe=subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
             self.logOutput=pipe.communicate()
-            compileAgain = len(self.labelWarning())>0
+            compileAgain = not existAux or len(self.labelWarning())>0
 
     def labelWarning(self):
         """
@@ -462,10 +566,16 @@ class l2lThread(QThread):
         fed into the second tab. The first tab is supposed to provide
         a series of links to wiki pages
         """
-        wb=w2book.wiki2([self.parent().homeUrl], parent=self.parent(), report=self.reportErr) # the fake homeUrl is there only to get the address of the wiki; as a side-effect, the cache will be loaded with fake data.
-        wb.reloadCacheIndirect(self.parent().inputText, cbInfo=self.cbInfo)
-        texSource=("%s" %wb).decode("utf-8")
-        self.parent().emit(SIGNAL("latexready"), texSource, True)
+        p = self.parent().autoParser()
+        if p:
+            wb=p.wiki2(report=False, parent=self.parent(), latexReadyParam="compiling")
+            wb.reloadCacheIndirect(self.parent().inputText, cbInfo=self.cbInfo)
+            self.parent().emit(SIGNAL("latexready"), "compiling")
+        else:
+            self.parent().emit(SIGNAL("notYetImplemented"),self.parent().style)
+            self.parent().emit(SIGNAL("latexready"), "endL2L")
+        self.parent().threadLinksToLatex=None # allow triggering this thread later
+
 
     def cbInfo(self, info):
         """
@@ -484,6 +594,17 @@ class toLatexThread(QThread):
     a class to expand wiki code to Latex source
     """
     def run(self):
+<<<<<<< HEAD
+        p = self.parent().autoParser()
+        if p:
+            wb=p.wiki2(report=False, parent=self.parent(), latexReadyParam="endToLatex")
+            wb.parseWikiSource()
+        else:
+            self.parent().emit(SIGNAL("notYetImplemented"),self.parent().style)
+            self.parent().emit(SIGNAL("latexready"), "endToLatex")
+        return
+            
+=======
         #initialize a wiki2book instance with the home page of the mediawiki
         homeUrl=self.parent().wikiIndex.encode("utf-8")+"/fakePage"
         wb=w2book.wiki2([homeUrl], parent=self.parent(), isUrl=True, report=False) # the fake homeUrl is there only to get the address of the wiki; as a side-effect, the cache will be loaded with fake data.
@@ -493,6 +614,7 @@ class toLatexThread(QThread):
         self.parent().wb=wb
         self.parent().emit(SIGNAL("latexready"), latexSource)
         self.parent().emit(SIGNAL("stopWaitLatex"))
+>>>>>>> 35b5b3690b76c638ef5e07c8bb641fbf6cae0a41
         
 class latexCompileThread(QThread):
     """
@@ -540,7 +662,6 @@ def run(argv):
     ###translation##
     locale = QLocale.system().name()
     qtTranslator = QTranslator()
-
     if qtTranslator.load("qt_" + locale):
         app.installTranslator(qtTranslator)
         
@@ -548,7 +669,7 @@ def run(argv):
     if appTranslator.load("/usr/share/uicilibris/lang/uicilibris_" + locale):
         app.installTranslator(appTranslator)
     
-    w = w2mMainWindow(None,argv,locale=locale)
+    w = w2mMainWindow(None,argv,locale)
     w.show()
     sys.exit(app.exec_())
     

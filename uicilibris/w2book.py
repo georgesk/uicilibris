@@ -51,7 +51,7 @@ class wiki2(wikiParser.wikiParser):
         encoded in utf-8
         """
         # finds the option for Babel, based on the current locale
-        if str(self.parent.locale)[:2]=="fr":
+        if "FR" in str(self.parent.locale):
             babelOpt="frenchb";
         else:
             babelOpt="english"
@@ -147,6 +147,10 @@ class wiki2(wikiParser.wikiParser):
         s=s.replace("&amp;amp;","\\&")
         s=s.replace("%", "\\%")
         s=re.sub(r"\\comment\{(.*)\}",r"%% \1",s)
+        s=s.replace(" ;","~;")
+        s=s.replace(" :","~:")
+        s=s.replace(" !","~!")
+        s=s.replace(" ?","~?")
         # some mediawiki instances do not provide the same results,
         # so here is a second pass to translate special markup
         s=s.replace("<math>", "$")

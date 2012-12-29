@@ -122,9 +122,9 @@ class imageParser(templateParser):
                 if d[k]=="thumb":
                     figure=True
                 else: # the last unindentified value will become a caption
-                    figure=True
+                    figure=False
                     caption=d[k]
-        if figure:
+        if figure: # wrap the image in a figure "here"
             code="\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\\\ \n%s\n\\end{center}\n\\end{figure}\n" %(caption, code)
         return code
 
