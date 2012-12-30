@@ -61,7 +61,25 @@ class wiki2(wikiParser.wikiParser):
             l = self.sanitize(l)
             result += l
         result += self.postamble()
+        result = self.processMath(result)
         return result
+
+    def processMath(self, t):
+        """
+        processes math expressions inside a text
+        @param t the input text
+        @result the processed text
+        """
+        begin_arrays = [m.start() for m in re.finditer(r'\\begin{array}', t)]
+        end_arrays = [m.start() for m in re.finditer(r'\\end{array}', t)]
+        for i in range(len(begin_arrays)):
+            b=begin_arrays[i]
+            e=end_arrays[i]
+            t1=t[b:e]
+            t1=t1.replace('\\&','&')
+            t1=t[:b]+t1+t[e:]
+            t=t1
+        return t
 
     def processTabular(self, l):
         m=tableHeadPattern.match(l)
@@ -151,6 +169,8 @@ class wiki2(wikiParser.wikiParser):
         s=s.replace(" :","~:")
         s=s.replace(" !","~!")
         s=s.replace(" ?","~?")
+        s=s.replace(" »","~»")
+        s=s.replace("« ","«~")
         # some mediawiki instances do not provide the same results,
         # so here is a second pass to translate special markup
         s=s.replace("<math>", "$")
