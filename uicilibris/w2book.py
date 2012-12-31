@@ -198,7 +198,11 @@ class wiki2(wikiParser.wikiParser):
         @param lines a list of lines
         @param report if True, messages are emitted to sys.stderr;
         if it is callable, it is invoked with the same messages
-        @param transform a function to transform lines
+        @param transform a function to transform lines; its profile
+        requires 3 parameters: a text to transform, a reference to
+        the automatons's state, and a reference to a feedback (?) device;
+        it returns the transformed string, and affects its other parameters
+        as a side effect
         """
         self.state = w2bstate()
         result = [''] #start with one empty line as line 0

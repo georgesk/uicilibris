@@ -28,7 +28,7 @@
 # You should have received a copy of the GNU General Public License
 # along with uicilibris.  If not, see <http://www.gnu.org/licenses/>.
 
-import re, sys
+import re, sys, uicimd5
 
 def transform_itemenums(string, state):
     """handle itemizations/enumerations"""
@@ -246,30 +246,62 @@ def topOfStack(stack):
     else:
         return None
 
-def transform_h3_to_subsec(string, state):
-    """ headings (2) to subsections """
-    subsec_opening = r"\n\\subsection\2{\1}\n\n"
+def transform_heading_to_sect(s, state, pattern, replacement):
+    """
+    transforms a heading to a section of adapted level
+    @param s the string to transform
+    @param state state of the automaton
+    @param pattern a regexp to recognize the heading
+    @param replacement a string to replace the pattern with matched substrings
+    @return the transformed string
+    """
+    for m in re.finditer(pattern, s):
+        anchor="%s#%s" %(state.currentPage, m.group(1))
+        hashtag=uicimd5.digest(anchor)
+        s=s[:m.start()]+m.expand(replacement)+s[m.end():]
+        s=s %(hashtag, anchor)
+    return s
 
-    p = re.compile("^===\s*(.*?)\s*===(.*)", re.VERBOSE)
-    _string = p.sub(subsec_opening, string)
-    
-    return _string
+def transform_h4_to_subsubsec(s, state):
+    """
+    headings (4) to subsubsection
+    @param s the string to transform
+    @param state state of the automaton
+    """
+    pattern=r"^!?====\s*(.*?)\s*====(.*)"
+    replace=r"\n\\subsubsection\2{\1 \\label{%s}}\n\\comment{%s}\n"
+    return transform_heading_to_sect(s, state, pattern, replace)
 
-def transform_h2_to_sec(string, state):
-    """ headings (1) to sections """
-    sec_opening = r"\n\\section\2{\1}\n\n"
-    p = re.compile("^==\s*(.*?)\s*==(.*)", re.VERBOSE)
-    _string = p.sub(sec_opening, string)
 
-    return _string
+def transform_h3_to_subsec(s, state):
+    """
+    headings (3) to subsections
+    @param s the string to transform
+    @param state state of the automaton
+    """
+    pattern = r"^===\s*(.*?)\s*===(.*)"
+    replace=r"\n\\subsection\2{\1 \\label{%s}}\n\\comment{%s}\n"
+    return transform_heading_to_sect(s, state, pattern, replace)
 
-def transform_h1_to_chap(string, state):
-    """ headings (0) to chapters """
-    sec_opening = r"\n\\chapter\2{\1}\n\n"
-    p = re.compile("^=\s*(.*?)\s*=(.*)", re.VERBOSE)
-    _string = p.sub(sec_opening, string)
+def transform_h2_to_sec(s, state):
+    """
+    headings (2) to sections
+    @param s the string to transform
+    @param state state of the automaton
+    """
+    pattern=r"^==\s*(.*?)\s*==(.*)"
+    replace=r"\n\\section\2{\1 \\label{%s}}\n\\comment{%s}\n"
+    return transform_heading_to_sect(s, state, pattern, replace)
 
-    return _string
+def transform_h1_to_chap(s, state):
+    """
+    headings (1) to chapters
+    @param s the string to transform
+    @param state state of the automaton
+    """
+    pattern=r"^=\s*(.*?)\s*=(.*)"
+    replace=r"\n\\chapter\2{\1 \\label{%s}}\n\\comment{%s}\n"
+    return transform_heading_to_sect(s, state, pattern, replace)
 
 def transform_boldfont(string):
     """ bold font """
@@ -282,14 +314,6 @@ def transform_italicfont(string):
     p = re.compile("''(.*?)''", re.VERBOSE)
     string = p.sub(r"\\emph{\1}", string) 
     return string
-
-def transform_h4_to_subsubsec(string, state):
-    """headings (3) to subsubsection"""
-    subsubsec_opening = r"\n\\subsubsection\2{\1}\n\n"
-    p = re.compile("^!?====\s*(.*?)\s*====(.*)", re.VERBOSE)
-    _string = p.sub(subsubsec_opening, string)
-
-    return _string
 
 def transform_commentLines(string, state):
     """
@@ -313,15 +337,15 @@ def transform(string, state, report=False):
     @param report if True, messages are emitted to sys.stderr;
     if it is callable, it is invoked with the same messages
     """
+    string = transform_boldfont(string)
+    string = transform_italicfont(string)
+    string = transform_tables(string, state, report)
     string = transform_h4_to_subsubsec(string, state)
     string = transform_h3_to_subsec(string, state)
     string = transform_h2_to_sec(string, state)
     string = transform_h1_to_chap(string, state)
-    string = transform_boldfont(string)
-    string = transform_italicfont(string)
 
     string = transform_itemenums(string, state)
-    string = transform_tables(string, state, report)
     string = transform_commentLines(string, state)
 
     return string

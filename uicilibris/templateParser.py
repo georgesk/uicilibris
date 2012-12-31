@@ -157,6 +157,56 @@ class imageParser(templateParser):
         return pf
 
 
+class wikiLinkParser(templateParser):
+    """
+    a class to parse wiki links, based on the module re
+    """
+
+    def __init__(self, fun=None):
+        """
+        the constructor
+        @param fun a function necessary to get the parameters and output the result
+        """
+        if fun!=None:
+            templateParser.__init__(self,"wikiLink:", fun)
+        else:
+            templateParser.__init__(self,"wikiLink:",self.linkFun)
+        regexp=r"\[\[([^|]+)(\|(.*))?\]\]"
+        self.pattern=re.compile(regexp)
+        self.regexp=regexp
+
+    def linkFun(self,d):
+        """
+        the standard parser for a wiki link
+        """
+        code="!!! not implemented !!!"
+        return code
+
+    def sub(self, text):
+        """
+        makes every substitution in a given text and returns the result
+        @param text the given text
+        @return the result with every substitution done
+        """
+        print "GRRRR inside wikiLinkParser's sub function"
+        return self.pattern.sub(self.parseFunc, text)
+
+    def pfMaker(self,fun):
+        """
+        creates a parse function
+        @param fun a function getting the dictionary of parameters of a template
+        @return a function whose profile is: input parameter = a match expression, result = a string
+        """
+        def pf(m):
+            dic={}
+            dic["target"]=m.group(1)
+            if m.group(3):
+                dic["anchor"]=m.group(3)
+            else:
+                dic["anchor"]=m.group(1)
+            return fun(dic)
+
+        return pf
 
 
 if __name__=="__main__":

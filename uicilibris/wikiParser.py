@@ -29,11 +29,11 @@
 # along with uicilibris.  If not, see <http://www.gnu.org/licenses/>.
 
 
-import sys, url, StringIO, re, os, urllib2
+import sys, url, StringIO, re, os, urllib2, uicimd5
 from regularExpressions import *
 from BeautifulSoup import BeautifulSoup
 from plugin.plugin import plugins
-from templateParser import imageParser
+from templateParser import imageParser, wikiLinkParser
 import mediawiki
 from PyQt4.QtCore import SIGNAL
 
@@ -130,6 +130,16 @@ def imgFun(d):
     if figure:
         code="\\begin{figure}[h!]\n\\begin{center}\n\\caption{%s}\\vspace{0.5em}\n%s\n\\end{center}\n\\end{figure}\n" %(caption, code)
     wParser.registerImage(d["imgFile"])
+    return code
+
+############# a callback function for the wikilink parser
+def linkFun(d):
+    """
+    the standard custom parser for a dictionary coming from a
+    wikilink
+    """
+    hashtag=uicimd5.digest(d["target"])
+    code="\\hyperref[%s]{%s}" %(hashtag,d["anchor"]) 
     return code
 
 class lineJoiner:
@@ -462,6 +472,19 @@ class wikiParser:
             s=parser.sub(s)
         return s
                     
+    def applyPlugins2(self, s):
+        """
+        a lighter plugin applier, just for images and wiki links,
+        some of them result from templates expanded by the mediawiki engine
+        @param s the string to be processed
+        @return the processed string
+        """
+        #== the parsers of every plugin are applied, then the image parser
+        parsers=[imageParser(imgFun), wikiLinkParser(linkFun)]
+        for parser in parsers:
+            s=parser.sub(s)
+        return s
+                    
     def wikiTemplates(self, contents):
         """
         calls the special page ExpandTemplates in the wiki
@@ -541,9 +564,8 @@ class wikiParser:
             contents=self.applyPlugins(contents)
             processedContents=self.wikiTemplates(contents)
             # if processedContents still contain some included images
-            # run another template processor
-            if "[[Image:" in processedContents:
-                processedContents=self.applyPlugins(processedContents)
+            # or some wiki links, run another template processor
+            processedContents=self.applyPlugins2(processedContents)
             text+="\n<!-- uicilibris: begin '%s' -->\n" %a
             text+=processedContents+"\n"
             text+="\n<!-- uicilibris: end '%s' -->\n" %a
