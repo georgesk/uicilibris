@@ -188,7 +188,6 @@ class wikiLinkParser(templateParser):
         @param text the given text
         @return the result with every substitution done
         """
-        print "GRRRR inside wikiLinkParser's sub function"
         return self.pattern.sub(self.parseFunc, text)
 
     def pfMaker(self,fun):
