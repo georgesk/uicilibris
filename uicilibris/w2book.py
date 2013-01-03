@@ -128,6 +128,7 @@ class wiki2(wikiParser.wikiParser):
 \\usepackage{hyperref,wrapfig}
 \\usepackage{amssymb}
 \\usepackage{latexsym}
+OTHERPACKAGES
 
 \\PrerenderUnicode{É} % Pre-render some accented chars for titles of chapter
 \\PrerenderUnicode{À}
@@ -135,7 +136,7 @@ class wiki2(wikiParser.wikiParser):
 \\newcommand{\\nop}{}
 
 \\begin{document}
-""".replace("babelOpt", babelOpt)
+""".replace("babelOpt", babelOpt).replace("OTHERPACKAGES", self.parent.autoTemplates.encode("utf-8"))
 
     def postamble(self):
         return """\
@@ -165,20 +166,12 @@ class wiki2(wikiParser.wikiParser):
         s=s.replace("&amp;amp;","\\&")
         s=s.replace("%", "\\%")
         s=re.sub(r"\\comment\{(.*)\}",r"%% \1",s)
-        s=s.replace(" ;","~;")
-        s=s.replace(" :","~:")
-        s=s.replace(" !","~!")
-        s=s.replace(" ?","~?")
-        s=s.replace(" »","~»")
-        s=s.replace("« ","«~")
         # some mediawiki instances do not provide the same results,
         # so here is a second pass to translate special markup
         s=s.replace("<math>", "$")
         s=s.replace("</math>", "$")
         s=s.replace("<code>", "\\texttt{")
         s=s.replace("</code>", "}")
-        s=re.sub(r"<source[^>]*>", r"\\begin{verbatim}",s)
-        s=s.replace("</source>", r"\end{verbatim}")
         s=s.replace("<ref>", "\\footnote{")
         s=s.replace("</ref>", " }")
         s=s.replace("<references />", "")
@@ -236,36 +229,4 @@ class wiki2(wikiParser.wikiParser):
         #insert defverbs somewhere at the beginning
         expand_code_defverbs(result, self.state)
         return result
-
-    def parse_usepackage(self, usepackage):
-        """
-        @param usepackage (str)
-            the unparsed usepackage string in the form [options]{name}
-        @return (tuple)
-            (name(str), options(str))
-        """
-
-        p = re.compile(r'^\s*(\[.*\])?\s*\{(.*)\}\s*$')
-        m = p.match(usepackage)
-        g = m.groups()
-        if len(g)<2 or len(g)>2:
-            syntax_error('usepackage specifications have to be of the form [%s]{%s}', usepackage)
-        elif g[1]==None and g[1].strip()!='':
-            syntax_error('usepackage specifications have to be of the form [%s]{%s}', usepackage)
-        else:
-            options = g[0]
-            name = g[1].strip()
-            return (name, options)
-
-    def parse_bool(self, string):
-        boolean = False
-
-        if string == 'True' or string == 'true' or string == '1':
-            boolean = True
-        elif string == 'False' or string == 'false' or string =='0':
-            boolean = False
-        else:
-            syntax_error('Boolean expected (True/true/1 or False/false/0)', string)
-
-        return boolean
 

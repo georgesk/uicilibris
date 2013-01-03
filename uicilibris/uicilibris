@@ -48,6 +48,7 @@ from Ui_uicilibris import Ui_MainWindow
 from waitDialog import spinWheelWaitDialog
 import version, wikiParser, w2book, w2beamer, w2article, export
 import sys, re, StringIO, time, tempfile, subprocess, os.path
+import uiciautotemplates
 
 locale="C" # this global variable may be redefined later
 
@@ -177,6 +178,7 @@ class w2mMainWindow(QMainWindow):
             if m:
                 # get the web page's source
                 self.wikiIndex, text=wikiParser.getWikiContents(text)
+                text=re.sub(r'&lt;\[\s*autotemplate\s*\]', '<[ autotemplate ]', text)
                 self.ui.wikiDropArea.setPlainText(text)
                 self.ui.wikiIndex.setText(self.wikiIndex)
             else:
@@ -281,6 +283,7 @@ class w2mMainWindow(QMainWindow):
         contents are selected.
         """
         self.inputText=self.dropAreaText()
+        self.autoTemplates=uiciautotemplates.collectAutoTemplates(self.inputText.split("\n"))
         self.ui.latexCodeArea.clear()
         if self.wikiIndex==None:
             self.getWikiIndex()
@@ -507,7 +510,7 @@ class latexComp(QObject):
         """
         launches the compilation of the source file
         """
-        cmd="cd %s; pdflatex -interaction=nonstopmode out.tex" %self.tmpdir
+        cmd="cd %s; pdflatex -shell-escape -interaction=nonstopmode out.tex" %self.tmpdir
         compileAgain=True
         while compileAgain:
             existAux=os.path.exists(self.auxFileName)

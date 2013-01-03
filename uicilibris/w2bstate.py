@@ -50,6 +50,9 @@ class w2bstate:
         self.tableStack=[]
         self.allTables=[]
         self.tableErrors=[]
+        self.sourceCodeStack=[]
+        self.sourceCodeActive=False
+        self.sourceCodeLanguage=""
         self.currentPage=None
         return
 

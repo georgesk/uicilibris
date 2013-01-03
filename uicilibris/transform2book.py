@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # 	$Id: transform2book.py 36 2011-08-11 20:19:06Z georgesk $	
 #
 # transform2book.py is part of the package uicilibris
@@ -246,6 +247,50 @@ def topOfStack(stack):
     else:
         return None
 
+def transform_sourceCode(s, state, report=None):
+    """
+    handle sourcecode parts in the mediawiki and inserts non-breakable
+    spaces associated with punctuation for non-sourcecode parts
+    @param s (string) the current line to transform
+    @param state the state of the automaton
+    @param report if True, messages are emitted to sys.stderr;
+    if it is callable, it is invoked with the same messages
+    """
+    if state.sourceCodeActive:
+        #m=re.match("^\s*</source>",s)
+        m=re.match("^\s*&amp;lt;/source&gt;",s)
+        if m:
+            state.sourceCodeActive=False
+            s=r"\end{minted}"+"\n"
+    else:
+        #m=re.match("^\s*<source(\s+.*)*>",s)
+        m=re.match("^\s*&amp;lt;source(\s+.*)*&gt;",s)
+        if m:
+            state.sourceCodeActive=True
+            lang="C"
+            option=""
+            if len(m.groups())>0:
+                attr=m.group(1)
+                attributes={}
+                for m in re.finditer('\s+([a-zA-Z0-9]+)(\s*=\s*&quot;(\S+)&quot;)?',attr):
+                    attributes[m.group(1)]=m.group(3)
+                if "lang" in attributes:
+                    lang=attributes["lang"]
+                if "line" in attributes:
+                    option="[linenos=true]"
+            state.sourceCodeLanguage=lang
+            s=r"\begin{minted}%s{%s}" %(option,lang)+"\n"
+        else:
+            s=s.replace(" ;","~;")
+            s=s.replace(" :","~:")
+            s=s.replace(" !","~!")
+            s=s.replace(" ?","~?")
+            s=s.replace(" »","~»")
+            s=s.replace("« ","«~")
+            
+            
+    return s
+
 def transform_heading_to_sect(s, state, pattern, replacement):
     """
     transforms a heading to a section of adapted level
@@ -340,6 +385,7 @@ def transform(string, state, report=False):
     string = transform_boldfont(string)
     string = transform_italicfont(string)
     string = transform_tables(string, state, report)
+    string = transform_sourceCode(string, state, report)
     string = transform_h4_to_subsubsec(string, state)
     string = transform_h3_to_subsec(string, state)
     string = transform_h2_to_sec(string, state)
@@ -350,3 +396,21 @@ def transform(string, state, report=False):
 
     return string
 
+if __name__=="__main__":
+    #test for source code snippets
+    text="""\
+essai de ponctuation : ; ? ! « azert »
+&amp;lt;source lang=&quot;php&quot; line&gt;
+<?php
+    $v = "string";    // sample initialization
+?>
+html text
+<?
+    echo $v;         // end of php code
+?>
+&amp;lt;/source&gt;
+"""
+    import w2bstate
+    state=w2bstate.w2bstate()
+    for l in text.split("\n"):
+        print transform_sourceCode(l, state)
