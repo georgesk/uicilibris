@@ -177,6 +177,8 @@ class wiki2(wikiParser.wikiParser):
         s=s.replace("</math>", "$")
         s=s.replace("<code>", "\\texttt{")
         s=s.replace("</code>", "}")
+        s=re.sub(r"<source[^>]*>", r"\\begin{verbatim}",s)
+        s=s.replace("</source>", r"\end{verbatim}")
         s=s.replace("<ref>", "\\footnote{")
         s=s.replace("</ref>", " }")
         s=s.replace("<references />", "")
